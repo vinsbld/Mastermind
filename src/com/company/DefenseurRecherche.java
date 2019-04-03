@@ -22,11 +22,10 @@ public class DefenseurRecherche {
         for (int i = 0; i < tabSaisieAttaquant.length; i++) {
             tabSaisieAttaquant[i] = saisieAttaquant.nextInt(9);
         }
-        System.out.println(Arrays.toString(tabSaisieAttaquant));
 
         for (int y = nbEssai; y >= 0; y--) {
 
-            Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
+            System.out.print("Proposition : "+Arrays.toString(tabSaisieAttaquant)+" | Réponse : ");
 
             System.out.println();
             System.out.print("Réponse : ");

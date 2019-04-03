@@ -26,14 +26,12 @@ public class DefenseurMaster {
             tabSaisieAttaquant[i] = saisieAttaquant.nextInt(9);
         }
 
-        System.out.println(Arrays.toString(tabSaisieAttaquant));
-
         for (int y = nbEssai; y >= 0; y--) {
 
             Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
 
             System.out.println();
-            System.out.print("Réponse : ");
+            System.out.print("Proposition : "+Arrays.toString(tabSaisieAttaquant)+" | Réponse : ");
             Utils.algoMaster(tabSaisieDefenseur, tabSaisieAttaquant);
             System.out.println();
 
