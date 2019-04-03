@@ -32,7 +32,7 @@ public class Menu {
 
     static void menuModeDeJeu() {
         System.out.println("*         CHOISISSEZ UN MODE DE JEUX          *");
-        etoileDecoration(); 
+        etoileDecoration();
         System.out.println();
         System.out.println("1. ChallengerRecherche");
         System.out.println("Le joueur jour contre l'ordinateur");

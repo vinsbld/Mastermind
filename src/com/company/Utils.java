@@ -18,7 +18,7 @@ public class Utils {
     }
 
     public static void algoMaster(int[] combinaisonSecrete, int[] attaque) {
-        //System.out.print("Réponse : ");
+
         int present = 0;
         int bienPlace = 0;
         for (int i = 0; i < combinaisonSecrete.length; i++) {
@@ -33,13 +33,14 @@ public class Utils {
                 }
             }
         }
-        System.out.println("bien placé " + bienPlace);
-        System.out.println(present + " present");
+        System.out.print(present + " present, ");
+        System.out.println(bienPlace+ " bien placé" );
     }
 
 
 
         public static void algoComportementRandom ( int tabSaisieAttaquant[], int tabSaisieDefenseur[]){
+
             for (int i = 0; i < tabSaisieAttaquant.length; i++) {
                 if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
                     tabSaisieAttaquant[i] = tabSaisieAttaquant[i] + 1;

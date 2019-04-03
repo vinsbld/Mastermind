@@ -19,30 +19,32 @@ public class ChallengerRecherche {
         System.out.println();
 
         for (int y = nbEssai; y >= 0; y--) {
+
             String saisieUtilisateur = nb.next();
             int[] tabSaisieUtilisateur = new int[longueurDeLaCombaison];
             for (int i = 0; i < tabSaisieUtilisateur.length; i++) {
                 int converter = Integer.parseInt(saisieUtilisateur.charAt(i) + "");
                 tabSaisieUtilisateur[i] = converter;
             }
+                System.out.print("Réponse : ");
 
-            System.out.print("Réponse : ");
-            Utils.algoPlusMoins(tabSaisieUtilisateur, tabSaisieOrdinateur);
+                Utils.algoPlusMoins(tabSaisieUtilisateur, tabSaisieOrdinateur);
 
-            System.out.println();
-            if (y == 1) {
-                System.out.println("Attention dernier essai");
-            }
-            if (y == 0) {
-                System.out.println("Perdu ! vous n'avez pas trouver la combinaison secrete");
-                System.out.println("La combinaison secrette était : " + Arrays.toString(tabSaisieOrdinateur));
-                break;
-            }
-            if (Arrays.equals(tabSaisieOrdinateur, tabSaisieUtilisateur)) {
-                System.out.println("Bravo vous avez trouver la combinaison secrete !");
-                System.out.println("La combinaison été : " + Arrays.toString(tabSaisieOrdinateur));
+                System.out.println();
+
+                if (y == 1) {
+                    System.out.println("Attention dernier essai");
+                }
+                if (y == 0) {
+                    System.out.println("Perdu ! vous n'avez pas trouver la combinaison secrete");
+                    System.out.println("La combinaison secrette était : " + Arrays.toString(tabSaisieOrdinateur));
+                    break;
+                }
+                if (Arrays.equals(tabSaisieOrdinateur, tabSaisieUtilisateur)) {
+                    System.out.println("Bravo vous avez trouver la combinaison secrete !");
+                    System.out.println("La combinaison été : " + Arrays.toString(tabSaisieOrdinateur));
+                }
             }
         }
     }
 
-}
