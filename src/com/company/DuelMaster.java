@@ -51,7 +51,7 @@ public class DuelMaster {
             System.out.println();
             System.out.print("Réponse pour ordinateur " + Arrays.toString(tabEssaiCpu) + " : ");
 
-            Utils.algoPlusMoins(tabEssaiCpu, tabNbSecretUtil);
+            Utils.algoMaster(tabEssaiCpu, tabNbSecretUtil);
 
             System.out.println();
             if (i == 1) {
