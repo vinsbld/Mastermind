@@ -25,10 +25,10 @@ public class DefenseurRecherche {
 
         for (int y = nbEssai; y >= 0; y--) {
 
-            System.out.print("Proposition : "+Arrays.toString(tabSaisieAttaquant)+" | Réponse : ");
+            Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
 
+            System.out.print("Proposition : "+Arrays.toString(tabSaisieAttaquant)+" | Réponse : ");
             System.out.println();
-            System.out.print("Réponse : ");
             Utils.algoPlusMoins(tabSaisieDefenseur, tabSaisieAttaquant);
             System.out.println();
 

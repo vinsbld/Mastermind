@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
-
 public class Utils {
 
     public static void algoPlusMoins(int[] tab1, int[] tab2) {
@@ -36,7 +34,6 @@ public class Utils {
         System.out.print(present + " present, ");
         System.out.println(bienPlace+ " bien placé" );
     }
-
 
 
         public static void algoComportementRandom ( int tabSaisieAttaquant[], int tabSaisieDefenseur[]){
