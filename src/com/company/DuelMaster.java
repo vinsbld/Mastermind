@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class DuelMaster {
     static Scanner nb = new Scanner(System.in);
 
-    static void algoDuelRecherche() {
+    static void algoDuelMaster() {
         int longueurDelaCombinaison = 3;
         int nbEssai = 10;
 

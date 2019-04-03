@@ -28,9 +28,14 @@ public class Menu {
         System.out.print("* Pour choisir un jeu entrer 1 ou 2 : ");
         int saisieUtilisateurJeux = nb.nextInt();
         etoileDecoration();
+        if (saisieUtilisateurJeux == 1) {
+            menuModeDeJeuRecherchePlusMoins();
+        } else if (saisieUtilisateurJeux == 2) {
+                    menuModeDeJeuMaster();
+        }
     }
 
-    static void menuModeDeJeu() {
+    static void menuModeDeJeuRecherchePlusMoins() {
         System.out.println("*         CHOISISSEZ UN MODE DE JEUX          *");
         etoileDecoration();
         System.out.println();
@@ -52,8 +57,33 @@ public class Menu {
         } else if (saisieUtilisateurMode == 2) {
             DefenseurRecherche.algoDefenseurRecherche();
         } else if (saisieUtilisateurMode == 3) {
+            DuelRecherche.algoDuelRecherche();
+        }
+    }
 
+    static void menuModeDeJeuMaster() {
+        System.out.println("*         CHOISISSEZ UN MODE DE JEUX          *");
+        etoileDecoration();
+        System.out.println();
+        System.out.println("1. ChallengerRecherche");
+        System.out.println("Le joueur jour contre l'ordinateur");
+        System.out.println();
+        System.out.println("2. Défenseur");
+        System.out.println("L'ordinateur joue contre le joueur");
+        System.out.println();
+        System.out.println("3. Duel");
+        System.out.println("Le joueur et l'ordinateur jouent à tour de rôle");
+        System.out.println();
+        etoileDecoration();
+        System.out.println("Pour choisir un Mode entrer 1, 2 ou 3 : ");
+        int saisieUtilisateurMode = nb.nextInt();
+        etoileDecoration();
+        if (saisieUtilisateurMode == 1) {
+            ChallengerMaster.algoChalengerMaster();
+        } else if (saisieUtilisateurMode == 2) {
+            DefenseurMaster.algoDefenseurMaster();
+        } else if (saisieUtilisateurMode == 3) {
+            DuelMaster.algoDuelMaster();
         }
     }
 }
-
