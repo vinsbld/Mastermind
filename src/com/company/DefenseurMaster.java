@@ -39,16 +39,24 @@ public class DefenseurMaster {
                 System.out.println("Attention dernier essai");
             }
             if (y == 0) {
-                System.out.println("Gagné ! l'ordinateur n'a pas trouver la combinaison secrete");
+                System.out.println("                 GAGNé !");
+                System.out.println("l'ordinateur n'a pas trouver la combinaison secrete");
                 System.out.println("La combinaison secrette était : " + Arrays.toString(tabSaisieDefenseur));
                 break;
             }
             if (Arrays.equals(tabSaisieAttaquant, tabSaisieDefenseur)) {
-                System.out.println("Perdu ! l'ordinateur a trouver la combinaison secrete");
+                Utils.etoileDecoration();
+                Utils.hastagDecoration();
+                System.out.println("                    PERDU !  ");
+                Utils.hastagDecoration();
+                Utils.etoileDecoration();
+                System.out.println("l'ordinateur a trouver la combinaison secrete");
                 System.out.println("La combinaison été : " + Arrays.toString(tabSaisieDefenseur));
                 break;
             }
         }
+        Utils.etoileDecoration();
+        Menu.menuFinMaster();
     }
 }
 

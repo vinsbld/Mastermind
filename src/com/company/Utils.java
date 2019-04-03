@@ -50,6 +50,21 @@ public class Utils {
                 }
             }
         }
+
+    static void etoileDecoration() {
+        for (int i = 1; i <= 47; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
     }
+
+    static void hastagDecoration() {
+        for (int i = 1; i <= 47; i++) {
+            System.out.print("#");
+        }
+        System.out.println();
+    }
+
+}
 
 
