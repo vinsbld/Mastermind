@@ -1,6 +1,48 @@
 package com.company;
 
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 public class Utils {
+
+    static Scanner nb = new Scanner(System.in);
+
+    public static void algoDefenseur(int []tabSaisieDefenseur, int[]tabSaisieAttaquant, int longueurDelaCombinaison, int nbEssai){
+
+        System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
+        String saisieDefenseur = nb.next();
+        tabSaisieDefenseur = new int[longueurDelaCombinaison];
+        for (int i = 0; i < tabSaisieDefenseur.length; i++) {
+            int converter = Integer.parseInt(saisieDefenseur.charAt(i) + "");
+            tabSaisieDefenseur[i] = converter;
+        }
+        Random saisieAttaquant = new Random();
+        tabSaisieAttaquant = new int[longueurDelaCombinaison];
+        for (int i = 0; i < tabSaisieAttaquant.length; i++) {
+            tabSaisieAttaquant[i] = saisieAttaquant.nextInt(9);
+        }
+    }
+
+    public static void algoChallenger(int[] tabSaisieOrdinateur, int[] tabSaisieUtilisateur, int longueurDeLaCombaison, int nbEssai) {
+
+        Random nbAleatoire = new Random();
+        tabSaisieOrdinateur = new int[longueurDeLaCombaison];
+        for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
+            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(9);
+        }
+        System.out.print(Arrays.toString(tabSaisieOrdinateur));
+        System.out.println();
+
+        for (int y = nbEssai; y >= 0; y--) {
+
+            String saisieUtilisateur = nb.next();
+            tabSaisieUtilisateur = new int[longueurDeLaCombaison];
+            for (int i = 0; i < tabSaisieUtilisateur.length; i++) {
+                int converter = Integer.parseInt(saisieUtilisateur.charAt(i) + "");
+                tabSaisieUtilisateur[i] = converter;
+            }
+        }
+    }
 
     public static void algoPlusMoins(int[] tab1, int[] tab2) {
 
@@ -37,14 +79,18 @@ public class Utils {
 
 
         public static void algoComportementRandom ( int tabSaisieAttaquant[], int tabSaisieDefenseur[]){
-
+            Random r = new Random();
             for (int i = 0; i < tabSaisieAttaquant.length; i++) {
-                if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
-                    tabSaisieAttaquant[i] = tabSaisieAttaquant[i] + 1;
+
+                int nbPourRandom = tabSaisieAttaquant[i]-9;
+                if (nbPourRandom<0){
+                    nbPourRandom = -nbPourRandom;
                 }
-                if (tabSaisieAttaquant[i] > tabSaisieDefenseur[i]) {
-                    tabSaisieAttaquant[i] = tabSaisieAttaquant[i] - 1;
+                
+                if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i] || tabSaisieAttaquant[i] > tabSaisieDefenseur[i] ) {
+                    tabSaisieAttaquant[i] = r.nextInt(tabSaisieAttaquant[i]+1) + nbPourRandom;
                 }
+
                 if (tabSaisieAttaquant[i] == tabSaisieDefenseur[i]) {
                     tabSaisieAttaquant[i] = tabSaisieAttaquant[i];
                 }

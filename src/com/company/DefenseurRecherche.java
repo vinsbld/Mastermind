@@ -8,6 +8,7 @@ public class DefenseurRecherche {
     static Scanner nb = new Scanner(System.in);
 
     static void algoDefenseurRecherche() {
+
         int nbEssai = 10;
         int longueurDelaCombinaison = 3;
         System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
@@ -28,7 +29,6 @@ public class DefenseurRecherche {
             Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
 
             System.out.print("Proposition : "+Arrays.toString(tabSaisieAttaquant)+" | Réponse : ");
-            System.out.println();
             Utils.algoPlusMoins(tabSaisieDefenseur, tabSaisieAttaquant);
             System.out.println();
 
@@ -36,7 +36,11 @@ public class DefenseurRecherche {
                 System.out.println("Attention dernier essai");
             }
             if (y == 0) {
-                System.out.println("                  GAGNé !");
+                Utils.etoileDecoration();
+                Utils.hastagDecoration();
+                System.out.println("                    GAGNé !");
+                Utils.hastagDecoration();
+                Utils.etoileDecoration();
                 System.out.println("l'ordinateur n'a pas trouver la combinaison secrete");
                 System.out.println("La combinaison secrette était : " + Arrays.toString(tabSaisieDefenseur));
                 break;
@@ -44,16 +48,16 @@ public class DefenseurRecherche {
             if (Arrays.equals(tabSaisieAttaquant, tabSaisieDefenseur)) {
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
-                System.out.println("                   PERDU !  ");
+                System.out.println("                     PERDU !");
                 Utils.hastagDecoration();
                 Utils.etoileDecoration();
                 System.out.println("l'ordinateur a trouver la combinaison secrete");
                 System.out.println("La combinaison été : " + Arrays.toString(tabSaisieDefenseur));
                 break;
             }
-            Utils.etoileDecoration();
-            Menu.menuFinRecherchePlusMoins();
         }
+        Utils.etoileDecoration();
+        Menu.menuFinRecherchePlusMoins();
     }
 }
 

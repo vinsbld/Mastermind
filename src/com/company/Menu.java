@@ -8,7 +8,7 @@ public class Menu {
 
 
     static void menuDemarrer() {
-        
+
         Utils.etoileDecoration();
         System.out.println();
         System.out.println("*              MASTER MIND                    *");
@@ -91,6 +91,7 @@ public class Menu {
     static void menuFinRecherchePlusMoins() {
 
         Utils.hastagDecoration();
+        System.out.println();
         System.out.println("Pour rejouer au même jeu tapez : 1");
         System.out.println();
         System.out.println("Pour revenir au menu tapez : 2");
@@ -110,7 +111,7 @@ public class Menu {
         }
         else if (sasisieUtilisateur == 3) {
             Utils.hastagDecoration();
-            System.out.println("                   FIN");
+            System.out.println("                      FIN");
             Utils.hastagDecoration();
         }
     }
@@ -118,6 +119,7 @@ public class Menu {
     static void menuFinMaster() {
 
         Utils.hastagDecoration();
+        System.out.println();
         System.out.println("Pour rejouer au même jeu tapez : 1");
         System.out.println();
         System.out.println("Pour revenir au menu tapez : 2");
@@ -137,7 +139,7 @@ public class Menu {
         }
         else if (sasisieUtilisateur == 3) {
             Utils.hastagDecoration();
-            System.out.println("                   FIN");
+            System.out.println("                      FIN");
             Utils.hastagDecoration();
         }
     }
