@@ -33,8 +33,14 @@ public class DefenseurRecherche {
             System.out.println();
 
             if (y == 1) {
+
+                System.out.println();
+                Utils.etoileDecoration();
                 System.out.println("Attention dernier essai");
+                Utils.etoileDecoration();
+                System.out.println();
             }
+
             if (y == 0) {
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
@@ -45,6 +51,7 @@ public class DefenseurRecherche {
                 System.out.println("La combinaison secrette était : " + Arrays.toString(tabSaisieDefenseur));
                 break;
             }
+
             if (Arrays.equals(tabSaisieAttaquant, tabSaisieDefenseur)) {
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();

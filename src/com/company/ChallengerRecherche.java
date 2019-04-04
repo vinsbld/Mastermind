@@ -39,7 +39,11 @@ public class ChallengerRecherche {
 
                 if (y == 1) {
 
+                    System.out.println();
+                    Utils.etoileDecoration();
                     System.out.println("Attention dernier essai");
+                    Utils.etoileDecoration();
+                    System.out.println();
                 }
                 if (y == 0) {
 
@@ -63,6 +67,8 @@ public class ChallengerRecherche {
                     System.out.println("La combinaison été : " + Arrays.toString(tabSaisieOrdinateur));
                 }
             }
+        Utils.etoileDecoration();
+        Menu.menuFinRecherchePlusMoins();
         }
     }
 

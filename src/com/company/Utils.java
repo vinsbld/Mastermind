@@ -83,8 +83,8 @@ public class Utils {
             for (int i = 0; i < tabSaisieAttaquant.length; i++) {
 
                 /*si le nombre generé et inferieur ou supereieur à la valeur cible
-                   l'ordinateur généré un chiffre entre la valeur [i] et 9 pour ne jamais dépasser 9.
-                   ou entre valeur [i] et 0 sans jamais depasser 0.
+                   l'ordinateur génére un chiffre entre la valeur [i] et 9 si resultat est +.
+                   l'ordinateur génére un chiffre entre la valeur [i] et 0 si resultat est -.
                  */
                 if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
                     tabSaisieAttaquant[i] = r.nextInt((9 - tabSaisieAttaquant[i]) + 1);
@@ -108,6 +108,13 @@ public class Utils {
     static void hastagDecoration() {
         for (int i = 1; i <= 47; i++) {
             System.out.print("#");
+        }
+        System.out.println();
+    }
+
+    static void etoileDecorationPourMaster() {
+        for (int i = 1; i <= 60; i++) {
+            System.out.print("*");
         }
         System.out.println();
     }

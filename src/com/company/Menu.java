@@ -94,7 +94,7 @@ public class Menu {
         System.out.println();
         System.out.println("Pour rejouer au même jeu tapez : 1");
         System.out.println();
-        System.out.println("Pour revenir au menu tapez : 2");
+        System.out.println("Pour revenir au menu principal tapez : 2");
         System.out.println();
         System.out.println("Pour quitter tapez : 3");
         System.out.println();
@@ -122,7 +122,7 @@ public class Menu {
         System.out.println();
         System.out.println("Pour rejouer au même jeu tapez : 1");
         System.out.println();
-        System.out.println("Pour revenir au menu tapez : 2");
+        System.out.println("Pour revenir au menu principal tapez : 2");
         System.out.println();
         System.out.println("Pour quitter tapez : 3");
         System.out.println();

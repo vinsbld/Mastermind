@@ -54,24 +54,35 @@ public class DuelRecherche {
             Utils.algoPlusMoins(tabEssaiCpu, tabNbSecretUtil);
 
             System.out.println();
+
             if (i == 1) {
+
+                System.out.println();
+                Utils.etoileDecoration();
                 System.out.println("Attention dernier essai");
+                Utils.etoileDecoration();
+                System.out.println();
             }
             if (i == 0) {
+
                 System.out.println("Perdu ! nombre de tentatives écoulées");
                 System.out.println("La combinaison secrete de l'ordinateur était : " + Arrays.toString(tabNbSecretCpu));
                 System.out.println("La combinaison secrete du joueur était : " + Arrays.toString(tabNbSecretUtil));
                 break;
             }
             if (Arrays.equals(tabEssaiCpu, tabNbSecretUtil)) {
+
                 System.out.println("L'ordinateur a gagné ! l'ordinateur a trouver la combinaison secrete");
                 System.out.println("La combinaison été : " + Arrays.toString(tabEssaiUtilisateur));
                 break;
             }
             if (Arrays.equals(tabEssaiUtilisateur, tabNbSecretCpu)) {
+
                 System.out.println("Gagné ! vous avez trouver la combinaison secrete !");
                 System.out.println("La combinaison secrete de l'ordinateur était : " + Arrays.toString(tabNbSecretCpu));
             }
         }
+        Utils.etoileDecoration();
+        Menu.menuFinRecherchePlusMoins();
     }
 }

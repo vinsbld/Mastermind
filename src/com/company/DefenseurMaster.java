@@ -35,7 +35,12 @@ public class DefenseurMaster {
             Utils.algoMaster(tabSaisieDefenseur, tabSaisieAttaquant);
 
             if (y == 1) {
+
+                System.out.println();
+                Utils.etoileDecorationPourMaster();
                 System.out.println("Attention dernier essai");
+                Utils.etoileDecorationPourMaster();
+                System.out.println();
             }
             if (y == 0) {
                 Utils.etoileDecoration();
@@ -59,7 +64,7 @@ public class DefenseurMaster {
             }
         }
         Utils.etoileDecoration();
-        Menu.menuFinRecherchePlusMoins();
+        Menu.menuFinMaster();
     }
 }
 

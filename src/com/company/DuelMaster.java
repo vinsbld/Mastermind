@@ -55,8 +55,14 @@ public class DuelMaster {
 
             System.out.println();
             if (i == 1) {
+
+                System.out.println();
+                Utils.etoileDecorationPourMaster();
                 System.out.println("Attention dernier essai");
+                Utils.etoileDecorationPourMaster();
+                System.out.println();
             }
+
             if (i == 0) {
                 System.out.println("Perdu ! nombre de tentatives écoulées");
                 System.out.println("La combinaison secrete de l'ordinateur était : " + Arrays.toString(tabNbSecretCpu));
@@ -73,6 +79,8 @@ public class DuelMaster {
                 System.out.println("La combinaison secrete de l'ordinateur était : " + Arrays.toString(tabNbSecretCpu));
             }
         }
+        Utils.etoileDecoration();
+        Menu.menuFinMaster();
     }
 }
 

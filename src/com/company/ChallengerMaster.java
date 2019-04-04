@@ -20,10 +20,10 @@ public class ChallengerMaster {
 
         for (int y = nbEssai; y >= 0; y--) {
 
-            Utils.etoileDecoration();
+            Utils.etoileDecorationPourMaster();
             System.out.println("Entrez votre proposition : ");
             String saisieUtilisateur = nb.next();
-            Utils.etoileDecoration();
+            Utils.etoileDecorationPourMaster();
 
             int[] tabSaisieUtilisateur = new int[longueurDeLaCombaison];
             for (int i = 0; i < tabSaisieUtilisateur.length; i++) {
@@ -38,10 +38,16 @@ public class ChallengerMaster {
 
             if (y == 1) {
 
+                System.out.println();
+                Utils.etoileDecorationPourMaster();
                 System.out.println("Attention dernier essai");
+                Utils.etoileDecorationPourMaster();
+                System.out.println();
             }
             if (y == 0) {
 
+                Utils.etoileDecorationPourMaster();
+                System.out.println();
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                     PERDU !");
@@ -53,6 +59,8 @@ public class ChallengerMaster {
             }
             if (Arrays.equals(tabSaisieOrdinateur, tabSaisieUtilisateur)) {
 
+                Utils.etoileDecorationPourMaster();
+                System.out.println();
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                    GAGNé !");
@@ -60,7 +68,10 @@ public class ChallengerMaster {
                 Utils.etoileDecoration();
                 System.out.println("Vous avez trouver la combinaison secrete !");
                 System.out.println("La combinaison été : " + Arrays.toString(tabSaisieOrdinateur));
+                break;
             }
         }
+        Utils.etoileDecoration();
+        Menu.menuFinMaster();
     }
 }
