@@ -28,14 +28,13 @@ public class ChallengerRecherche {
 
             int[] tabSaisieUtilisateur = new int[longueurDeLaCombaison];
             for (int i = 0; i < tabSaisieUtilisateur.length; i++) {
-                //pour chaque caractères de la
                 int converter = Integer.parseInt(saisieUtilisateur.charAt(i) + "");
                 tabSaisieUtilisateur[i] = converter;
             }
+
             System.out.print("Proposition : "+Arrays.toString(tabSaisieUtilisateur)+" | Réponse : ");
 
-                Utils.algoPlusMoins(tabSaisieUtilisateur, tabSaisieOrdinateur);
-
+            Utils.algoPlusMoins(tabSaisieUtilisateur, tabSaisieOrdinateur);
 
                 if (y == 1) {
 

@@ -54,7 +54,7 @@ public class Utils {
             } else if (tab1[i] == tab2[i]) {
                 System.out.print("=");
             }
-        }
+        }System.out.println();
     }
 
     public static void algoMaster(int[] combinaisonSecrete, int[] attaque) {
@@ -80,17 +80,17 @@ public class Utils {
 
         public static void algoComportementRandom ( int tabSaisieAttaquant[], int tabSaisieDefenseur[]){
             Random r = new Random();
-            for (int i = 0; i < tabSaisieAttaquant.length; i++) {
+            for (int i = 0; i < tabSaisieDefenseur.length; i++) {
 
                 /*si le nombre generé et inferieur ou supereieur à la valeur cible
                    l'ordinateur génére un chiffre entre la valeur [i] et 9 si resultat est +.
                    l'ordinateur génére un chiffre entre la valeur [i] et 0 si resultat est -.
                  */
                 if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
-                    tabSaisieAttaquant[i] = r.nextInt((9 - tabSaisieAttaquant[i]) + 1);
+                    tabSaisieAttaquant[i] = r.nextInt((9 - tabSaisieAttaquant[i]) + 1) + tabSaisieAttaquant[i];
                 }
                 if (tabSaisieAttaquant[i] > tabSaisieDefenseur[i] ){
-                    tabSaisieAttaquant[i] = r.nextInt((tabSaisieAttaquant[i] - 0) + 1);
+                    tabSaisieAttaquant[i] = r.nextInt((tabSaisieAttaquant[i] - 0) + 1) + 0;
                 }
                 if (tabSaisieAttaquant[i] == tabSaisieDefenseur[i]) {
                     tabSaisieAttaquant[i] = tabSaisieAttaquant[i];

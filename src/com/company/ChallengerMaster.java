@@ -30,11 +30,10 @@ public class ChallengerMaster {
                 int converter = Integer.parseInt(saisieUtilisateur.charAt(i) + "");
                 tabSaisieUtilisateur[i] = converter;
             }
+
             System.out.print("Proposition : "+Arrays.toString(tabSaisieUtilisateur)+" | Réponse : ");
 
             Utils.algoMaster(tabSaisieOrdinateur, tabSaisieUtilisateur);
-
-
 
             if (y == 1) {
 

@@ -29,7 +29,7 @@ public class DefenseurRecherche {
             Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
 
             System.out.print("Proposition : "+Arrays.toString(tabSaisieAttaquant)+" | Réponse : ");
-            Utils.algoPlusMoins(tabSaisieDefenseur, tabSaisieAttaquant);
+            Utils.algoPlusMoins(tabSaisieAttaquant, tabSaisieDefenseur);
             System.out.println();
 
             if (y == 1) {
