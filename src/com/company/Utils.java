@@ -28,7 +28,7 @@ public class Utils {
         Random nbAleatoire = new Random();
         tabSaisieOrdinateur = new int[longueurDeLaCombaison];
         for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
-            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(9);
+            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(9 + 1);
         }
         System.out.print(Arrays.toString(tabSaisieOrdinateur));
         System.out.println();
@@ -82,15 +82,16 @@ public class Utils {
             Random r = new Random();
             for (int i = 0; i < tabSaisieAttaquant.length; i++) {
 
-                int nbPourRandom = tabSaisieAttaquant[i]-9;
-                if (nbPourRandom<0){
-                    nbPourRandom = -nbPourRandom;
+                /*si le nombre generé et inferieur ou supereieur à la valeur cible
+                   l'ordinateur généré un chiffre entre la valeur [i] et 9 pour ne jamais dépasser 9.
+                   ou entre valeur [i] et 0 sans jamais depasser 0.
+                 */
+                if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
+                    tabSaisieAttaquant[i] = r.nextInt((9 - tabSaisieAttaquant[i]) + 1);
                 }
-                
-                if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i] || tabSaisieAttaquant[i] > tabSaisieDefenseur[i] ) {
-                    tabSaisieAttaquant[i] = r.nextInt(tabSaisieAttaquant[i]+1) + nbPourRandom;
+                if (tabSaisieAttaquant[i] > tabSaisieDefenseur[i] ){
+                    tabSaisieAttaquant[i] = r.nextInt((tabSaisieAttaquant[i] - 0) + 1);
                 }
-
                 if (tabSaisieAttaquant[i] == tabSaisieDefenseur[i]) {
                     tabSaisieAttaquant[i] = tabSaisieAttaquant[i];
                 }
