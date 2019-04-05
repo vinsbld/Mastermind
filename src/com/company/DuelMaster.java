@@ -19,17 +19,25 @@ public class DuelMaster {
         System.out.print(Arrays.toString(tabNbSecretCpu));
         System.out.println();
 
+        System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
         String nbSecretUtilisateur = nb.next();
         int[] tabNbSecretUtil = new int[longueurDelaCombinaison];
         for (int j = 0; j < tabNbSecretUtil.length; j++) {
             int converter = Integer.parseInt(nbSecretUtilisateur.charAt(j) + "");
             tabNbSecretUtil[j] = converter;
         }
-        System.out.println(Arrays.toString(tabNbSecretUtil));
+        Utils.etoileDecorationPourMaster();
+        System.out.println("Votre code secret est : " + Arrays.toString(tabNbSecretUtil));
+        Utils.etoileDecorationPourMaster();
+        System.out.println();
+
 
         for (int i = nbEssai; i >= 0; i--) {
 
+            Utils.etoileDecorationPourMaster();
+            System.out.print("saisisez votre proposition : ");
             String essaiUtilisateur = nb.next();
+            Utils.etoileDecorationPourMaster();
             int[] tabEssaiUtilisateur = new int[longueurDelaCombinaison];
             for (int k = 0; k < tabEssaiUtilisateur.length; k++) {
                 int convEassaiUtilisateur = Integer.parseInt(essaiUtilisateur.charAt(k) + "");
@@ -44,16 +52,18 @@ public class DuelMaster {
             Utils.algoComportementRandom(tabEssaiCpu, tabEssaiUtilisateur);
 
             System.out.println();
-            System.out.print("Réponse pour joueur : ");
-
+            Utils.etoileDecorationPourMaster();
+            System.out.print(Arrays.toString(tabEssaiUtilisateur) + " Réponse pour joueur : ");
             Utils.algoMaster(tabEssaiUtilisateur, tabNbSecretCpu);
+            Utils.etoileDecorationPourMaster();
 
             System.out.println();
-            System.out.print("Réponse pour ordinateur " + Arrays.toString(tabEssaiCpu) + " : ");
-
+            Utils.etoileDecorationPourMaster();
+            System.out.print(Arrays.toString(tabEssaiCpu) + " Réponse pour ordinateur : ");
             Utils.algoMaster(tabEssaiCpu, tabNbSecretUtil);
-
+            Utils.etoileDecorationPourMaster();
             System.out.println();
+
             if (i == 1) {
 
                 System.out.println();
@@ -64,19 +74,34 @@ public class DuelMaster {
             }
 
             if (i == 0) {
-                System.out.println("Perdu ! nombre de tentatives écoulées");
-                System.out.println("La combinaison secrete de l'ordinateur était : " + Arrays.toString(tabNbSecretCpu));
-                System.out.println("La combinaison secrete du joueur était : " + Arrays.toString(tabNbSecretUtil));
+
+                Utils.etoileDecoration();
+                Utils.hastagDecoration();
+                System.out.println("                     PERDU !");
+                Utils.hastagDecoration();
+                Utils.etoileDecoration();
+                System.out.println("Le code secret de l'ordinateur était : " + Arrays.toString(tabNbSecretCpu));
+                System.out.println("Le code secret du joueur était : " + Arrays.toString(tabNbSecretUtil));
                 break;
             }
             if (Arrays.equals(tabEssaiCpu, tabNbSecretUtil)) {
-                System.out.println("L'ordinateur a gagné ! l'ordinateur a trouver la combinaison secrete");
+                Utils.etoileDecoration();
+                Utils.hastagDecoration();
+                System.out.println("             L'ordinateur a GAGNé !");
+                Utils.hastagDecoration();
+                Utils.etoileDecoration();
+                System.out.println("L'ordinateur a trouvé votre code secret");
                 System.out.println("La combinaison été : " + Arrays.toString(tabEssaiUtilisateur));
                 break;
             }
             if (Arrays.equals(tabEssaiUtilisateur, tabNbSecretCpu)) {
-                System.out.println("Gagné ! vous avez trouver la combinaison secrete !");
-                System.out.println("La combinaison secrete de l'ordinateur était : " + Arrays.toString(tabNbSecretCpu));
+                Utils.etoileDecoration();
+                Utils.hastagDecoration();
+                System.out.println("                    GAGNé !");
+                Utils.hastagDecoration();
+                Utils.etoileDecoration();
+                System.out.println("Vous avez trouver le code secret de l'ordinateur !");
+                System.out.println("Le code secret de l'ordinateur était : " + Arrays.toString(tabNbSecretCpu));
             }
         }
         Utils.etoileDecoration();

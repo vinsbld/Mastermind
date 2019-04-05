@@ -54,7 +54,8 @@ public class Utils {
             } else if (tab1[i] == tab2[i]) {
                 System.out.print("=");
             }
-        }System.out.println();
+        }
+        System.out.println();
     }
 
     public static void algoMaster(int[] combinaisonSecrete, int[] attaque) {
@@ -85,6 +86,9 @@ public class Utils {
                 /*si le nombre generé et inferieur ou supereieur à la valeur cible
                    l'ordinateur génére un chiffre entre la valeur [i] et 9 si resultat est +.
                    l'ordinateur génére un chiffre entre la valeur [i] et 0 si resultat est -.
+                   En ajoutant +1 dans le random on offre une chance à l'ordinateur
+                   de réutiliser le même chiffre plusieurs fois à la même place
+                   si il n'a pas trouver sa place.
                  */
                 if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
                     tabSaisieAttaquant[i] = r.nextInt((9 - tabSaisieAttaquant[i]) + 1) + tabSaisieAttaquant[i];

@@ -30,13 +30,15 @@ public class DefenseurMaster {
 
             Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
 
-            System.out.println();
+            Utils.etoileDecorationPourMaster();
             System.out.print("Proposition : " + Arrays.toString(tabSaisieAttaquant) + " | Réponse : ");
             Utils.algoMaster(tabSaisieDefenseur, tabSaisieAttaquant);
+            Utils.etoileDecorationPourMaster();
+            System.out.println();
+
 
             if (y == 1) {
 
-                System.out.println();
                 Utils.etoileDecorationPourMaster();
                 System.out.println("Attention dernier essai");
                 Utils.etoileDecorationPourMaster();
@@ -48,7 +50,7 @@ public class DefenseurMaster {
                 System.out.println("                    GAGNé !");
                 Utils.hastagDecoration();
                 Utils.etoileDecoration();
-                System.out.println("l'ordinateur n'a pas trouver la combinaison secrete");
+                System.out.println("l'ordinateur n'a pas trouver le code secret");
                 System.out.println("La combinaison secrette était : " + Arrays.toString(tabSaisieDefenseur));
                 break;
             }
@@ -58,7 +60,7 @@ public class DefenseurMaster {
                 System.out.println("                     PERDU !");
                 Utils.hastagDecoration();
                 Utils.etoileDecoration();
-                System.out.println("l'ordinateur a trouver la combinaison secrete");
+                System.out.println("l'ordinateur a trouver le code secret");
                 System.out.println("La combinaison été : " + Arrays.toString(tabSaisieDefenseur));
                 break;
             }

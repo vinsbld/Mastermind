@@ -27,14 +27,16 @@ public class DefenseurRecherche {
         for (int y = nbEssai; y >= 0; y--) {
 
             Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
-
+            Utils.etoileDecoration();
             System.out.print("Proposition : "+Arrays.toString(tabSaisieAttaquant)+" | Réponse : ");
             Utils.algoPlusMoins(tabSaisieAttaquant, tabSaisieDefenseur);
+            Utils.etoileDecoration();
             System.out.println();
+
+
 
             if (y == 1) {
 
-                System.out.println();
                 Utils.etoileDecoration();
                 System.out.println("Attention dernier essai");
                 Utils.etoileDecoration();
@@ -47,7 +49,7 @@ public class DefenseurRecherche {
                 System.out.println("                    GAGNé !");
                 Utils.hastagDecoration();
                 Utils.etoileDecoration();
-                System.out.println("l'ordinateur n'a pas trouver la combinaison secrete");
+                System.out.println("l'ordinateur n'a pas trouver le code secret");
                 System.out.println("La combinaison secrette était : " + Arrays.toString(tabSaisieDefenseur));
                 break;
             }
