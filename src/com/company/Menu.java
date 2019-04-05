@@ -22,12 +22,15 @@ public class Menu {
         System.out.println();
         Utils.etoileDecoration();
         System.out.print("* Pour choisir un jeu entrer 1 ou 2 : ");
-        int saisieUtilisateurJeux = nb.nextInt();
+        String saisieUtilisateurJeux = nb.nextLine();
+
         Utils.etoileDecoration();
-        if (saisieUtilisateurJeux == 1) {
+        if (saisieUtilisateurJeux.equals("1")) {
             menuModeDeJeuRecherchePlusMoins();
-        } else if (saisieUtilisateurJeux == 2) {
+        } else if (saisieUtilisateurJeux.equals("2")) {
             menuModeDeJeuMaster();
+        } else {
+            Menu.menuDemarrer();
         }
     }
 
@@ -47,14 +50,20 @@ public class Menu {
         System.out.println();
         Utils.etoileDecoration();
         System.out.println("Pour choisir un Mode entrer 1, 2 ou 3 : ");
-        int saisieUtilisateurMode = nb.nextInt();
+
+        String saisieUtilisateurMode = nb.nextLine();
         Utils.etoileDecoration();
-        if (saisieUtilisateurMode == 1) {
+        if (saisieUtilisateurMode.equals("1")) {
             ChallengerRecherche.algoChalengerRecherche();
-        } else if (saisieUtilisateurMode == 2) {
+        }
+        else if (saisieUtilisateurMode.equals("2")) {
             DefenseurRecherche.algoDefenseurRecherche();
-        } else if (saisieUtilisateurMode == 3) {
+        }
+        else if (saisieUtilisateurMode.equals("3")) {
             DuelRecherche.algoDuelRecherche();
+        }
+        else {
+            Menu.menuModeDeJeuRecherchePlusMoins();
         }
     }
 
@@ -74,17 +83,21 @@ public class Menu {
         System.out.println();
         Utils.etoileDecoration();
         System.out.println("Pour choisir un Mode entrer 1, 2 ou 3 : ");
-        int saisieUtilisateurMode = nb.nextInt();
+
+        String saisieUtilisateurMode = nb.nextLine();
         Utils.etoileDecoration();
 
-        if (saisieUtilisateurMode == 1) {
+        if (saisieUtilisateurMode.equals("1")) {
             ChallengerMaster.algoChalengerMaster();
         }
-        else if (saisieUtilisateurMode == 2) {
+        else if (saisieUtilisateurMode.equals("2")) {
             DefenseurMaster.algoDefenseurMaster();
         }
-        else if (saisieUtilisateurMode == 3) {
+        else if (saisieUtilisateurMode.equals("3")) {
             DuelMaster.algoDuelMaster();
+        }
+        else {
+            Menu.menuModeDeJeuMaster();
         }
     }
 
@@ -100,19 +113,23 @@ public class Menu {
         System.out.println();
         Utils.etoileDecoration();
         System.out.println("Pour choisir un Mode entrer 1, 2 ou 3 : ");
-        int sasisieUtilisateur = nb.nextInt();
+
+        String sasisieUtilisateur = nb.nextLine();
         Utils.etoileDecoration();
 
-        if (sasisieUtilisateur == 1) {
+        if (sasisieUtilisateur.equals("1")) {
             Menu.menuModeDeJeuRecherchePlusMoins();
         }
-        else if (sasisieUtilisateur == 2) {
+        else if (sasisieUtilisateur.equals("2")) {
             Menu.menuDemarrer();
         }
-        else if (sasisieUtilisateur == 3) {
+        else if (sasisieUtilisateur.equals("3")) {
             Utils.hastagDecoration();
             System.out.println("                      FIN");
             Utils.hastagDecoration();
+        }
+        else {
+            Menu.menuFinRecherchePlusMoins();
         }
     }
 
@@ -128,19 +145,23 @@ public class Menu {
         System.out.println();
         Utils.etoileDecoration();
         System.out.println("Pour choisir un Mode entrer 1, 2 ou 3 : ");
-        int sasisieUtilisateur = nb.nextInt();
+
+        String sasisieUtilisateur = nb.nextLine();
         Utils.etoileDecoration();
 
-        if (sasisieUtilisateur == 1) {
+        if (sasisieUtilisateur.equals("1")) {
             Menu.menuModeDeJeuMaster();
         }
-        else if (sasisieUtilisateur == 2) {
+        else if (sasisieUtilisateur.equals("2")) {
             Menu.menuDemarrer();
         }
-        else if (sasisieUtilisateur == 3) {
+        else if (sasisieUtilisateur.equals("3")) {
             Utils.hastagDecoration();
             System.out.println("                      FIN");
             Utils.hastagDecoration();
+        }
+        else {
+            Menu.menuFinMaster();
         }
     }
 

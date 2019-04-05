@@ -12,6 +12,7 @@ public class ChallengerMaster {
         int longueurDeLaCombaison = 3;
         int nbEssai = 4;
 
+        //creer un nombre aléatoire entre 0 et 9 et place ses chiffres dans un tableau
         Random nbAleatoire = new Random();
         int[] tabSaisieOrdinateur = new int[longueurDeLaCombaison];
         for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
@@ -24,6 +25,7 @@ public class ChallengerMaster {
             Utils.etoileDecorationPourMaster();
             System.out.println("Entrez votre proposition : ");
             String saisieUtilisateur = nb.next();
+
             /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 9
             envoie un message d'erreur
              */
@@ -39,10 +41,13 @@ public class ChallengerMaster {
                 isUnNombre = saisieUtilisateur.matches("[0-9]*");
             }
             Utils.etoileDecorationPourMaster();
-
+            /*
+            converti la saisie utilisateur String en un tableau integer
+            pour pouvoir comparer le tableau random et la saisiUtilisateur
+             */
             int[] tabSaisieUtilisateur = new int[longueurDeLaCombaison];
             for (int i = 0; i < tabSaisieUtilisateur.length; i++) {
-                int converter = Integer.parseInt(saisieUtilisateur.charAt(i) + "");
+                int converter = Integer.parseInt(String.valueOf(saisieUtilisateur.charAt(i)));
                 tabSaisieUtilisateur[i] = converter;
             }
 
