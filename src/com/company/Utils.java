@@ -7,35 +7,25 @@ public class Utils {
 
     static Scanner nb = new Scanner(System.in);
 
-    public static void algoDefenseur(int []tabSaisieDefenseur, int[]tabSaisieAttaquant, int longueurDelaCombinaison, int nbEssai){
-
-        System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
-        String saisieDefenseur = nb.next();
-        tabSaisieDefenseur = new int[longueurDelaCombinaison];
-        for (int i = 0; i < tabSaisieDefenseur.length; i++) {
-            int converter = Integer.parseInt(saisieDefenseur.charAt(i) + "");
-            tabSaisieDefenseur[i] = converter;
-        }
-        Random saisieAttaquant = new Random();
-        tabSaisieAttaquant = new int[longueurDelaCombinaison];
-        for (int i = 0; i < tabSaisieAttaquant.length; i++) {
-            tabSaisieAttaquant[i] = saisieAttaquant.nextInt(9);
-        }
-    }
-
-    public static void algoChallenger(int[] tabSaisieOrdinateur, int[] tabSaisieUtilisateur, int longueurDeLaCombaison, int nbEssai) {
+    public static void challengerRandom(int longueurDeLaCombaison, int[] tabSaisieOrdinateur) {
 
         Random nbAleatoire = new Random();
         tabSaisieOrdinateur = new int[longueurDeLaCombaison];
         for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
-            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(9 + 1);
+            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(9);
         }
-        System.out.print(Arrays.toString(tabSaisieOrdinateur));
-        System.out.println();
+    }
+        // System.out.print(Arrays.toString(tabSaisieOrdinateur));
+
+    public static void challengerUtilistateur(int longueurDeLaCombaison, int nbEssai, int []tabSaisieUtilisateur){
 
         for (int y = nbEssai; y >= 0; y--) {
 
+            Utils.etoileDecoration();
+            System.out.println("Entrez votre proposition : ");
             String saisieUtilisateur = nb.next();
+            Utils.etoileDecoration();
+
             tabSaisieUtilisateur = new int[longueurDeLaCombaison];
             for (int i = 0; i < tabSaisieUtilisateur.length; i++) {
                 int converter = Integer.parseInt(saisieUtilisateur.charAt(i) + "");
@@ -44,39 +34,39 @@ public class Utils {
         }
     }
 
-    public static void algoPlusMoins(int[] tab1, int[] tab2) {
+        public static void algoPlusMoins ( int[] tab1, int[] tab2){
 
-        for (int i = 0; i < tab1.length; i++) {
-            if (tab1[i] < tab2[i]) {
-                System.out.print("+");
-            } else if (tab1[i] > tab2[i]) {
-                System.out.print("-");
-            } else if (tab1[i] == tab2[i]) {
-                System.out.print("=");
+            for (int i = 0; i < tab1.length; i++) {
+                if (tab1[i] < tab2[i]) {
+                    System.out.print("+");
+                } else if (tab1[i] > tab2[i]) {
+                    System.out.print("-");
+                } else if (tab1[i] == tab2[i]) {
+                    System.out.print("=");
+                }
             }
+            System.out.println();
         }
-        System.out.println();
-    }
 
-    public static void algoMaster(int[] combinaisonSecrete, int[] attaque) {
+        public static void algoMaster ( int[] combinaisonSecrete, int[] attaque){
 
-        int present = 0;
-        int bienPlace = 0;
-        for (int i = 0; i < combinaisonSecrete.length; i++) {
-            if (attaque[i] == combinaisonSecrete[i]) {
-                bienPlace = bienPlace + 1;
-            } else {
-                for (int y = 0; y < combinaisonSecrete.length; y++) {
-                    if (attaque[i] == combinaisonSecrete[y] && attaque[y] != combinaisonSecrete[y]) {
-                        present = present + 1;
-                        break;
+            int present = 0;
+            int bienPlace = 0;
+            for (int i = 0; i < combinaisonSecrete.length; i++) {
+                if (attaque[i] == combinaisonSecrete[i]) {
+                    bienPlace = bienPlace + 1;
+                } else {
+                    for (int y = 0; y < combinaisonSecrete.length; y++) {
+                        if (attaque[i] == combinaisonSecrete[y] && attaque[y] != combinaisonSecrete[y]) {
+                            present = present + 1;
+                            break;
+                        }
                     }
                 }
             }
+            System.out.print(present + " present, ");
+            System.out.println(bienPlace + " bien placé");
         }
-        System.out.print(present + " present, ");
-        System.out.println(bienPlace+ " bien placé" );
-    }
 
 
         public static void algoComportementRandom ( int tabSaisieAttaquant[], int tabSaisieDefenseur[]){
@@ -93,7 +83,7 @@ public class Utils {
                 if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
                     tabSaisieAttaquant[i] = r.nextInt((9 - tabSaisieAttaquant[i]) + 1) + tabSaisieAttaquant[i];
                 }
-                if (tabSaisieAttaquant[i] > tabSaisieDefenseur[i] ){
+                if (tabSaisieAttaquant[i] > tabSaisieDefenseur[i]) {
                     tabSaisieAttaquant[i] = r.nextInt((tabSaisieAttaquant[i] - 0) + 1) + 0;
                 }
                 if (tabSaisieAttaquant[i] == tabSaisieDefenseur[i]) {
@@ -102,26 +92,27 @@ public class Utils {
             }
         }
 
-    static void etoileDecoration() {
-        for (int i = 1; i <= 47; i++) {
-            System.out.print("*");
+        public static void etoileDecoration() {
+            for (int i = 1; i <= 47; i++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
-        System.out.println();
-    }
 
-    static void hastagDecoration() {
-        for (int i = 1; i <= 47; i++) {
-            System.out.print("#");
+        public static void hastagDecoration() {
+            for (int i = 1; i <= 47; i++) {
+                System.out.print("#");
+            }
+            System.out.println();
         }
-        System.out.println();
-    }
 
-    static void etoileDecorationPourMaster() {
-        for (int i = 1; i <= 60; i++) {
-            System.out.print("*");
+        public static void etoileDecorationPourMaster () {
+            for (int i = 1; i <= 60; i++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
-        System.out.println();
-    }
+
 
 }
 

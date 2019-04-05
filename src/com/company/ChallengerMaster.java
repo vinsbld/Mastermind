@@ -10,19 +10,34 @@ public class ChallengerMaster {
     static void algoChalengerMaster() {
 
         int longueurDeLaCombaison = 3;
-        int nbEssai = 10;
+        int nbEssai = 4;
+
         Random nbAleatoire = new Random();
         int[] tabSaisieOrdinateur = new int[longueurDeLaCombaison];
         for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
-            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(9);
+            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(9 + 1);
         }
-       //System.out.print(Arrays.toString(tabSaisieOrdinateur));
+        //System.out.print(Arrays.toString(tabSaisieOrdinateur));
 
         for (int y = nbEssai; y >= 0; y--) {
 
             Utils.etoileDecorationPourMaster();
             System.out.println("Entrez votre proposition : ");
             String saisieUtilisateur = nb.next();
+            /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 9
+            envoie un message d'erreur
+             */
+            boolean isUnNombre = saisieUtilisateur.matches("[0-9]*");
+
+            while (!isUnNombre) {
+                Utils.etoileDecorationPourMaster();
+                System.out.println("Vous n'avez pas saisi un nombre !");
+                y++;
+                Utils.etoileDecorationPourMaster();
+                System.out.println("Entrez votre proposition : ");
+                saisieUtilisateur = nb.next();
+                isUnNombre = saisieUtilisateur.matches("[0-9]*");
+            }
             Utils.etoileDecorationPourMaster();
 
             int[] tabSaisieUtilisateur = new int[longueurDeLaCombaison];
@@ -31,9 +46,18 @@ public class ChallengerMaster {
                 tabSaisieUtilisateur[i] = converter;
             }
 
-            System.out.print("Proposition : "+Arrays.toString(tabSaisieUtilisateur)+" | Réponse : ");
-
-            Utils.algoMaster(tabSaisieOrdinateur, tabSaisieUtilisateur);
+            /*tant que la proposition n'est pas de la bonne taille envoie ce message d'erreur,
+             y++ fait en sorte que chaque mauvaise saisie n'est pas compté comme un essai
+            */
+            while (saisieUtilisateur.length() < tabSaisieOrdinateur.length || saisieUtilisateur.length() > tabSaisieOrdinateur.length) {
+                System.out.println("Votre proposition doit comporter " + longueurDeLaCombaison + " chiffres.");
+                y++;
+                break;
+            }
+            if (saisieUtilisateur.length() == tabSaisieOrdinateur.length) {
+                System.out.print("Proposition : " + Arrays.toString(tabSaisieUtilisateur) + " | Réponse : ");
+                Utils.algoMaster(tabSaisieOrdinateur, tabSaisieUtilisateur);
+            }
 
             if (y == 1) {
 
