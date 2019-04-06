@@ -13,7 +13,7 @@ public class ChallengerRecherche {
         int longueurDeLaCombaison = 3;
         int nbEssai = 10;
 
-        //creer un nombre aléatoire entre 0 et 9 et place ses chiffres dans un tableau
+        //creer un nombre aléatoire entre 0 et 9 et place les chiffres dans un tableau
         Random nbAleatoire = new Random();
         int[] tabSaisieOrdinateur = new int[longueurDeLaCombaison];
         for (int i = 0; i < tabSaisieOrdinateur.length; i++) {

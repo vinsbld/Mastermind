@@ -55,14 +55,11 @@ public class Menu {
         Utils.etoileDecoration();
         if (saisieUtilisateurMode.equals("1")) {
             ChallengerRecherche.algoChalengerRecherche();
-        }
-        else if (saisieUtilisateurMode.equals("2")) {
+        } else if (saisieUtilisateurMode.equals("2")) {
             DefenseurRecherche.algoDefenseurRecherche();
-        }
-        else if (saisieUtilisateurMode.equals("3")) {
+        } else if (saisieUtilisateurMode.equals("3")) {
             DuelRecherche.algoDuelRecherche();
-        }
-        else {
+        } else {
             Menu.menuModeDeJeuRecherchePlusMoins();
         }
     }
@@ -89,14 +86,11 @@ public class Menu {
 
         if (saisieUtilisateurMode.equals("1")) {
             ChallengerMaster.algoChalengerMaster();
-        }
-        else if (saisieUtilisateurMode.equals("2")) {
+        } else if (saisieUtilisateurMode.equals("2")) {
             DefenseurMaster.algoDefenseurMaster();
-        }
-        else if (saisieUtilisateurMode.equals("3")) {
+        } else if (saisieUtilisateurMode.equals("3")) {
             DuelMaster.algoDuelMaster();
-        }
-        else {
+        } else {
             Menu.menuModeDeJeuMaster();
         }
     }
@@ -119,16 +113,13 @@ public class Menu {
 
         if (sasisieUtilisateur.equals("1")) {
             Menu.menuModeDeJeuRecherchePlusMoins();
-        }
-        else if (sasisieUtilisateur.equals("2")) {
+        } else if (sasisieUtilisateur.equals("2")) {
             Menu.menuDemarrer();
-        }
-        else if (sasisieUtilisateur.equals("3")) {
+        } else if (sasisieUtilisateur.equals("3")) {
             Utils.hastagDecoration();
             System.out.println("                      FIN");
             Utils.hastagDecoration();
-        }
-        else {
+        } else {
             Menu.menuFinRecherchePlusMoins();
         }
     }
@@ -151,16 +142,13 @@ public class Menu {
 
         if (sasisieUtilisateur.equals("1")) {
             Menu.menuModeDeJeuMaster();
-        }
-        else if (sasisieUtilisateur.equals("2")) {
+        } else if (sasisieUtilisateur.equals("2")) {
             Menu.menuDemarrer();
-        }
-        else if (sasisieUtilisateur.equals("3")) {
+        } else if (sasisieUtilisateur.equals("3")) {
             Utils.hastagDecoration();
             System.out.println("                      FIN");
             Utils.hastagDecoration();
-        }
-        else {
+        } else {
             Menu.menuFinMaster();
         }
     }

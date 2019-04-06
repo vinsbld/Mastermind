@@ -12,19 +12,49 @@ public class DefenseurMaster {
 
         int nbEssai = 10;
         int longueurDelaCombinaison = 3;
-        System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
-        String saisieDefenseur = nb.next();
-        int[] tabSaisieDefenseur = new int[longueurDelaCombinaison];
-        for (int i = 0; i < tabSaisieDefenseur.length; i++) {
-            int converter = Integer.parseInt(saisieDefenseur.charAt(i) + "");
-            tabSaisieDefenseur[i] = converter;
-        }
+        int[] tabSaisieDefenseur = new int[0];
 
+        //creer un nombre aléatoire entre 0 et 9 et place ses chiffres dans un tableau
         Random saisieAttaquant = new Random();
         int[] tabSaisieAttaquant = new int[longueurDelaCombinaison];
         for (int i = 0; i < tabSaisieAttaquant.length; i++) {
-            tabSaisieAttaquant[i] = saisieAttaquant.nextInt(9);
+            tabSaisieAttaquant[i] = saisieAttaquant.nextInt(9 + 1);
+
+            System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
+            String saisieDefenseur = nb.next();
+
+        /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 9
+            envoie un message d'erreur
+             */
+            boolean isUnNombre = saisieDefenseur.matches("[0-9]*");
+
+            while (!isUnNombre) {
+                Utils.etoileDecorationPourMaster();
+                System.out.println("Vous n'avez pas saisi un nombre !");
+                Utils.etoileDecorationPourMaster();
+                System.out.println("Entrez votre proposition : ");
+                saisieDefenseur = nb.next();
+                isUnNombre = saisieDefenseur.matches("[0-9]*");
+            }
+
+            tabSaisieDefenseur = new int[longueurDelaCombinaison];
+            for (int y = 0; y < tabSaisieDefenseur.length; y++) {
+                int converter = Integer.parseInt(saisieDefenseur.charAt(y) + "");
+                tabSaisieDefenseur[y] = converter;
+            }
+
+        /*tant que la proposition n'est pas de la bonne taille envoie ce message d'erreur,
+          y++ fait en sorte que chaque mauvaise saisie n'est pas compté comme un essai*/
+            while (saisieDefenseur.length() < tabSaisieAttaquant.length || saisieDefenseur.length() > tabSaisieAttaquant.length) {
+                System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres.");
+                break;
+            }
+            if (saisieDefenseur.length() == tabSaisieAttaquant.length) {
+                System.out.print("Proposition : " + Arrays.toString(tabSaisieAttaquant) + " | Réponse : ");
+                Utils.algoMaster(tabSaisieAttaquant, tabSaisieDefenseur);
+            }
         }
+
 
         for (int y = nbEssai; y >= 0; y--) {
 
@@ -36,7 +66,6 @@ public class DefenseurMaster {
             Utils.etoileDecorationPourMaster();
             System.out.println();
 
-
             if (y == 1) {
 
                 Utils.etoileDecorationPourMaster();
@@ -45,6 +74,7 @@ public class DefenseurMaster {
                 System.out.println();
             }
             if (y == 0) {
+
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                    GAGNé !");
@@ -54,6 +84,7 @@ public class DefenseurMaster {
                 System.out.println("La combinaison secrette était : " + Arrays.toString(tabSaisieDefenseur));
                 break;
             }
+
             if (Arrays.equals(tabSaisieAttaquant, tabSaisieDefenseur)) {
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
