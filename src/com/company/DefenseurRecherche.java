@@ -49,52 +49,50 @@ public class DefenseurRecherche {
                 break;
             }
             if (saisieDefenseur.length() == tabSaisieAttaquant.length) {
-                System.out.print("Proposition : " + Arrays.toString(tabSaisieAttaquant) + " | Réponse : ");
-                Utils.algoMaster(tabSaisieAttaquant, tabSaisieDefenseur);
+
+                for (int y = nbEssai; y >= 0; y--) {
+
+                    Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
+                    Utils.etoileDecoration();
+                    System.out.print("Proposition : " + Arrays.toString(tabSaisieAttaquant) + " | Réponse : ");
+                    Utils.algoPlusMoins(tabSaisieAttaquant, tabSaisieDefenseur);
+                    Utils.etoileDecoration();
+                    System.out.println();
+
+                    if (y == 1) {
+
+                        Utils.etoileDecoration();
+                        System.out.println("Attention dernier essai");
+                        Utils.etoileDecoration();
+                        System.out.println();
+                    }
+
+                    if (y == 0) {
+                        Utils.etoileDecoration();
+                        Utils.hastagDecoration();
+                        System.out.println("                    GAGNé !");
+                        Utils.hastagDecoration();
+                        Utils.etoileDecoration();
+                        System.out.println("l'ordinateur n'a pas trouver le code secret");
+                        System.out.println("La combinaison secrette était : " + Arrays.toString(tabSaisieDefenseur));
+                        break;
+                    }
+
+                    if (Arrays.equals(tabSaisieAttaquant, tabSaisieDefenseur)) {
+                        Utils.etoileDecoration();
+                        Utils.hastagDecoration();
+                        System.out.println("                     PERDU !");
+                        Utils.hastagDecoration();
+                        Utils.etoileDecoration();
+                        System.out.println("l'ordinateur a trouver la combinaison secrete");
+                        System.out.println("La combinaison été : " + Arrays.toString(tabSaisieDefenseur));
+                        break;
+                    }
+                }
+                Utils.etoileDecoration();
+                Menu.menuFinRecherchePlusMoins();
             }
         }
-        for (int y = nbEssai; y >= 0; y--) {
-
-            Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
-            Utils.etoileDecoration();
-            System.out.print("Proposition : " + Arrays.toString(tabSaisieAttaquant) + " | Réponse : ");
-            Utils.algoPlusMoins(tabSaisieAttaquant, tabSaisieDefenseur);
-            Utils.etoileDecoration();
-            System.out.println();
-
-            if (y == 1) {
-
-                Utils.etoileDecoration();
-                System.out.println("Attention dernier essai");
-                Utils.etoileDecoration();
-                System.out.println();
-            }
-
-            if (y == 0) {
-                Utils.etoileDecoration();
-                Utils.hastagDecoration();
-                System.out.println("                    GAGNé !");
-                Utils.hastagDecoration();
-                Utils.etoileDecoration();
-                System.out.println("l'ordinateur n'a pas trouver le code secret");
-                System.out.println("La combinaison secrette était : " + Arrays.toString(tabSaisieDefenseur));
-                break;
-            }
-
-            if (Arrays.equals(tabSaisieAttaquant, tabSaisieDefenseur)) {
-                Utils.etoileDecoration();
-                Utils.hastagDecoration();
-                System.out.println("                     PERDU !");
-                Utils.hastagDecoration();
-                Utils.etoileDecoration();
-                System.out.println("l'ordinateur a trouver la combinaison secrete");
-                System.out.println("La combinaison été : " + Arrays.toString(tabSaisieDefenseur));
-                break;
-            }
-        }
-        Utils.etoileDecoration();
-        Menu.menuFinRecherchePlusMoins();
     }
 }
-
 
