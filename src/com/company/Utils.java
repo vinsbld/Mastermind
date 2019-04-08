@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,45 +7,50 @@ public class Utils {
 
     static Scanner nb = new Scanner(System.in);
 
-    public static void challengerRandom(int longueurDeLaCombaison, int[] tabSaisieOrdinateur) {
+    /************************************************************************************/
+    /************************** fonctions pour Mastermind *******************************/
+
+    public static int[] initialiseTableauRandomMaster(int longueurDelaCombinaison, int nombreDeChiffre) {
 
         Random nbAleatoire = new Random();
-        tabSaisieOrdinateur = new int[longueurDeLaCombaison];
+        int[] tabSaisieOrdinateur = new int[longueurDelaCombinaison];
         for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
-            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(9);
+            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(nombreDeChiffre);
         }
-    }
-    // System.out.print(Arrays.toString(tabSaisieOrdinateur));
-
-    public static void challengerUtilistateur(int longueurDeLaCombaison, int nbEssai, int[] tabSaisieUtilisateur) {
-
-        for (int y = nbEssai; y >= 0; y--) {
-
-            Utils.etoileDecoration();
-            System.out.println("Entrez votre proposition : ");
-            String saisieUtilisateur = nb.next();
-            Utils.etoileDecoration();
-
-            tabSaisieUtilisateur = new int[longueurDeLaCombaison];
-            for (int i = 0; i < tabSaisieUtilisateur.length; i++) {
-                int converter = Integer.parseInt(saisieUtilisateur.charAt(i) + "");
-                tabSaisieUtilisateur[i] = converter;
-            }
-        }
+        return tabSaisieOrdinateur;
     }
 
-    public static void algoPlusMoins(int[] tab1, int[] tab2) {
+    public static String saisieUtilisateurMaster(int longueurDelaCombinaison, int nbChiffreAleatoire) {
 
-        for (int i = 0; i < tab1.length; i++) {
-            if (tab1[i] < tab2[i]) {
-                System.out.print("+");
-            } else if (tab1[i] > tab2[i]) {
-                System.out.print("-");
-            } else if (tab1[i] == tab2[i]) {
-                System.out.print("=");
-            }
-        }
-        System.out.println();
+        boolean isUnNombre;
+        String nbSecretUtilisateur;
+
+        do {
+            Utils.etoileDecorationPourMaster();
+            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à " + nbChiffreAleatoire);
+            Utils.etoileDecorationPourMaster();
+            System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
+            nbSecretUtilisateur = nb.next();
+            isUnNombre = nbSecretUtilisateur.matches("[0-" + nbChiffreAleatoire + "]*");
+        } while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
+        return nbSecretUtilisateur;
+    }
+
+    public static String essaiUtilisateurMaster(int longueurDelaCombinaison, int nbChiffreAleatoire) {
+
+        boolean isUnNombre;
+        String nbSecretUtilisateur;
+
+        do {
+            Utils.etoileDecorationPourMaster();
+            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à " + nbChiffreAleatoire);
+            Utils.etoileDecorationPourMaster();
+            System.out.print("saisisez votre proposition : ");
+            nbSecretUtilisateur = nb.next();
+            Utils.etoileDecorationPourMaster();
+            isUnNombre = nbSecretUtilisateur.matches("[0-" + nbChiffreAleatoire + "]*");
+        } while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
+        return nbSecretUtilisateur;
     }
 
     public static void algoMaster(int[] combinaisonSecrete, int[] attaque) {
@@ -69,6 +73,38 @@ public class Utils {
         System.out.println(bienPlace + " bien placé");
     }
 
+    //décoration * pour Maestermind
+    public static void etoileDecorationPourMaster() {
+        for (int i = 1; i <= 60; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+    }
+
+    //renvoie un message d'erreur quand le chiffre n'est pas conforme
+    public static void exceptionNbAleatoireMaster(int nbChiffreAleatoire) {
+
+        if (nbChiffreAleatoire < 0 || nbChiffreAleatoire > 10) {
+            //logger.warn("le nombre de chiffre utilisable n'est pas conforme ([4-10])")
+            Utils.etoileDecorationPourMaster();
+            System.out.println("Les chiffres utilisables vont de (0 - 4 à 10)");
+            System.out.println("Merci de saisir une valeur correct dans le fichier config.properties");
+            Utils.etoileDecorationPourMaster();
+        }
+    }
+
+    /************************************************************************************/
+    /******************************* fonctions communes *********************************/
+
+    public static int[] initialiseTableauUtilisateur(int longueurDelaCombinaison, String saisieUtilisateur){
+
+        int[] tabNbSecretUtil = new int[longueurDelaCombinaison];
+        for (int j = 0; j < tabNbSecretUtil.length; j++) {
+            int converter = Integer.parseInt(String.valueOf(saisieUtilisateur.charAt(j)));
+            tabNbSecretUtil[j] = converter;
+        }
+        return tabNbSecretUtil;
+    }
 
     public static void algoComportementRandom(int tabSaisieAttaquant[], int tabSaisieDefenseur[]) {
         Random r = new Random();
@@ -93,6 +129,24 @@ public class Utils {
         }
     }
 
+    /************************************************************************************/
+    /**************************** fonctions Recherche +/- *******************************/
+
+    public static void algoPlusMoins(int[] tab1, int[] tab2) {
+
+        for (int i = 0; i < tab1.length; i++) {
+            if (tab1[i] < tab2[i]) {
+                System.out.print("+");
+            } else if (tab1[i] > tab2[i]) {
+                System.out.print("-");
+            } else if (tab1[i] == tab2[i]) {
+                System.out.print("=");
+            }
+        }
+        System.out.println();
+    }
+
+    //décoration * pour menus et recherche +/-
     public static void etoileDecoration() {
         for (int i = 1; i <= 47; i++) {
             System.out.print("*");
@@ -100,6 +154,7 @@ public class Utils {
         System.out.println();
     }
 
+    //décoration # pour menus et recherche +/-
     public static void hastagDecoration() {
         for (int i = 1; i <= 47; i++) {
             System.out.print("#");
@@ -107,20 +162,14 @@ public class Utils {
         System.out.println();
     }
 
-    public static void etoileDecorationPourMaster() {
-        for (int i = 1; i <= 60; i++) {
-            System.out.print("*");
-        }
-        System.out.println();
-    }
+    public static int[] initialiseTableauRandomRecherche(int longueurDelaCombinaison) {
 
-    public static void exceptionNbAleatoireMaster(int nbChiffreAleatoire) {
-
-        //si le chiffre n'est pas conforme
-        if (nbChiffreAleatoire < 4 || nbChiffreAleatoire > 10) {
-            //logger.warn("le nombre de chiffre utilisable n'est pas conforme ([4-10])")
-            return;
+        Random nbAleatoire = new Random();
+        int[] tabSaisieOrdinateur = new int[longueurDelaCombinaison];
+        for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
+            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(10);
         }
+        return tabSaisieOrdinateur;
     }
 
 }

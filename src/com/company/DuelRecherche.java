@@ -11,11 +11,8 @@ public class DuelRecherche {
         int longueurDelaCombinaison = Integer.parseInt(String.valueOf("duelRecherche.nombreCase"));
         int nbEssai = Integer.parseInt(String.valueOf("duelRecherche.nombreEssai"));
 
-        Random nbAleatoire = new Random();
-        int[] tabNbSecretCpu = new int[longueurDelaCombinaison];
-        for (int i = 0; i < tabNbSecretCpu.length; i++) {
-            tabNbSecretCpu[i] = nbAleatoire.nextInt(9 + 1);
-        }
+        int[] tabNbSecretCpu = Utils.initialiseTableauRandomRecherche(longueurDelaCombinaison);
+
 
         Utils.etoileDecoration();
         System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");

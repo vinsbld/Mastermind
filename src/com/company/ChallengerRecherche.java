@@ -12,13 +12,8 @@ public class ChallengerRecherche {
         int longueurDeLaCombinaison = Integer.parseInt(System.getProperty("challenger_recherche.nombre_case"));
         int nbEssai = Integer.parseInt(System.getProperty("challenger_recherche.nombre_essai"));
 
-        //creer un nombre aléatoire entre 0 et 9 et place les chiffres dans un tableau
-        Random nbAleatoire = new Random();
-        int[] tabSaisieOrdinateur = new int[longueurDeLaCombinaison];
-        for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
-            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(9 + 1);
-        }
-        // System.out.print(Arrays.toString(tabSaisieOrdinateur));
+        int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaison);
+
         Utils.etoileDecoration();
         System.out.println("Votre proposition doit comporter " + longueurDeLaCombinaison + " chiffres allants de 0 à 9");
         Utils.etoileDecoration();
@@ -47,11 +42,7 @@ public class ChallengerRecherche {
             converti la saisie utilisateur String en un tableau integer
             pour pouvoir comparer le tableau random et la saisiUtilisateur
              */
-            int[] tabSaisieUtilisateur = new int[longueurDeLaCombinaison];
-            for (int i = 0; i < tabSaisieUtilisateur.length; i++) {
-                int converter = Integer.parseInt(saisieUtilisateur.charAt(i) + "");
-                tabSaisieUtilisateur[i] = converter;
-            }
+            int[] tabSaisieUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaison,saisieUtilisateur);
             /*tant que la proposition n'est pas de la bonne taille envoie ce message d'erreur,
              y++ fait en sorte que chaque mauvaise saisie n'est pas compté comme un essai
             */

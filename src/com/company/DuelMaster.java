@@ -1,11 +1,8 @@
 package com.company;
 
 import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
 
 public class DuelMaster {
-    static Scanner nb = new Scanner(System.in);
 
     static void algoDuelMaster() {
 
@@ -16,51 +13,11 @@ public class DuelMaster {
 
         Utils.exceptionNbAleatoireMaster(nbChiffreAleatoire);
 
-        /*creer un chiffre aléatoire à chaque tour de boucle, chaque chiffre crée correspond
-         à un index dans le tableau tabNbSecretCpu */
-        Random nbAleatoire = new Random();
-        int[] tabNbSecretCpu = new int[longueurDelaCombinaison];
-        for (int i = 0; i < tabNbSecretCpu.length; i++) {
-            tabNbSecretCpu[i] = nbAleatoire.nextInt(nbChiffreAleatoire);
-        }
+        int[] tabNbSecretCpu = Utils.initialiseTableauRandomMaster(longueurDelaCombinaison, nbChiffreAleatoire);
 
-        Utils.etoileDecorationPourMaster();
-        System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à "+nbChiffreAleatoire);
-        Utils.etoileDecorationPourMaster();
+        String saisieUtilisateur = Utils.saisieUtilisateurMaster(longueurDelaCombinaison, nbChiffreAleatoire);
 
-        System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
-        String nbSecretUtilisateur = nb.next();
-
-        /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 9
-         envoie un message d'erreur*/
-
-        boolean isUnNombre = nbSecretUtilisateur.matches("[0 - "+ nbChiffreAleatoire +"]*");
-
-        while (!isUnNombre) {
-            Utils.etoileDecorationPourMaster();
-            System.out.println("Vous n'avez pas saisi un nombre !");
-            Utils.etoileDecorationPourMaster();
-            System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
-            nbSecretUtilisateur = nb.next();
-            isUnNombre = nbSecretUtilisateur.matches("[0-" + nbChiffreAleatoire + "]*");
-        }
-
-        int[] tabNbSecretUtil = new int[longueurDelaCombinaison];
-        for (int j = 0; j < tabNbSecretUtil.length; j++) {
-            int converter = Integer.parseInt(String.valueOf(nbSecretUtilisateur.charAt(j)));
-            tabNbSecretUtil[j] = converter;
-        }
-
-        /*tant que la proposition n'est pas de la bonne taille envoie ce message d'erreur,
-        y++ fait en sorte que chaque mauvaise saisie n'est pas compté comme un essai*/
-
-        while (nbSecretUtilisateur.length() < tabNbSecretCpu.length || nbSecretUtilisateur.length() > tabNbSecretCpu.length) {
-            Utils.etoileDecorationPourMaster();
-            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à "+nbChiffreAleatoire);
-            Utils.etoileDecorationPourMaster();
-            System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
-            nbSecretUtilisateur = nb.next();
-        }
+        int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDelaCombinaison, saisieUtilisateur);
 
         //la condition est respectée, affiche le code secret
         Utils.etoileDecorationPourMaster();
@@ -70,86 +27,11 @@ public class DuelMaster {
 
         for (int i = nbEssai; i >= 0; i--) {
 
-            Utils.etoileDecorationPourMaster();
-            System.out.print("saisisez votre proposition : ");
-            String essaiUtilisateur = nb.next();
-            Utils.etoileDecorationPourMaster();
+            String essaiUtilisateur = Utils.essaiUtilisateurMaster(longueurDelaCombinaison, nbChiffreAleatoire);
 
-            /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 4 à 10
-            envoie un message d'erreur*/
-            isUnNombre = essaiUtilisateur.matches("[0-"+ nbChiffreAleatoire +"]*");
+            int[] tabEssaiUtilisateur = Utils.initialiseTableauUtilisateur(longueurDelaCombinaison, essaiUtilisateur);
 
-            while (!isUnNombre) {
-                Utils.etoileDecorationPourMaster();
-                System.out.println("Vous n'avez pas saisi un nombre !");
-                Utils.etoileDecorationPourMaster();
-                System.out.print("saisisez votre proposition : ");
-                essaiUtilisateur = nb.next();
-                isUnNombre = nbSecretUtilisateur.matches("[0-" + nbChiffreAleatoire + "]*");
-                i++;
-            }
-
-            int[] tabEssaiUtilisateur = new int[longueurDelaCombinaison];
-            for (int k = 0; k < tabEssaiUtilisateur.length; k++) {
-                int convEassaiUtilisateur = Integer.parseInt(essaiUtilisateur.charAt(k) + "");
-                tabEssaiUtilisateur[k] = convEassaiUtilisateur;
-            }
-
-            /*tant que la proposition n'est pas de la bonne taille envoie ce message d'erreur,
-            y++ fait en sorte que chaque mauvaise saisie n'est pas compté comme un essai*/
-            if (essaiUtilisateur.length() < tabNbSecretCpu.length || essaiUtilisateur.length() > tabNbSecretCpu.length) {
-
-                Utils.etoileDecorationPourMaster();
-                System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à "+ nbChiffreAleatoire);
-                Utils.etoileDecorationPourMaster();
-                System.out.print("saisisez votre proposition : ");
-                essaiUtilisateur = nb.next();
-                i++;
-            }
-
-            Utils.etoileDecorationPourMaster();
-            System.out.print("saisisez votre proposition : ");
-            essaiUtilisateur = nb.next();
-            Utils.etoileDecorationPourMaster();
-
-
-            isUnNombre = essaiUtilisateur.matches("[0-"+ nbChiffreAleatoire +"]*");
-            /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 9
-            envoie un message d'erreur*/
-            while (!isUnNombre) {
-                Utils.etoileDecorationPourMaster();
-                System.out.println("Vous n'avez pas saisi un nombre !");
-                Utils.etoileDecorationPourMaster();
-                System.out.print("saisisez votre proposition : ");
-                essaiUtilisateur = nb.next();
-                isUnNombre = nbSecretUtilisateur.matches("[0-"+ nbChiffreAleatoire +"]*");
-                i++;
-            }
-
-            tabEssaiUtilisateur = new int[longueurDelaCombinaison];
-
-            for (int k = 0; k < tabEssaiUtilisateur.length; k++) {
-                int convEassaiUtilisateur = Integer.parseInt(essaiUtilisateur.charAt(k) + "");
-                tabEssaiUtilisateur[k] = convEassaiUtilisateur;
-            }
-
-                    /*tant que la proposition n'est pas de la bonne taille envoie ce message d'erreur,
-                    y++ fait en sorte que chaque mauvaise saisie n'est pas compté comme un essai*/
-            if (essaiUtilisateur.length() < tabNbSecretCpu.length || essaiUtilisateur.length() > tabNbSecretCpu.length) {
-
-                Utils.etoileDecorationPourMaster();
-                System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à "+ nbChiffreAleatoire);
-                Utils.etoileDecorationPourMaster();
-                System.out.print("saisisez votre proposition : ");
-                essaiUtilisateur = nb.next();
-                i++;
-            }
-
-            Random essaiCpu = new Random();
-            int[] tabEssaiCpu = new int[longueurDelaCombinaison];
-            for (int l = 0; l < tabEssaiCpu.length; l++) {
-                tabEssaiCpu[l] = essaiCpu.nextInt(nbChiffreAleatoire);
-            }
+            int[] tabEssaiCpu = Utils.initialiseTableauRandomMaster(longueurDelaCombinaison, nbChiffreAleatoire);
 
             Utils.algoComportementRandom(tabEssaiCpu, tabEssaiUtilisateur);
 
