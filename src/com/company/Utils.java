@@ -114,4 +114,13 @@ public class Utils {
         System.out.println();
     }
 
+    public static void exceptionNbAleatoireMaster(int nbChiffreAleatoire) {
+
+        //si le chiffre n'est pas conforme
+        if (nbChiffreAleatoire < 4 || nbChiffreAleatoire > 10) {
+            //logger.warn("le nombre de chiffre utilisable n'est pas conforme ([4-10])")
+            return;
+        }
+    }
+
 }

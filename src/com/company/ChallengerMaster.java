@@ -9,20 +9,17 @@ public class ChallengerMaster {
 
     static void algoChalengerMaster() {
 
-        int longueurDeLaCombaison = 3;
-        int nbEssai = 4;
-        int nbChiffre = Integer.parseInt(System.getProperty("nb_chiffre"));
+        int longueurDeLaCombaison = Integer.parseInt(System.getProperty("ChallengerMaster.nombreCase"));
+        int nbEssai = Integer.parseInt(System.getProperty("ChallengerMaster.nombreEssai"));
+        int nbChiffreAleatoire = Integer.parseInt(System.getProperty("ChallengerMaster.nombreDeChiffre"));
 
-        if (nbChiffre < 4 || nbChiffre > 10) {
-            //logger.warn("le nombre de chiffre utilisable n'est pas conforme ([4-10])")
-            return;
-        }
+        Utils.exceptionNbAleatoireMaster(nbChiffreAleatoire);
 
         //creer un nombre aléatoire entre 0 et 9 et place ses chiffres dans un tableau
         Random nbAleatoire = new Random();
         int[] tabSaisieOrdinateur = new int[longueurDeLaCombaison];
         for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
-            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(9 + 1);
+            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(nbChiffreAleatoire);
         }
         //System.out.print(Arrays.toString(tabSaisieOrdinateur));
 

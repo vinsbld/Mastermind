@@ -10,8 +10,8 @@ public class ChallengerRecherche {
 
     static void algoChalengerRecherche() {
 
-        int longueurDeLaCombaison = 3;
-        int nbEssai = 10;
+        int longueurDeLaCombaison = Integer.parseInt(System.getProperty("ChallengerRecherche.nombreCase"));
+        int nbEssai = Integer.parseInt(System.getProperty("ChallengerRecherche.nombreEssai"));
 
         //creer un nombre aléatoire entre 0 et 9 et place les chiffres dans un tableau
         Random nbAleatoire = new Random();
