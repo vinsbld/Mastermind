@@ -14,7 +14,7 @@ public class DuelRecherche {
         Random nbAleatoire = new Random();
         int[] tabNbSecretCpu = new int[longueurDelaCombinaison];
         for (int i = 0; i < tabNbSecretCpu.length; i++) {
-            tabNbSecretCpu[i] = nbAleatoire.nextInt(9);
+            tabNbSecretCpu[i] = nbAleatoire.nextInt(9 + 1);
         }
 
         System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");

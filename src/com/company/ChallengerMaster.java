@@ -11,6 +11,12 @@ public class ChallengerMaster {
 
         int longueurDeLaCombaison = 3;
         int nbEssai = 4;
+        int nbChiffre = Integer.parseInt(System.getProperty("nb_chiffre"));
+
+        if (nbChiffre < 4 || nbChiffre > 10) {
+            //logger.warn("le nombre de chiffre utilisable n'est pas conforme ([4-10])")
+            return;
+        }
 
         //creer un nombre aléatoire entre 0 et 9 et place ses chiffres dans un tableau
         Random nbAleatoire = new Random();
@@ -54,10 +60,9 @@ public class ChallengerMaster {
             /*tant que la proposition n'est pas de la bonne taille envoie ce message d'erreur,
              y++ fait en sorte que chaque mauvaise saisie n'est pas compté comme un essai
             */
-            while (saisieUtilisateur.length() < tabSaisieOrdinateur.length || saisieUtilisateur.length() > tabSaisieOrdinateur.length) {
+            if (saisieUtilisateur.length() < tabSaisieOrdinateur.length || saisieUtilisateur.length() > tabSaisieOrdinateur.length) {
                 System.out.println("Votre proposition doit comporter " + longueurDeLaCombaison + " chiffres.");
                 y++;
-                break;
             }
             if (saisieUtilisateur.length() == tabSaisieOrdinateur.length) {
                 System.out.print("Proposition : " + Arrays.toString(tabSaisieUtilisateur) + " | Réponse : ");
@@ -91,7 +96,7 @@ public class ChallengerMaster {
                 System.out.println();
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
-                System.out.println("                    GAGNé !");
+                System.out.println("                    GAGNÉ !");
                 Utils.hastagDecoration();
                 Utils.etoileDecoration();
                 System.out.println("Vous avez trouver la combinaison secrete !");
