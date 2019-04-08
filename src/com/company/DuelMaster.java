@@ -10,9 +10,9 @@ public class DuelMaster {
     static void algoDuelMaster() {
 
         //logger.info("le jeu commence")
-        int longueurDelaCombinaison = Integer.parseInt(System.getProperty("DuelMaster.nombreCase"));
-        int nbEssai = Integer.parseInt(System.getProperty("DuelMaster.nombreEssai"));
-        int nbChiffreAleatoire = Integer.parseInt(System.getProperty("DuelMaster.nombreDeChiffre"));
+        int longueurDelaCombinaison = Integer.parseInt(System.getProperty("duelMaster.nombre_case"));
+        int nbEssai = Integer.parseInt(System.getProperty("duelMaster.nombre_essai"));
+        int nbChiffreAleatoire = Integer.parseInt(System.getProperty("duel_master.nombre_de_chiffre"));
 
         Utils.exceptionNbAleatoireMaster(nbChiffreAleatoire);
 
@@ -24,13 +24,17 @@ public class DuelMaster {
             tabNbSecretCpu[i] = nbAleatoire.nextInt(nbChiffreAleatoire);
         }
 
+        Utils.etoileDecorationPourMaster();
+        System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à "+nbChiffreAleatoire);
+        Utils.etoileDecorationPourMaster();
+
         System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
         String nbSecretUtilisateur = nb.next();
 
         /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 9
          envoie un message d'erreur*/
 
-        boolean isUnNombre = nbSecretUtilisateur.matches("[0-9]*");
+        boolean isUnNombre = nbSecretUtilisateur.matches("[0 - "+ nbChiffreAleatoire +"]*");
 
         while (!isUnNombre) {
             Utils.etoileDecorationPourMaster();
@@ -38,12 +42,12 @@ public class DuelMaster {
             Utils.etoileDecorationPourMaster();
             System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
             nbSecretUtilisateur = nb.next();
-            isUnNombre = nbSecretUtilisateur.matches("[0-9]*");
+            isUnNombre = nbSecretUtilisateur.matches("[0-" + nbChiffreAleatoire + "]*");
         }
 
         int[] tabNbSecretUtil = new int[longueurDelaCombinaison];
         for (int j = 0; j < tabNbSecretUtil.length; j++) {
-            int converter = Integer.parseInt(nbSecretUtilisateur.charAt(j) + "");
+            int converter = Integer.parseInt(String.valueOf(nbSecretUtilisateur.charAt(j)));
             tabNbSecretUtil[j] = converter;
         }
 
@@ -52,7 +56,7 @@ public class DuelMaster {
 
         while (nbSecretUtilisateur.length() < tabNbSecretCpu.length || nbSecretUtilisateur.length() > tabNbSecretCpu.length) {
             Utils.etoileDecorationPourMaster();
-            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres.");
+            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à "+nbChiffreAleatoire);
             Utils.etoileDecorationPourMaster();
             System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
             nbSecretUtilisateur = nb.next();
@@ -71,9 +75,9 @@ public class DuelMaster {
             String essaiUtilisateur = nb.next();
             Utils.etoileDecorationPourMaster();
 
-            /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 9
+            /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 4 à 10
             envoie un message d'erreur*/
-            isUnNombre = essaiUtilisateur.matches("[0-9]*");
+            isUnNombre = essaiUtilisateur.matches("[0-"+ nbChiffreAleatoire +"]*");
 
             while (!isUnNombre) {
                 Utils.etoileDecorationPourMaster();
@@ -81,7 +85,7 @@ public class DuelMaster {
                 Utils.etoileDecorationPourMaster();
                 System.out.print("saisisez votre proposition : ");
                 essaiUtilisateur = nb.next();
-                isUnNombre = nbSecretUtilisateur.matches("[0-9]*");
+                isUnNombre = nbSecretUtilisateur.matches("[0-" + nbChiffreAleatoire + "]*");
                 i++;
             }
 
@@ -93,10 +97,10 @@ public class DuelMaster {
 
             /*tant que la proposition n'est pas de la bonne taille envoie ce message d'erreur,
             y++ fait en sorte que chaque mauvaise saisie n'est pas compté comme un essai*/
-            while (essaiUtilisateur.length() < tabNbSecretCpu.length || essaiUtilisateur.length() > tabNbSecretCpu.length) {
+            if (essaiUtilisateur.length() < tabNbSecretCpu.length || essaiUtilisateur.length() > tabNbSecretCpu.length) {
 
                 Utils.etoileDecorationPourMaster();
-                System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres.");
+                System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à "+ nbChiffreAleatoire);
                 Utils.etoileDecorationPourMaster();
                 System.out.print("saisisez votre proposition : ");
                 essaiUtilisateur = nb.next();
@@ -108,17 +112,17 @@ public class DuelMaster {
             essaiUtilisateur = nb.next();
             Utils.etoileDecorationPourMaster();
 
-                    /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 9
-                    envoie un message d'erreur*/
-            isUnNombre = essaiUtilisateur.matches("[0-9]*");
 
+            isUnNombre = essaiUtilisateur.matches("[0-"+ nbChiffreAleatoire +"]*");
+            /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 9
+            envoie un message d'erreur*/
             while (!isUnNombre) {
                 Utils.etoileDecorationPourMaster();
                 System.out.println("Vous n'avez pas saisi un nombre !");
                 Utils.etoileDecorationPourMaster();
                 System.out.print("saisisez votre proposition : ");
                 essaiUtilisateur = nb.next();
-                isUnNombre = nbSecretUtilisateur.matches("[0-9]*");
+                isUnNombre = nbSecretUtilisateur.matches("[0-"+ nbChiffreAleatoire +"]*");
                 i++;
             }
 
@@ -134,7 +138,7 @@ public class DuelMaster {
             if (essaiUtilisateur.length() < tabNbSecretCpu.length || essaiUtilisateur.length() > tabNbSecretCpu.length) {
 
                 Utils.etoileDecorationPourMaster();
-                System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres.");
+                System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à "+ nbChiffreAleatoire);
                 Utils.etoileDecorationPourMaster();
                 System.out.print("saisisez votre proposition : ");
                 essaiUtilisateur = nb.next();

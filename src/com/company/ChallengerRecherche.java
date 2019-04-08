@@ -1,6 +1,5 @@
 package com.company;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -10,16 +9,19 @@ public class ChallengerRecherche {
 
     static void algoChalengerRecherche() {
 
-        int longueurDeLaCombaison = Integer.parseInt(System.getProperty("ChallengerRecherche.nombreCase"));
-        int nbEssai = Integer.parseInt(System.getProperty("ChallengerRecherche.nombreEssai"));
+        int longueurDeLaCombinaison = Integer.parseInt(System.getProperty("challenger_recherche.nombre_case"));
+        int nbEssai = Integer.parseInt(System.getProperty("challenger_recherche.nombre_essai"));
 
         //creer un nombre aléatoire entre 0 et 9 et place les chiffres dans un tableau
         Random nbAleatoire = new Random();
-        int[] tabSaisieOrdinateur = new int[longueurDeLaCombaison];
+        int[] tabSaisieOrdinateur = new int[longueurDeLaCombinaison];
         for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
             tabSaisieOrdinateur[i] = nbAleatoire.nextInt(9 + 1);
         }
         // System.out.print(Arrays.toString(tabSaisieOrdinateur));
+        Utils.etoileDecoration();
+        System.out.println("Votre proposition doit comporter " + longueurDeLaCombinaison + " chiffres allants de 0 à 9");
+        Utils.etoileDecoration();
 
         for (int y = nbEssai; y >= 0; y--) {
 
@@ -45,7 +47,7 @@ public class ChallengerRecherche {
             converti la saisie utilisateur String en un tableau integer
             pour pouvoir comparer le tableau random et la saisiUtilisateur
              */
-            int[] tabSaisieUtilisateur = new int[longueurDeLaCombaison];
+            int[] tabSaisieUtilisateur = new int[longueurDeLaCombinaison];
             for (int i = 0; i < tabSaisieUtilisateur.length; i++) {
                 int converter = Integer.parseInt(saisieUtilisateur.charAt(i) + "");
                 tabSaisieUtilisateur[i] = converter;
@@ -53,11 +55,11 @@ public class ChallengerRecherche {
             /*tant que la proposition n'est pas de la bonne taille envoie ce message d'erreur,
              y++ fait en sorte que chaque mauvaise saisie n'est pas compté comme un essai
             */
-            while (saisieUtilisateur.length() < tabSaisieOrdinateur.length || saisieUtilisateur.length() > tabSaisieOrdinateur.length) {
-                System.out.println("Votre proposition doit comporter " + longueurDeLaCombaison + " chiffres.");
+            if (saisieUtilisateur.length() < tabSaisieOrdinateur.length || saisieUtilisateur.length() > tabSaisieOrdinateur.length) {
+                System.out.println("Votre proposition doit comporter " + longueurDeLaCombinaison + " chiffres allants de 0 à 9");
                 y++;
-                break;
             }
+
             if (saisieUtilisateur.length() == tabSaisieOrdinateur.length) {
                 System.out.print("Proposition : " + Arrays.toString(tabSaisieUtilisateur) + " | Réponse : ");
                 Utils.algoPlusMoins(tabSaisieUtilisateur, tabSaisieOrdinateur);
@@ -85,7 +87,7 @@ public class ChallengerRecherche {
 
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
-                System.out.println("                    GAGNé !");
+                System.out.println("                    GAGNÉ !");
                 Utils.hastagDecoration();
                 Utils.etoileDecoration();
                 System.out.println("Vous avez trouver la combinaison secrete !");

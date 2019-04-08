@@ -10,9 +10,9 @@ public class DefenseurMaster {
 
     static void algoDefenseurMaster() {
 
-        int nbEssai = Integer.parseInt(System.getProperty("DefenseurMaster.nombreCase"));
-        int longueurDelaCombinaison = Integer.parseInt(System.getProperty("DefenseurMaster.nombreEssai"));
-        int nbAleatoireAttaquant = Integer.parseInt(System.getProperty("Defenseur.Master.nombreDeChiffre"));
+        int nbEssai = Integer.parseInt(System.getProperty("defenseur_master.nombre_essai"));
+        int longueurDelaCombinaison = Integer.parseInt(System.getProperty("defenseur_master.nombre_case"));
+        int nbAleatoireAttaquant = Integer.parseInt(System.getProperty("defenseur_master.nombre_de_chiffre"));
 
         Utils.exceptionNbAleatoireMaster(nbAleatoireAttaquant);
 
@@ -22,12 +22,16 @@ public class DefenseurMaster {
         for (int i = 0; i < tabSaisieAttaquant.length; i++) {
             tabSaisieAttaquant[i] = saisieAttaquant.nextInt(nbAleatoireAttaquant);
 
+            Utils.etoileDecorationPourMaster();
+            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à "+ nbAleatoireAttaquant);
+            Utils.etoileDecorationPourMaster();
+
             System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
             String saisieDefenseur = nb.next();
 
             /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 9
             envoie un message d'erreur*/
-            boolean isUnNombre = saisieDefenseur.matches("[0-9]*");
+            boolean isUnNombre = saisieDefenseur.matches("[0-"+ nbAleatoireAttaquant +"]*");
 
             while (!isUnNombre) {
                 Utils.etoileDecorationPourMaster();
@@ -35,19 +39,19 @@ public class DefenseurMaster {
                 Utils.etoileDecorationPourMaster();
                 System.out.println("Entrez votre proposition : ");
                 saisieDefenseur = nb.next();
-                isUnNombre = saisieDefenseur.matches("[0-9]*");
+                isUnNombre = saisieDefenseur.matches("[0-"+ nbAleatoireAttaquant +"]*");
             }
 
             int[] tabSaisieDefenseur = new int[longueurDelaCombinaison];
             for (int y = 0; y < tabSaisieDefenseur.length; y++) {
-                int converter = Integer.parseInt(saisieDefenseur.charAt(y) + "");
+                int converter = Integer.parseInt(String.valueOf(saisieDefenseur.charAt(y)));
                 tabSaisieDefenseur[y] = converter;
             }
 
             /*tant que la proposition n'est pas de la bonne taille envoie ce message d'erreur,
             y++ fait en sorte que chaque mauvaise saisie n'est pas compté comme un essai*/
             if (saisieDefenseur.length() < tabSaisieAttaquant.length || saisieDefenseur.length() > tabSaisieAttaquant.length) {
-                System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres.");
+                System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à "+ nbAleatoireAttaquant);
             }
 
             for (int y = nbEssai; y >= 0; y--) {

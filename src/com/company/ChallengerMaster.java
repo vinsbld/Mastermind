@@ -9,19 +9,22 @@ public class ChallengerMaster {
 
     static void algoChalengerMaster() {
 
-        int longueurDeLaCombaison = Integer.parseInt(System.getProperty("ChallengerMaster.nombreCase"));
-        int nbEssai = Integer.parseInt(System.getProperty("ChallengerMaster.nombreEssai"));
-        int nbChiffreAleatoire = Integer.parseInt(System.getProperty("ChallengerMaster.nombreDeChiffre"));
+        int longueurDeLaCombinaison = Integer.parseInt(System.getProperty("challenger_master.nombre_case"));
+        int nbEssai = Integer.parseInt(System.getProperty("challenger_master.nombre_essai"));
+        int nbChiffreAleatoire = Integer.parseInt(System.getProperty("challenger_master.nombre_de_chiffre"));
 
         Utils.exceptionNbAleatoireMaster(nbChiffreAleatoire);
 
-        //creer un nombre aléatoire entre 0 et 9 et place ses chiffres dans un tableau
+        //creer un nombre aléatoire entre 0 et 4 à 10 et place ses chiffres dans un tableau
         Random nbAleatoire = new Random();
-        int[] tabSaisieOrdinateur = new int[longueurDeLaCombaison];
+        int[] tabSaisieOrdinateur = new int[longueurDeLaCombinaison];
         for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
             tabSaisieOrdinateur[i] = nbAleatoire.nextInt(nbChiffreAleatoire);
         }
         //System.out.print(Arrays.toString(tabSaisieOrdinateur));
+        Utils.etoileDecorationPourMaster();
+        System.out.println("Votre proposition doit comporter " + longueurDeLaCombinaison + " chiffres allants de 0 à "+nbChiffreAleatoire);
+        Utils.etoileDecorationPourMaster();
 
         for (int y = nbEssai; y >= 0; y--) {
 
@@ -32,23 +35,23 @@ public class ChallengerMaster {
             /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 9
             envoie un message d'erreur
              */
-            boolean isUnNombre = saisieUtilisateur.matches("[0-9]*");
+            boolean isUnNombre = saisieUtilisateur.matches("[0-"+ nbChiffreAleatoire +"]*");
 
             while (!isUnNombre) {
                 Utils.etoileDecorationPourMaster();
                 System.out.println("Vous n'avez pas saisi un nombre !");
-                y++;
                 Utils.etoileDecorationPourMaster();
                 System.out.println("Entrez votre proposition : ");
                 saisieUtilisateur = nb.next();
-                isUnNombre = saisieUtilisateur.matches("[0-9]*");
+                isUnNombre = saisieUtilisateur.matches("[0-"+ nbChiffreAleatoire +"]*");
+                y++;
             }
             Utils.etoileDecorationPourMaster();
             /*
             converti la saisie utilisateur String en un tableau integer
             pour pouvoir comparer le tableau random et la saisiUtilisateur
              */
-            int[] tabSaisieUtilisateur = new int[longueurDeLaCombaison];
+            int[] tabSaisieUtilisateur = new int[longueurDeLaCombinaison];
             for (int i = 0; i < tabSaisieUtilisateur.length; i++) {
                 int converter = Integer.parseInt(String.valueOf(saisieUtilisateur.charAt(i)));
                 tabSaisieUtilisateur[i] = converter;
@@ -58,7 +61,7 @@ public class ChallengerMaster {
              y++ fait en sorte que chaque mauvaise saisie n'est pas compté comme un essai
             */
             if (saisieUtilisateur.length() < tabSaisieOrdinateur.length || saisieUtilisateur.length() > tabSaisieOrdinateur.length) {
-                System.out.println("Votre proposition doit comporter " + longueurDeLaCombaison + " chiffres.");
+                System.out.println("Votre proposition doit comporter " + longueurDeLaCombinaison + " chiffres allants de 0 à "+nbChiffreAleatoire);
                 y++;
             }
             if (saisieUtilisateur.length() == tabSaisieOrdinateur.length) {
