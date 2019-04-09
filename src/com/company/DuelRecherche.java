@@ -13,42 +13,9 @@ public class DuelRecherche {
 
         int[] tabNbSecretCpu = Utils.initialiseTableauRandomRecherche(longueurDelaCombinaison);
 
+        String nbSecretUtilisateur = Utils.saisieUtilisateurRecherche(longueurDelaCombinaison);
 
-        Utils.etoileDecoration();
-        System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
-        Utils.etoileDecoration();
-
-        System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
-        String nbSecretUtilisateur = nb.next();
-
-        /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 9
-        envoie un message d'erreur*/
-        boolean isUnNombre = nbSecretUtilisateur.matches("[0-9]*");
-
-        while (!isUnNombre) {
-            Utils.etoileDecoration();
-            System.out.println("Vous n'avez pas saisi un nombre !");
-            Utils.etoileDecoration();
-            System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
-            nbSecretUtilisateur = nb.next();
-            isUnNombre = nbSecretUtilisateur.matches("[0-9]*");
-        }
-
-        int[] tabNbSecretUtil = new int[longueurDelaCombinaison];
-        for (int j = 0; j < tabNbSecretUtil.length; j++) {
-            int converter = Integer.parseInt(nbSecretUtilisateur.charAt(j) + "");
-            tabNbSecretUtil[j] = converter;
-        }
-
-        /*tant que la proposition n'est pas de la bonne taille envoie ce message d'erreur,
-          y++ fait en sorte que chaque mauvaise saisie n'est pas compté comme un essai*/
-        if (nbSecretUtilisateur.length() < tabNbSecretCpu.length || nbSecretUtilisateur.length() > tabNbSecretCpu.length) {
-            Utils.etoileDecoration();
-            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
-            Utils.etoileDecoration();
-            System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
-            nbSecretUtilisateur = nb.next();
-        }
+        int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDelaCombinaison, nbSecretUtilisateur);
 
         Utils.etoileDecoration();
         System.out.println("Votre code secret est : " + Arrays.toString(tabNbSecretUtil));
@@ -57,86 +24,11 @@ public class DuelRecherche {
 
         for (int i = nbEssai; i >= 0; i--) {
 
-            Utils.etoileDecoration();
-            System.out.print("saisisez votre proposition : ");
-            String essaiUtilisateur = nb.next();
-            Utils.etoileDecoration();
+            String essaiUtilisateur = Utils.essaiUtilisateurRecherche(longueurDelaCombinaison);
 
+            int[] tabEssaiUtilisateur = Utils.initialiseTableauUtilisateur(longueurDelaCombinaison, essaiUtilisateur);
 
-            isUnNombre = essaiUtilisateur.matches("[0-9]*");
-            /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 9
-            envoie un message d'erreur */
-            while (!isUnNombre) {
-                Utils.etoileDecoration();
-                System.out.println("Vous n'avez pas saisi un nombre !");
-                Utils.etoileDecoration();
-                System.out.print("saisisez votre proposition : ");
-                essaiUtilisateur = nb.next();
-                isUnNombre = essaiUtilisateur.matches("[0-9]*");
-                i++;
-            }
-
-            int[] tabEssaiUtilisateur = new int[longueurDelaCombinaison];
-            for (int k = 0; k < tabEssaiUtilisateur.length; k++) {
-                int convEassaiUtilisateur = Integer.parseInt(essaiUtilisateur.charAt(k) + "");
-                tabEssaiUtilisateur[k] = convEassaiUtilisateur;
-            }
-
-                /*tant que la proposition n'est pas de la bonne taille envoie ce message d'erreur,
-                y++ fait en sorte que chaque mauvaise saisie n'est pas compté comme un essai*/
-            if (essaiUtilisateur.length() < tabNbSecretCpu.length || essaiUtilisateur.length() > tabNbSecretCpu.length) {
-
-                Utils.etoileDecoration();
-                System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
-                Utils.etoileDecoration();
-                System.out.print("saisisez votre proposition : ");
-                essaiUtilisateur = nb.next();
-                i++;
-            }
-
-            Utils.etoileDecoration();
-            System.out.print("saisisez votre proposition : ");
-            essaiUtilisateur = nb.next();
-            Utils.etoileDecoration();
-
-                      /*tant que la saisiUtilisateur n'est pas un nombre entre 0 et 9
-                      envoie un message d'erreur */
-
-            isUnNombre = essaiUtilisateur.matches("[0-9]*");
-
-            while (!isUnNombre) {
-                Utils.etoileDecoration();
-                System.out.println("Vous n'avez pas saisi un nombre !");
-                Utils.etoileDecoration();
-                System.out.print("saisisez votre proposition : ");
-                essaiUtilisateur = nb.next();
-                isUnNombre = essaiUtilisateur.matches("[0-9]*");
-                i++;
-            }
-
-            tabEssaiUtilisateur = new int[longueurDelaCombinaison];
-            for (int k = 0; k < tabEssaiUtilisateur.length; k++) {
-                int convEassaiUtilisateur = Integer.parseInt(essaiUtilisateur.charAt(k) + "");
-                tabEssaiUtilisateur[k] = convEassaiUtilisateur;
-            }
-
-                    /*tant que la proposition n'est pas de la bonne taille envoie ce message d'erreur,
-                    y++ fait en sorte que chaque mauvaise saisie n'est pas compté comme un essai*/
-            if (essaiUtilisateur.length() < tabNbSecretCpu.length || essaiUtilisateur.length() > tabNbSecretCpu.length) {
-
-                Utils.etoileDecoration();
-                System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
-                Utils.etoileDecoration();
-                System.out.print("saisisez votre proposition : ");
-                essaiUtilisateur = nb.next();
-                i++;
-            }
-
-            Random essaiCpu = new Random();
-            int[] tabEssaiCpu = new int[longueurDelaCombinaison];
-            for (int l = 0; l < tabEssaiCpu.length; l++) {
-                tabEssaiCpu[l] = essaiCpu.nextInt(9 + 1);
-            }
+            int[] tabEssaiCpu = Utils.initialiseTableauRandomRecherche(longueurDelaCombinaison);
 
             Utils.algoComportementRandom(tabEssaiCpu, tabEssaiUtilisateur);
 

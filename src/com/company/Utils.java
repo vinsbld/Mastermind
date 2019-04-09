@@ -93,6 +93,16 @@ public class Utils {
         }
     }
 
+    public static int[] initialiseTableauRandomRecherche(int longueurDelaCombinaison) {
+
+        Random nbAleatoire = new Random();
+        int[] tabSaisieOrdinateur = new int[longueurDelaCombinaison];
+        for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
+            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(10);
+        }
+        return tabSaisieOrdinateur;
+    }
+
     /************************************************************************************/
     /******************************* fonctions communes *********************************/
 
@@ -162,14 +172,37 @@ public class Utils {
         System.out.println();
     }
 
-    public static int[] initialiseTableauRandomRecherche(int longueurDelaCombinaison) {
+    public static String essaiUtilisateurRecherche(int longueurDelaCombinaison) {
 
-        Random nbAleatoire = new Random();
-        int[] tabSaisieOrdinateur = new int[longueurDelaCombinaison];
-        for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
-            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(10);
-        }
-        return tabSaisieOrdinateur;
+        boolean isUnNombre;
+        String nbSecretUtilisateur;
+
+        do {
+            Utils.etoileDecorationPourMaster();
+            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
+            Utils.etoileDecorationPourMaster();
+            System.out.print("saisisez votre proposition : ");
+            nbSecretUtilisateur = nb.next();
+            Utils.etoileDecorationPourMaster();
+            isUnNombre = nbSecretUtilisateur.matches("[0-9]*");
+        } while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
+        return nbSecretUtilisateur;
+    }
+
+    public static String saisieUtilisateurRecherche(int longueurDelaCombinaison) {
+
+        boolean isUnNombre;
+        String nbSecretUtilisateur;
+
+        do {
+            Utils.etoileDecoration();
+            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
+            Utils.etoileDecorationPourMaster();
+            System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
+            nbSecretUtilisateur = nb.next();
+            isUnNombre = nbSecretUtilisateur.matches("[0-9]*");
+        } while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
+        return nbSecretUtilisateur;
     }
 
 }

@@ -19,6 +19,10 @@ public class DefenseurMaster {
 
         int[] tabSaisieDefenseur = Utils.initialiseTableauUtilisateur(longueurDelaCombinaison, saisieDefenseur);
 
+        Utils.etoileDecorationPourMaster();
+        System.out.println("Votre code secret est " + Arrays.toString(tabSaisieDefenseur));
+        Utils.etoileDecorationPourMaster();
+
         for (int y = nbEssai; y >= 0; y--) {
 
             Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
