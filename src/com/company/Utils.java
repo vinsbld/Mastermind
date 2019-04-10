@@ -171,12 +171,14 @@ public class Utils {
                    l'ordinateur génére un chiffre entre la valeur [i] et 4 si resultat est -.
                  */
             if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
+                Logger.getLogger(Utils.class).info("le chiffre "+ tabSaisieAttaquant[i] +" est trop petit");
                 tabSaisieAttaquant[i] = r.nextInt((9 - tabSaisieAttaquant[i]) ) + tabSaisieAttaquant[i];
-                Logger.getLogger(Utils.class).info("le chiffre est trop petit, le nouveau chiffre proposé par l'ordinateur est "+ tabSaisieAttaquant[i]);
+                Logger.getLogger(Utils.class).info("le nouveau chiffre proposé par l'ordinateur est "+ tabSaisieAttaquant[i]);
             }
             if (tabSaisieAttaquant[i] > tabSaisieDefenseur[i]) {
+                Logger.getLogger(Utils.class).info("le chiffre "+ tabSaisieAttaquant[i] +" est trop grand");
                 tabSaisieAttaquant[i] = r.nextInt((tabSaisieAttaquant[i] - 4) ) + 4;
-                Logger.getLogger(Utils.class).info("le chiffre est trop grand, le nouveau chiffre proposé par l'ordinateur est "+ tabSaisieAttaquant[i]);
+                Logger.getLogger(Utils.class).info("le nouveau chiffre proposé par l'ordinateur est "+ tabSaisieAttaquant[i]);
             }
             if (tabSaisieAttaquant[i] == tabSaisieDefenseur[i]) {
                 tabSaisieAttaquant[i] = tabSaisieAttaquant[i];
@@ -299,12 +301,14 @@ public class Utils {
                    l'ordinateur génére un chiffre entre la valeur [i] et 0 si resultat est -.
                  */
             if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
+                Logger.getLogger(Utils.class).info("le chiffre "+ tabSaisieAttaquant[i] +" est trop petit");
                 tabSaisieAttaquant[i] = r.nextInt((9 - tabSaisieAttaquant[i]) ) + tabSaisieAttaquant[i];
-                Logger.getLogger(Utils.class).info("le chiffre est trop petit, le nouveau chiffre proposé par l'ordinateur est "+ tabSaisieAttaquant[i]);
+                Logger.getLogger(Utils.class).info("le nouveau chiffre proposé par l'ordinateur est "+ tabSaisieAttaquant[i]);
             }
             if (tabSaisieAttaquant[i] > tabSaisieDefenseur[i]) {
+                Logger.getLogger(Utils.class).info("le chiffre "+ tabSaisieAttaquant[i] +" est trop grand");
                 tabSaisieAttaquant[i] = r.nextInt((tabSaisieAttaquant[i] - 0) ) + 0;
-                Logger.getLogger(Utils.class).info("le chiffre est trop grand, le nouveau chiffre proposé par l'ordinateur est "+ tabSaisieAttaquant[i]);
+                Logger.getLogger(Utils.class).info("le nouveau chiffre proposé par l'ordinateur est "+ tabSaisieAttaquant[i]);
             }
             if (tabSaisieAttaquant[i] == tabSaisieDefenseur[i]) {
                 tabSaisieAttaquant[i] = tabSaisieAttaquant[i];
