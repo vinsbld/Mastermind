@@ -41,7 +41,7 @@ public class Utils {
             isUnNombre = nbSecretUtilisateur.matches("[4-" + nbChiffreAleatoire + "]*");
 
             if (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison) {
-                Logger.getLogger(Utils.class).warn("Utilisateur a saisie une mauvaise combinaison " + nbSecretUtilisateur +"n'est pas valide, la proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à " + nbChiffreAleatoire);
+                Logger.getLogger(Utils.class).warn("Utilisateur a saisie une mauvaise combinaison " + nbSecretUtilisateur +" n'est pas valide, la proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 4 à " + nbChiffreAleatoire);
             }
         } while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
         return nbSecretUtilisateur;
@@ -65,7 +65,7 @@ public class Utils {
             Logger.getLogger(Utils.class).info("L'utilisateur a essayé la combinaison : "+ nbSecretUtilisateur);
 
             if (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison) {
-                Logger.getLogger(Utils.class).warn("Utilisateur a saisie une mauvaise combinaison " + nbSecretUtilisateur +"n'est pas valide, la proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à " + nbChiffreAleatoire );
+                Logger.getLogger(Utils.class).warn("Utilisateur a saisie une mauvaise combinaison " + nbSecretUtilisateur +" n'est pas valide, la proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 4 à " + nbChiffreAleatoire );
             }
         }
         while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
@@ -281,7 +281,7 @@ public class Utils {
             Logger.getLogger(Utils.class).info("le chiffre mystère de l'utilisateur est : "+ nbSecretUtilisateur);
             isUnNombre = nbSecretUtilisateur.matches("[0-9]*");
             if (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison){
-                Logger.getLogger(Utils.class).warn("Utilisateur a saisie une mauvaise combinaison "+ nbSecretUtilisateur +"n'est pas une proposition valide, la proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
+                Logger.getLogger(Utils.class).warn("Utilisateur a saisie une mauvaise combinaison "+ nbSecretUtilisateur +" n'est pas une proposition valide, la proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
             }
         } while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
         return nbSecretUtilisateur;
