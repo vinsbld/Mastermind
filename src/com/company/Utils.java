@@ -19,7 +19,8 @@ public class Utils {
         int[] tabSaisieOrdinateur = new int[longueurDelaCombinaison];
         for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
             tabSaisieOrdinateur[i] = nbAleatoire.nextInt(nombreDeChiffre);
-        }Logger.getLogger(Utils.class).info("L'ordinateur créer un chiffre mystère : "+ Arrays.toString(tabSaisieOrdinateur));
+        }
+        Logger.getLogger(Utils.class).info("L'ordinateur créer un chiffre mystère : "+ Arrays.toString(tabSaisieOrdinateur));
         return tabSaisieOrdinateur;
 
     }
@@ -75,6 +76,7 @@ public class Utils {
     la deuxième boucle indique si un élément et présent dans le tableau,
     la condition != indique que si l'élément est bien placé alors il ne faut pas le prendre en concidèration*/
     public static void algoMaster(int[] combinaisonSecrete, int[] attaque) {
+        Logger.getLogger(Utils.class).info("l'odinateur verifie si dans sa combinaison : "+ Arrays.toString(attaque) +", un nombre est bien placé ou présent ");
         int present = 0;
         int bienPlace = 0;
         for (int i = 0; i < combinaisonSecrete.length; i++) {
@@ -89,8 +91,9 @@ public class Utils {
                 }
             }
         }
-        System.out.print(present + " present, ");
+        System.out.print(present + " présent, ");
         System.out.println(bienPlace + " bien placé");
+        Logger.getLogger(Utils.class).info("l'ordinateur a touver "+ present +" présent et "+ bienPlace +" bien palcé pour sa combinaison "+ Arrays.toString(attaque) + " comparer a la défense "+ Arrays.toString(combinaisonSecrete));
     }
 
     //décoration * pour Maestermind
@@ -110,16 +113,28 @@ public class Utils {
         if (nbChiffreAleatoire < 4 || nbChiffreAleatoire > 10) {
 
             Utils.etoileDecorationPourMaster();
-            Logger.getLogger(Utils.class).fatal("le nombre de chiffre utilisable n'est pas conforme ([0 - 4 - 10])");
+            Logger.getLogger(Utils.class).fatal("le nombre de chiffre utilisable n'est pas conforme ([4 - 10])");
             Utils.etoileDecorationPourMaster();
         }return;
     }
 
-    public static void exceptionLongueurMaster (int longueurDeLaCombinaisonMaster){
-        if (longueurDeLaCombinaisonMaster < 3 || longueurDeLaCombinaisonMaster > 10)
-        Utils.etoileDecorationPourMaster();
-        Logger.getLogger(Utils.class).fatal("la longueur de la combinaison "+ longueurDeLaCombinaisonMaster +" n'est pas valide");
-        Utils.etoileDecorationPourMaster();
+    //la longueur de la combinaison ne doit pas etre inferieure à 3 et suppérieure à 10 "Mastermind"
+    public static void exceptionLongueur (int longueurDeLaCombinaison){
+
+        if (longueurDeLaCombinaison < 3 || longueurDeLaCombinaison > 10) {
+            Utils.etoileDecorationPourMaster();
+            Logger.getLogger(Utils.class).fatal("la longueur de la combinaison " + longueurDeLaCombinaison + " n'est pas valide");
+            Utils.etoileDecorationPourMaster();
+        }return;
+    }
+
+
+    //le nombre d'essais ne peut pas être inférieur ou égale à 0
+    public static void exceptionNbEssais (int nbEssai){
+
+        if (nbEssai <= 0){
+            Logger.getLogger(Utils.class).fatal("le nombre d'essais est inférieur a zéro ");
+        }return;
     }
 
     /************************************************************************************/
@@ -140,6 +155,7 @@ public class Utils {
 
     /*algorithme qui defini le comportement de l'ordinateur pour trouver la combinaison secrete*/
     public static void algoComportementRandom(int tabSaisieAttaquant[], int tabSaisieDefenseur[]) {
+
         Random r = new Random();
         for (int i = 0; i < tabSaisieDefenseur.length; i++) {
 

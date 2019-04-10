@@ -15,6 +15,9 @@ public class ChallengerRecherche {
         int longueurDeLaCombinaisonRecherche = Config.longueurDeLaCombinaisonRecherche;
         int nbEssaiRecherche = Config.nbEssaiRecherche;
 
+        Utils.exceptionLongueur(longueurDeLaCombinaisonRecherche);
+        Utils.exceptionNbEssais(nbEssaiRecherche);
+
         int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
 

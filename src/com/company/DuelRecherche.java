@@ -16,6 +16,9 @@ public class DuelRecherche {
         int longueurDeLaCombinaisonRecherche = Config.longueurDeLaCombinaisonRecherche;
         int nbEssaiRecherche = Config.nbEssaiRecherche;
 
+        Utils.exceptionLongueur(longueurDeLaCombinaisonRecherche);
+        Utils.exceptionNbEssais(nbEssaiRecherche);
+
         int[] tabNbSecretCpu = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
         String nbSecretUtilisateur = Utils.saisieUtilisateurRecherche(longueurDeLaCombinaisonRecherche);

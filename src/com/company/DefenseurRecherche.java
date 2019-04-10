@@ -16,6 +16,10 @@ public class DefenseurRecherche {
         int longueurDeLaCombinaisonRecherche = Config.longueurDeLaCombinaisonRecherche;
         int nbEssaiRecherche = Config.nbEssaiRecherche;
 
+        Utils.exceptionLongueur(longueurDeLaCombinaisonRecherche);
+        Utils.exceptionNbEssais(nbEssaiRecherche);
+
+
         int[] tabSaisieAttaquant = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
         String saisieDefenseur = Utils.saisieUtilisateurRecherche(longueurDeLaCombinaisonRecherche);

@@ -15,6 +15,8 @@ public class ChallengerMaster {
         int nbEssaiMaster = Config.nbEssaiMaster;
         int nbChiffreAleatoireMaster = Config.nbChiffreAleatoireMaster;
 
+        Utils.exceptionLongueur(longueurDeLaCombinaisonMaster);
+        Utils.exceptionNbEssais(nbEssaiMaster);
         Utils.exceptionNbAleatoireMaster(nbChiffreAleatoireMaster);
 
         int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);

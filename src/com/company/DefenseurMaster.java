@@ -15,7 +15,10 @@ public class DefenseurMaster {
         int nbEssaiMaster = Config.nbEssaiMaster;
         int nbChiffreAleatoireMaster = Config.nbChiffreAleatoireMaster;
 
+        Utils.exceptionLongueur(longueurDeLaCombinaisonMaster);
+        Utils.exceptionNbEssais(nbEssaiMaster);
         Utils.exceptionNbAleatoireMaster(nbChiffreAleatoireMaster);
+
 
         int[] tabSaisieAttaquant = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
