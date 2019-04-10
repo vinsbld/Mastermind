@@ -1,5 +1,7 @@
 package com.company;
 
+import org.apache.log4j.Logger;
+import java.util.*;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,16 +12,20 @@ public class Utils {
     /************************************************************************************/
     /************************** fonctions pour Mastermind *******************************/
 
+    //céer un nombre aléatoire entre 0 - 4 a 10 "int nombreDeChiffre" et place chaque chiffre dans un tableau
     public static int[] initialiseTableauRandomMaster(int longueurDelaCombinaison, int nombreDeChiffre) {
 
         Random nbAleatoire = new Random();
         int[] tabSaisieOrdinateur = new int[longueurDelaCombinaison];
         for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
             tabSaisieOrdinateur[i] = nbAleatoire.nextInt(nombreDeChiffre);
-        }
+        }Logger.getLogger(Utils.class).info("L'ordinateur créer un chiffre mystère : "+ Arrays.toString(tabSaisieOrdinateur));
         return tabSaisieOrdinateur;
+
     }
 
+    /*tant que la condition n'est pas respectée alors revoi l'utilisateur vers une
+       nouvelle saisie en lui indiquant les prérequis d'une saisie valide*/
     public static String saisieUtilisateurMaster(int longueurDelaCombinaison, int nbChiffreAleatoire) {
 
         boolean isUnNombre;
@@ -32,10 +38,16 @@ public class Utils {
             System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
             nbSecretUtilisateur = nb.next();
             isUnNombre = nbSecretUtilisateur.matches("[0-" + nbChiffreAleatoire + "]*");
+
+            if (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison) {
+                Logger.getLogger(Utils.class).warn("Utilisateur a saisie une mauvaise combinaison " + nbSecretUtilisateur);
+            }
         } while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
         return nbSecretUtilisateur;
     }
 
+    /*tant que la condition n'est pas respectée alors revoi l'utilisateur vers une
+       nouvelle saisie en lui indiquant les prérequis d'une saisie valide*/
     public static String essaiUtilisateurMaster(int longueurDelaCombinaison, int nbChiffreAleatoire) {
 
         boolean isUnNombre;
@@ -49,12 +61,20 @@ public class Utils {
             nbSecretUtilisateur = nb.next();
             Utils.etoileDecorationPourMaster();
             isUnNombre = nbSecretUtilisateur.matches("[0-" + nbChiffreAleatoire + "]*");
-        } while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
+            Logger.getLogger(Utils.class).info("L'utilisateur a essayé la combinaison : "+ nbSecretUtilisateur);
+
+            if (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison) {
+                Logger.getLogger(Utils.class).warn("Utilisateur a saisie une mauvaise combinaison " + nbSecretUtilisateur);
+            }
+        }
+        while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
         return nbSecretUtilisateur;
     }
 
+    /*algorithme mastermind, première boucle indique si un élément est bien placé,
+    la deuxième boucle indique si un élément et présent dans le tableau,
+    la condition != indique que si l'élément est bien placé alors il ne faut pas le prendre en concidèration*/
     public static void algoMaster(int[] combinaisonSecrete, int[] attaque) {
-
         int present = 0;
         int bienPlace = 0;
         for (int i = 0; i < combinaisonSecrete.length; i++) {
@@ -84,28 +104,20 @@ public class Utils {
     //renvoie un message d'erreur quand le chiffre n'est pas conforme
     public static void exceptionNbAleatoireMaster(int nbChiffreAleatoire) {
 
-        if (nbChiffreAleatoire < 0 || nbChiffreAleatoire > 10) {
-            //logger.warn("le nombre de chiffre utilisable n'est pas conforme ([4-10])")
-            Utils.etoileDecorationPourMaster();
-            System.out.println("Les chiffres utilisables vont de (0 - 4 à 10)");
-            System.out.println("Merci de saisir une valeur correct dans le fichier config.properties");
-            Utils.etoileDecorationPourMaster();
-        }
-    }
+        if (nbChiffreAleatoire < 4 || nbChiffreAleatoire > 10) {
 
-    public static int[] initialiseTableauRandomRecherche(int longueurDelaCombinaison) {
-
-        Random nbAleatoire = new Random();
-        int[] tabSaisieOrdinateur = new int[longueurDelaCombinaison];
-        for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
-            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(10);
-        }
-        return tabSaisieOrdinateur;
+            Utils.etoileDecorationPourMaster();
+            Logger.getLogger(Utils.class).fatal("le nombre de chiffre utilisable n'est pas conforme ([0 - 4 - 10])");
+            Utils.etoileDecorationPourMaster();
+        }return;
     }
 
     /************************************************************************************/
     /******************************* fonctions communes *********************************/
 
+    /*transforme la saisie utilisateur "String", chaque caractères
+    "charAt(j)" est en suite converti en un entier et est placé dan sun tableau de int[]
+    cela permet de pouvoir comperer le tableau Random et celui-ci*/
     public static int[] initialiseTableauUtilisateur(int longueurDelaCombinaison, String saisieUtilisateur){
 
         int[] tabNbSecretUtil = new int[longueurDelaCombinaison];
@@ -116,6 +128,7 @@ public class Utils {
         return tabNbSecretUtil;
     }
 
+    /*algorithme qui defini le comportement de l'ordinateur pour trouver la combinaison secrete*/
     public static void algoComportementRandom(int tabSaisieAttaquant[], int tabSaisieDefenseur[]) {
         Random r = new Random();
         for (int i = 0; i < tabSaisieDefenseur.length; i++) {
@@ -123,15 +136,12 @@ public class Utils {
                 /*si le nombre generé et inferieur ou supereieur à la valeur cible
                    l'ordinateur génére un chiffre entre la valeur [i] et 9 si resultat est +.
                    l'ordinateur génére un chiffre entre la valeur [i] et 0 si resultat est -.
-                   En ajoutant +1 dans le random on offre une chance à l'ordinateur
-                   de réutiliser le même chiffre plusieurs fois à la même place
-                   si il n'a pas trouver sa place.
                  */
             if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
-                tabSaisieAttaquant[i] = r.nextInt((9 - tabSaisieAttaquant[i]) + 1) + tabSaisieAttaquant[i];
+                tabSaisieAttaquant[i] = r.nextInt((9 - tabSaisieAttaquant[i]) ) + tabSaisieAttaquant[i];
             }
             if (tabSaisieAttaquant[i] > tabSaisieDefenseur[i]) {
-                tabSaisieAttaquant[i] = r.nextInt((tabSaisieAttaquant[i] - 0) + 1) + 0;
+                tabSaisieAttaquant[i] = r.nextInt((tabSaisieAttaquant[i] - 0) ) + 0;
             }
             if (tabSaisieAttaquant[i] == tabSaisieDefenseur[i]) {
                 tabSaisieAttaquant[i] = tabSaisieAttaquant[i];
@@ -142,6 +152,9 @@ public class Utils {
     /************************************************************************************/
     /**************************** fonctions Recherche +/- *******************************/
 
+    /*si la valeur saisie est inferieur affiche "+"
+    si elle est inférieure affiche "-"
+    si la valeur esy la même affiche "="*/
     public static void algoPlusMoins(int[] tab1, int[] tab2) {
 
         for (int i = 0; i < tab1.length; i++) {
@@ -154,6 +167,16 @@ public class Utils {
             }
         }
         System.out.println();
+    }
+
+    public static int[] initialiseTableauRandomRecherche(int longueurDelaCombinaison) {
+
+        Random nbAleatoire = new Random();
+        int[] tabSaisieOrdinateur = new int[longueurDelaCombinaison];
+        for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
+            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(10);
+        }
+        return tabSaisieOrdinateur;
     }
 
     //décoration * pour menus et recherche +/-

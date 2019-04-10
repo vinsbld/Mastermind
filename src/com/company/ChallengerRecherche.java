@@ -1,5 +1,7 @@
 package com.company;
 
+import org.apache.log4j.Logger;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -7,6 +9,8 @@ public class ChallengerRecherche {
     static Scanner nb = new Scanner(System.in);
 
     static void algoChalengerRecherche() {
+
+        Logger.getLogger(ChallengerRecherche.class).info("l'utilisateur joue à Recherche +/- en mode challenger");
 
         int longueurDeLaCombinaison = Integer.parseInt(System.getProperty("challenger_recherche.nombre_case"));
         int nbEssai = Integer.parseInt(System.getProperty("challenger_recherche.nombre_essai"));

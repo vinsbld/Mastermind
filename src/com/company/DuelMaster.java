@@ -1,10 +1,14 @@
 package com.company;
 
+import org.apache.log4j.Logger;
+
 import java.util.Arrays;
 
 public class DuelMaster {
 
     static void algoDuelMaster() {
+
+        Logger.getLogger(DuelMaster.class).info("L'utilisateur joue à Mastermind en mode Duel");
 
         //logger.info("le jeu commence")
         int longueurDelaCombinaison = Integer.parseInt(System.getProperty("duelMaster.nombre_case"));

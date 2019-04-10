@@ -1,6 +1,5 @@
 package com.company;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Scanner;
 
 public class Menu {
@@ -85,7 +84,7 @@ public class Menu {
         Utils.etoileDecoration();
 
         if (saisieUtilisateurMode.equals("1")) {
-            ChallengerMaster.algoChalengerMaster();
+            ChallengerMaster.algoChallengerMaster();
         } else if (saisieUtilisateurMode.equals("2")) {
             DefenseurMaster.algoDefenseurMaster();
         } else if (saisieUtilisateurMode.equals("3")) {

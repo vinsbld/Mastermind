@@ -1,16 +1,19 @@
 package com.company;
 
+import org.apache.log4j.Logger;
+
 import java.util.Arrays;
-import java.util.Scanner;
+
 
 public class ChallengerMaster {
-    static Scanner nb = new Scanner(System.in);
 
-    static void algoChalengerMaster() {
+    static void algoChallengerMaster() {
 
-        int longueurDeLaCombinaison = Integer.parseInt(System.getProperty("challenger_master.nombre_case"));
-        int nbEssai = Integer.parseInt(System.getProperty("challenger_master.nombre_essai"));
-        int nbChiffreAleatoire = Integer.parseInt(System.getProperty("challenger_master.nombre_de_chiffre"));
+        Logger.getLogger(ChallengerRecherche.class).info("l'utilisateur joue à mastermind en mode challenger");
+
+        int longueurDeLaCombinaison = Config.longueurDeLaCombinaison;
+        int nbEssai = Config.nbEssai;
+        int nbChiffreAleatoire = Config.nbChiffreAleatoire;
 
         Utils.exceptionNbAleatoireMaster(nbChiffreAleatoire);
 

@@ -1,5 +1,7 @@
 package com.company;
 
+import org.apache.log4j.Logger;
+
 import java.util.Arrays;
 
 import java.util.Scanner;
@@ -8,6 +10,8 @@ public class DefenseurRecherche {
     static Scanner nb = new Scanner(System.in);
 
     static void algoDefenseurRecherche() {
+
+        Logger.getLogger(DefenseurRecherche.class).info("L'utilisateur joue à Recherche +/- en mode Défenseur");
 
         int longueurDeLaCombinaison = Integer.parseInt(System.getProperty("defenseur_recherche.nombre_case"));
         int nbEssai = Integer.parseInt(System.getProperty("defenseur_recherche.nombre_essai"));

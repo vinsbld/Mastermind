@@ -1,5 +1,7 @@
 package com.company;
 
+import org.apache.log4j.Logger;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -8,6 +10,9 @@ public class DuelRecherche {
     static Scanner nb = new Scanner(System.in);
 
     static void algoDuelRecherche() {
+
+        Logger.getLogger(DuelRecherche.class).info("L'utilisateur joue à Recherche +/- en mode Duel");
+
         int longueurDelaCombinaison = Integer.parseInt(String.valueOf("duelRecherche.nombreCase"));
         int nbEssai = Integer.parseInt(String.valueOf("duelRecherche.nombreEssai"));
 
