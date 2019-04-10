@@ -32,8 +32,8 @@ public class Config {
             nbEssaiMaster = Integer.parseInt(prop.getProperty("master.nombre_essai"));
             nbChiffreAleatoireMaster = Integer.parseInt(prop.getProperty("master.nombre_de_chiffre"));
 
-            longueurDeLaCombinaisonRecherche = Integer.parseInt("recherche.nombre_case");
-            nbEssaiRecherche = Integer.parseInt("recherche.nombre_essai");
+            longueurDeLaCombinaisonRecherche = Integer.parseInt(prop.getProperty("recherche.nombre_case"));
+            nbEssaiRecherche = Integer.parseInt(prop.getProperty("recherche.nombre_essai"));
 
 
         } catch (IOException ex) {
