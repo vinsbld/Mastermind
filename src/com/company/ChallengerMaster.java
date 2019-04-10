@@ -11,9 +11,9 @@ public class ChallengerMaster {
 
         Logger.getLogger(ChallengerRecherche.class).info("l'utilisateur joue à mastermind en mode challenger");
 
-        int longueurDeLaCombinaison = Config.longueurDeLaCombinaison;
-        int nbEssai = Config.nbEssai;
-        int nbChiffreAleatoire = Config.nbChiffreAleatoire;
+        int longueurDeLaCombinaison = Config.longueurDeLaCombinaisonMaster;
+        int nbEssai = Config.nbEssaiMaster;
+        int nbChiffreAleatoire = Config.nbChiffreAleatoireMaster;
 
         Utils.exceptionNbAleatoireMaster(nbChiffreAleatoire);
 

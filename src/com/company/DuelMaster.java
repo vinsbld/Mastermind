@@ -11,9 +11,9 @@ public class DuelMaster {
         Logger.getLogger(DuelMaster.class).info("L'utilisateur joue à Mastermind en mode Duel");
 
         //logger.info("le jeu commence")
-        int longueurDelaCombinaison = Integer.parseInt(System.getProperty("duelMaster.nombre_case"));
-        int nbEssai = Integer.parseInt(System.getProperty("duelMaster.nombre_essai"));
-        int nbChiffreAleatoire = Integer.parseInt(System.getProperty("duel_master.nombre_de_chiffre"));
+        int longueurDelaCombinaison = Config.longueurDeLaCombinaisonMaster;
+        int nbEssai = Config.nbEssaiMaster;
+        int nbChiffreAleatoire = Config.nbChiffreAleatoireMaster;
 
         Utils.exceptionNbAleatoireMaster(nbChiffreAleatoire);
 

@@ -11,9 +11,9 @@ public class DefenseurMaster {
 
         Logger.getLogger(DefenseurMaster.class).info("L'utilisateur joue à Mastermind en mode Défenseur");
 
-        int longueurDelaCombinaison = Config.longueurDeLaCombinaison;
-        int nbEssai = Config.nbEssai;
-        int nbAleatoireAttaquant = Config.nbChiffreAleatoire;
+        int longueurDelaCombinaison = Config.longueurDeLaCombinaisonMaster;
+        int nbEssai = Config.nbEssaiMaster;
+        int nbAleatoireAttaquant = Config.nbChiffreAleatoireMaster;
 
         Utils.exceptionNbAleatoireMaster(nbAleatoireAttaquant);
 

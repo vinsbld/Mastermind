@@ -7,14 +7,16 @@ import java.util.Properties;
 
 public class Config {
 
-   static int longueurDeLaCombinaison;
-    static int nbEssai;
-    static int nbChiffreAleatoire;
+   static int longueurDeLaCombinaisonMaster;
+    static int nbEssaiMaster;
+    static int nbChiffreAleatoireMaster;
 
-
+    static int longueurDeLaCombinaisonRecherche;
+    static int nbEssaiRecherche;
 
 
     static void load (String fileName){
+
         Properties prop = new Properties();
         InputStream input = null;
 
@@ -26,9 +28,13 @@ public class Config {
             prop.load(input);
 
             // get the property value and print it out
-            longueurDeLaCombinaison = Integer.parseInt(prop.getProperty("master.nombre_case"));
-            nbEssai = Integer.parseInt(prop.getProperty("master.nombre_essai"));
-            nbChiffreAleatoire = Integer.parseInt(prop.getProperty("master.nombre_de_chiffre"));
+            longueurDeLaCombinaisonMaster = Integer.parseInt(prop.getProperty("master.nombre_case"));
+            nbEssaiMaster = Integer.parseInt(prop.getProperty("master.nombre_essai"));
+            nbChiffreAleatoireMaster = Integer.parseInt(prop.getProperty("master.nombre_de_chiffre"));
+
+            longueurDeLaCombinaisonRecherche = Integer.parseInt("recherche.nombre_case");
+            nbEssaiRecherche = Integer.parseInt("recherche.nombre_essai");
+
 
         } catch (IOException ex) {
             ex.printStackTrace();
