@@ -10,7 +10,6 @@ public class DuelMaster {
 
         Logger.getLogger(DuelMaster.class).info("L'utilisateur joue à Mastermind en mode Duel");
 
-        //logger.info("le jeu commence")
         int longueurDeLaCombinaisonMaster = Config.longueurDeLaCombinaisonMaster;
         int nbEssaiMaster = Config.nbEssaiMaster;
         int nbChiffreAleatoireMaster = Config.nbChiffreAleatoireMaster;

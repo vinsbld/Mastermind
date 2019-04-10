@@ -9,7 +9,7 @@ public class ChallengerMaster {
 
     static void algoChallengerMaster() {
 
-        Logger.getLogger(ChallengerRecherche.class).info("l'utilisateur joue à mastermind en mode challenger");
+        Logger.getLogger(ChallengerMaster.class).info("l'utilisateur joue à mastermind en mode challenger");
 
         int longueurDeLaCombinaisonMaster = Config.longueurDeLaCombinaisonMaster;
         int nbEssaiMaster = Config.nbEssaiMaster;
