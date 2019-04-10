@@ -101,6 +101,9 @@ public class Utils {
         System.out.println();
     }
 
+    /************************************************************************************/
+    /******************************* fonctions config.properties *********************************/
+
     //renvoie un message d'erreur quand le chiffre n'est pas conforme
     public static void exceptionNbAleatoireMaster(int nbChiffreAleatoire) {
 
@@ -110,6 +113,13 @@ public class Utils {
             Logger.getLogger(Utils.class).fatal("le nombre de chiffre utilisable n'est pas conforme ([0 - 4 - 10])");
             Utils.etoileDecorationPourMaster();
         }return;
+    }
+
+    public static void exceptionLongueurMaster (int longueurDeLaCombinaisonMaster){
+        if (longueurDeLaCombinaisonMaster < 3 || longueurDeLaCombinaisonMaster > 10)
+        Utils.etoileDecorationPourMaster();
+        Logger.getLogger(Utils.class).fatal("la longueur de la combinaison "+ longueurDeLaCombinaisonMaster +" n'est pas valide");
+        Utils.etoileDecorationPourMaster();
     }
 
     /************************************************************************************/

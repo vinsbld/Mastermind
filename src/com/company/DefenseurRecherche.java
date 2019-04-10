@@ -13,20 +13,20 @@ public class DefenseurRecherche {
 
         Logger.getLogger(DefenseurRecherche.class).info("L'utilisateur joue à Recherche +/- en mode Défenseur");
 
-        int longueurDeLaCombinaison = Integer.parseInt(System.getProperty("defenseur_recherche.nombre_case"));
-        int nbEssai = Integer.parseInt(System.getProperty("defenseur_recherche.nombre_essai"));
+        int longueurDeLaCombinaisonRecherche = Config.longueurDeLaCombinaisonRecherche;
+        int nbEssaiRecherche = Config.nbEssaiRecherche;
 
-        int[] tabSaisieAttaquant = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaison);
+        int[] tabSaisieAttaquant = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
-        String saisieDefenseur = Utils.saisieUtilisateurRecherche(longueurDeLaCombinaison);
+        String saisieDefenseur = Utils.saisieUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
 
-        int[] tabSaisieDefenseur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaison, saisieDefenseur);
+        int[] tabSaisieDefenseur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, saisieDefenseur);
 
         Utils.etoileDecoration();
         System.out.println("Votre code secret est " + Arrays.toString(tabSaisieDefenseur));
         Utils.etoileDecoration();
 
-        for (int y = nbEssai; y >= 0; y--) {
+        for (int y = nbEssaiRecherche; y >= 0; y--) {
 
             Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
             Utils.etoileDecoration();

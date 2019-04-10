@@ -11,17 +11,17 @@ public class DuelMaster {
         Logger.getLogger(DuelMaster.class).info("L'utilisateur joue à Mastermind en mode Duel");
 
         //logger.info("le jeu commence")
-        int longueurDelaCombinaison = Config.longueurDeLaCombinaisonMaster;
-        int nbEssai = Config.nbEssaiMaster;
-        int nbChiffreAleatoire = Config.nbChiffreAleatoireMaster;
+        int longueurDeLaCombinaisonMaster = Config.longueurDeLaCombinaisonMaster;
+        int nbEssaiMaster = Config.nbEssaiMaster;
+        int nbChiffreAleatoireMaster = Config.nbChiffreAleatoireMaster;
 
-        Utils.exceptionNbAleatoireMaster(nbChiffreAleatoire);
+        Utils.exceptionNbAleatoireMaster(nbChiffreAleatoireMaster);
 
-        int[] tabNbSecretCpu = Utils.initialiseTableauRandomMaster(longueurDelaCombinaison, nbChiffreAleatoire);
+        int[] tabNbSecretCpu = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-        String saisieUtilisateur = Utils.saisieUtilisateurMaster(longueurDelaCombinaison, nbChiffreAleatoire);
+        String saisieUtilisateur = Utils.saisieUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-        int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDelaCombinaison, saisieUtilisateur);
+        int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieUtilisateur);
 
         //la condition est respectée, affiche le code secret
         Utils.etoileDecorationPourMaster();
@@ -29,13 +29,13 @@ public class DuelMaster {
         Utils.etoileDecorationPourMaster();
         System.out.println();
 
-        for (int i = nbEssai; i >= 0; i--) {
+        for (int i = nbEssaiMaster; i >= 0; i--) {
 
-            String essaiUtilisateur = Utils.essaiUtilisateurMaster(longueurDelaCombinaison, nbChiffreAleatoire);
+            String essaiUtilisateur = Utils.essaiUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-            int[] tabEssaiUtilisateur = Utils.initialiseTableauUtilisateur(longueurDelaCombinaison, essaiUtilisateur);
+            int[] tabEssaiUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, essaiUtilisateur);
 
-            int[] tabEssaiCpu = Utils.initialiseTableauRandomMaster(longueurDelaCombinaison, nbChiffreAleatoire);
+            int[] tabEssaiCpu = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
             Utils.algoComportementRandom(tabEssaiCpu, tabEssaiUtilisateur);
 

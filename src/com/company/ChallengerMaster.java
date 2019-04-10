@@ -11,19 +11,19 @@ public class ChallengerMaster {
 
         Logger.getLogger(ChallengerRecherche.class).info("l'utilisateur joue à mastermind en mode challenger");
 
-        int longueurDeLaCombinaison = Config.longueurDeLaCombinaisonMaster;
-        int nbEssai = Config.nbEssaiMaster;
-        int nbChiffreAleatoire = Config.nbChiffreAleatoireMaster;
+        int longueurDeLaCombinaisonMaster = Config.longueurDeLaCombinaisonMaster;
+        int nbEssaiMaster = Config.nbEssaiMaster;
+        int nbChiffreAleatoireMaster = Config.nbChiffreAleatoireMaster;
 
-        Utils.exceptionNbAleatoireMaster(nbChiffreAleatoire);
+        Utils.exceptionNbAleatoireMaster(nbChiffreAleatoireMaster);
 
-        int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaison, nbChiffreAleatoire);
+        int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-        for (int y = nbEssai; y >= 0; y--) {
+        for (int y = nbEssaiMaster; y >= 0; y--) {
 
-            String saisieUtilisateur = Utils.essaiUtilisateurMaster(longueurDeLaCombinaison, nbChiffreAleatoire);
+            String saisieUtilisateur = Utils.essaiUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-            int[] tabSaisieUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaison, saisieUtilisateur);
+            int[] tabSaisieUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieUtilisateur);
 
             if (y == 1) {
 

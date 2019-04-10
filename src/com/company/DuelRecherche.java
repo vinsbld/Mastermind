@@ -13,27 +13,27 @@ public class DuelRecherche {
 
         Logger.getLogger(DuelRecherche.class).info("L'utilisateur joue à Recherche +/- en mode Duel");
 
-        int longueurDelaCombinaison = Integer.parseInt(String.valueOf("duelRecherche.nombreCase"));
-        int nbEssai = Integer.parseInt(String.valueOf("duelRecherche.nombreEssai"));
+        int longueurDeLaCombinaisonRecherche = Config.longueurDeLaCombinaisonRecherche;
+        int nbEssaiRecherche = Config.nbEssaiRecherche;
 
-        int[] tabNbSecretCpu = Utils.initialiseTableauRandomRecherche(longueurDelaCombinaison);
+        int[] tabNbSecretCpu = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
-        String nbSecretUtilisateur = Utils.saisieUtilisateurRecherche(longueurDelaCombinaison);
+        String nbSecretUtilisateur = Utils.saisieUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
 
-        int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDelaCombinaison, nbSecretUtilisateur);
+        int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, nbSecretUtilisateur);
 
         Utils.etoileDecoration();
         System.out.println("Votre code secret est : " + Arrays.toString(tabNbSecretUtil));
         Utils.etoileDecoration();
         System.out.println();
 
-        for (int i = nbEssai; i >= 0; i--) {
+        for (int i = nbEssaiRecherche; i >= 0; i--) {
 
-            String essaiUtilisateur = Utils.essaiUtilisateurRecherche(longueurDelaCombinaison);
+            String essaiUtilisateur = Utils.essaiUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
 
-            int[] tabEssaiUtilisateur = Utils.initialiseTableauUtilisateur(longueurDelaCombinaison, essaiUtilisateur);
+            int[] tabEssaiUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, essaiUtilisateur);
 
-            int[] tabEssaiCpu = Utils.initialiseTableauRandomRecherche(longueurDelaCombinaison);
+            int[] tabEssaiCpu = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
             Utils.algoComportementRandom(tabEssaiCpu, tabEssaiUtilisateur);
 

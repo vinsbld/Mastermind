@@ -12,17 +12,17 @@ public class ChallengerRecherche {
 
         Logger.getLogger(ChallengerRecherche.class).info("l'utilisateur joue à Recherche +/- en mode challenger");
 
-        int longueurDeLaCombinaison = Integer.parseInt(System.getProperty("challenger_recherche.nombre_case"));
-        int nbEssai = Integer.parseInt(System.getProperty("challenger_recherche.nombre_essai"));
+        int longueurDeLaCombinaisonRecherche = Config.longueurDeLaCombinaisonRecherche;
+        int nbEssaiRecherche = Config.nbEssaiRecherche;
 
-        int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaison);
+        int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
 
-        for (int y = nbEssai; y >= 0; y--) {
+        for (int y = nbEssaiRecherche; y >= 0; y--) {
 
-            String saisieUtilisateur = Utils.essaiUtilisateurRecherche(longueurDeLaCombinaison);
+            String saisieUtilisateur = Utils.essaiUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
 
-            int[] tabSaisieUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaison, saisieUtilisateur);
+            int[] tabSaisieUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, saisieUtilisateur);
 
             System.out.print("Proposition : " + Arrays.toString(tabSaisieUtilisateur) + " | Réponse : ");
             Utils.algoPlusMoins(tabSaisieUtilisateur, tabSaisieOrdinateur);

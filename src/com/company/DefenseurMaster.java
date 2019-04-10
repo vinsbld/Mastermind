@@ -11,23 +11,23 @@ public class DefenseurMaster {
 
         Logger.getLogger(DefenseurMaster.class).info("L'utilisateur joue à Mastermind en mode Défenseur");
 
-        int longueurDelaCombinaison = Config.longueurDeLaCombinaisonMaster;
-        int nbEssai = Config.nbEssaiMaster;
-        int nbAleatoireAttaquant = Config.nbChiffreAleatoireMaster;
+        int longueurDeLaCombinaisonMaster = Config.longueurDeLaCombinaisonMaster;
+        int nbEssaiMaster = Config.nbEssaiMaster;
+        int nbChiffreAleatoireMaster = Config.nbChiffreAleatoireMaster;
 
-        Utils.exceptionNbAleatoireMaster(nbAleatoireAttaquant);
+        Utils.exceptionNbAleatoireMaster(nbChiffreAleatoireMaster);
 
-        int[] tabSaisieAttaquant = Utils.initialiseTableauRandomMaster(longueurDelaCombinaison, nbAleatoireAttaquant);
+        int[] tabSaisieAttaquant = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-        String saisieDefenseur = Utils.saisieUtilisateurMaster(longueurDelaCombinaison, nbAleatoireAttaquant);
+        String saisieDefenseur = Utils.saisieUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-        int[] tabSaisieDefenseur = Utils.initialiseTableauUtilisateur(longueurDelaCombinaison, saisieDefenseur);
+        int[] tabSaisieDefenseur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieDefenseur);
 
         Utils.etoileDecorationPourMaster();
         System.out.println("Votre code secret est " + Arrays.toString(tabSaisieDefenseur));
         Utils.etoileDecorationPourMaster();
 
-        for (int y = nbEssai; y >= 0; y--) {
+        for (int y = nbEssaiMaster; y >= 0; y--) {
 
             Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
 
