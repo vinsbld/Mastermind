@@ -34,7 +34,7 @@ public class Utils {
 
         do {
             Utils.etoileDecorationPourMaster();
-            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à " + nbChiffreAleatoire);
+            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 4 à " + nbChiffreAleatoire);
             Utils.etoileDecorationPourMaster();
             System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
             nbSecretUtilisateur = nb.next();
@@ -56,7 +56,7 @@ public class Utils {
 
         do {
             Utils.etoileDecorationPourMaster();
-            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à " + nbChiffreAleatoire);
+            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 4 à " + nbChiffreAleatoire);
             Utils.etoileDecorationPourMaster();
             System.out.print("saisisez votre proposition : ");
             nbSecretUtilisateur = nb.next();
