@@ -38,7 +38,7 @@ public class DuelRecherche {
 
             int[] tabEssaiCpu = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
-            Utils.algoComportementRandom(tabEssaiCpu, tabEssaiUtilisateur);
+            Utils.algoComportementRandomRecherhe(tabEssaiCpu, tabEssaiUtilisateur);
 
             System.out.println();
             Utils.etoileDecorationPourMaster();

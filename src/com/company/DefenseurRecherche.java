@@ -32,7 +32,7 @@ public class DefenseurRecherche {
 
         for (int y = nbEssaiRecherche; y >= 0; y--) {
 
-            Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
+            Utils.algoComportementRandomRecherhe(tabSaisieAttaquant, tabSaisieDefenseur);
             Utils.etoileDecoration();
             System.out.print("Proposition : " + Arrays.toString(tabSaisieAttaquant) + " | Réponse : ");
             Utils.algoPlusMoins(tabSaisieAttaquant, tabSaisieDefenseur);
