@@ -29,13 +29,13 @@ public class Menu {
         if (saisieUtilisateurJeux.equals("1")) {
             menuModeDeJeuRecherchePlusMoins();
             Logger.getLogger(Menu.class).info("l'utilisateur a saisi : "+ saisieUtilisateurJeux +" l'utilisateur a choisi de jouer au jeu Recherche +/-");
-            if (saisieUtilisateurJeux != "1") {
+            if (!saisieUtilisateurJeux.equals("1")) {
                 Logger.getLogger(Menu.class).error("l'utilisateur a saisi : "+ saisieUtilisateurJeux +" l'utilisateur ne devrait pas jouer au jeu Recherche +/-");
             }
         } else if (saisieUtilisateurJeux.equals("2")) {
             menuModeDeJeuMaster();
             Logger.getLogger(Menu.class).info("l'utilisateur a saisi : "+ saisieUtilisateurJeux +" l'utilisateur a choisi de jouer au jeu Mastermind");
-            if (saisieUtilisateurJeux != "2") {
+            if (!saisieUtilisateurJeux.equals("2")) {
                 Logger.getLogger(Menu.class).error("l'utilisateur a saisi : "+ saisieUtilisateurJeux +" l'utilisateur ne devrait pas jouer jeu Mastermind");
             }
         } else {
@@ -67,7 +67,7 @@ public class Menu {
         if (saisieUtilisateurMode.equals("1")) {
             ChallengerRecherche.algoChalengerRecherche();
             Logger.getLogger(Menu.class).info("l'utilisateur a saisi : "+ saisieUtilisateurMode +" l'utilisateur a choisi de jouer au jeu Recherche +/- en mode challenger");
-            if (saisieUtilisateurMode != "1"){
+            if (!saisieUtilisateurMode.equals("1")){
                 Logger.getLogger(Menu.class).error("l'utilisateur a saisi : "+ saisieUtilisateurMode +" l'utiisateur ne devrait pas jouer au jeu Recherche +/- en mode challenger");
             }
 
@@ -75,7 +75,7 @@ public class Menu {
         else if (saisieUtilisateurMode.equals("2")) {
             DefenseurRecherche.algoDefenseurRecherche();
             Logger.getLogger(Menu.class).info("l'utilisateur a saisi : "+ saisieUtilisateurMode +" l'utilisateur a choisi de jouer au jeu Recherche +/- en mode défenseur");
-            if (saisieUtilisateurMode != "2"){
+            if (!saisieUtilisateurMode.equals("2")){
                 Logger.getLogger(Menu.class).error("l'utilisateur a saisi : "+ saisieUtilisateurMode +" l'utiisateur ne devrait pas jouer au jeu Recherche +/- en mode défenseur");
             }
 
@@ -83,7 +83,7 @@ public class Menu {
         else if (saisieUtilisateurMode.equals("3")) {
             DuelRecherche.algoDuelRecherche();
             Logger.getLogger(Menu.class).info("l'utilisateur a saisi : "+ saisieUtilisateurMode +" l'utilisateur a choisi de jouer au jeu Recherche +/- en mode duel");
-            if (saisieUtilisateurMode != "3"){
+            if (!saisieUtilisateurMode.equals("3")){
                 Logger.getLogger(Menu.class).error("l'utilisateur a saisi : "+ saisieUtilisateurMode +" l'utiisateur ne devrait pas jouer au jeu Recherche +/- en mode duel");
             }
 
@@ -118,21 +118,21 @@ public class Menu {
         if (saisieUtilisateurMode.equals("1")) {
             ChallengerMaster.algoChallengerMaster();
             Logger.getLogger(Menu.class).info("l'utilisateur a saisi : "+ saisieUtilisateurMode +" l'utilisateur a choisi de jouer au jeu Mastermind en mode challenger");
-            if (saisieUtilisateurMode != "1"){
+            if (!saisieUtilisateurMode.equals("1")){
                 Logger.getLogger(Menu.class).error("l'utilisateur a saisi : "+ saisieUtilisateurMode +" l'utiisateur ne devrait pas jouer au jeu Mastermind en mode challenger");
             }
         }
         else if (saisieUtilisateurMode.equals("2")) {
             DefenseurMaster.algoDefenseurMaster();
             Logger.getLogger(Menu.class).info("l'utilisateur a saisi : "+ saisieUtilisateurMode +" l'utilisateur a choisi de jouer au jeu Mastermind en mode défenseur");
-            if (saisieUtilisateurMode != "2"){
+            if (!saisieUtilisateurMode.equals("2")){
                 Logger.getLogger(Menu.class).error("l'utilisateur a saisi : "+ saisieUtilisateurMode + " l'utiisateur ne devrait pas jouer au jeu Mastermind en mode défenseur");
             }
         }
         else if (saisieUtilisateurMode.equals("3")) {
             DuelMaster.algoDuelMaster();
             Logger.getLogger(Menu.class).info("l'utilisateur veut jouer à Mastermind en mode duel");
-            if (saisieUtilisateurMode != "3"){
+            if (!saisieUtilisateurMode.equals("3")){
                 Logger.getLogger(Menu.class).error("l'utilisateur a saisi : "+ saisieUtilisateurMode + " l'utiisateur ne devrait pas jouer au jeu Mastermind en mode duel");
             }
         }
@@ -161,23 +161,23 @@ public class Menu {
         if (sasisieUtilisateur.equals("1")) {
             Menu.menuModeDeJeuRecherchePlusMoins();
             Logger.getLogger(Menu.class).info("l'utilisateur a saisi : "+ sasisieUtilisateur +" l'utilisateur a choisi de rejouer au jeu Recherche +/-");
-            if (sasisieUtilisateur != "1") {
+            if (!sasisieUtilisateur.equals("1")) {
                 Logger.getLogger(Menu.class).error("l'utilisateur a saisi : "+ sasisieUtilisateur +" l'utilisateur ne devrait pas jouer au jeu Recherche +/-");
             }
 
         } else if (sasisieUtilisateur.equals("2")) {
             Menu.menuDemarrer();
             Logger.getLogger(Menu.class).info("l'utilisateur a saisi : "+ sasisieUtilisateur +" l'utilisateur a choisi de revenir au menu principal");
-            if (sasisieUtilisateur != "2") {
+            if (!sasisieUtilisateur.equals("2")) {
                 Logger.getLogger(Menu.class).error("l'utilisateur a saisi : "+ sasisieUtilisateur +" l'utilisateur ne devrait pas revenir au menu principal");
             }
 
-        } else if (sasisieUtilisateur.equals("3")) {
+        } else if (!sasisieUtilisateur.equals("3")) {
             Utils.hastagDecoration();
             System.out.println("                      FIN");
             Utils.hastagDecoration();
             Logger.getLogger(Menu.class).info("l'utilisateur a saisi "+ sasisieUtilisateur +"l'utilisateur a mis fin au jeu");
-            if (sasisieUtilisateur != "3") {
+            if (!sasisieUtilisateur.equals("3")) {
                 Logger.getLogger(Menu.class).error("l'utilisateur a saisi : "+ sasisieUtilisateur +"l'utilisateur ne devrait pas avoir mis fin au jeu");
             }
 
@@ -206,14 +206,14 @@ public class Menu {
         if (sasisieUtilisateur.equals("1")) {
             Menu.menuModeDeJeuMaster();
             Logger.getLogger(Menu.class).info("l'utilisateur a saisi : "+ sasisieUtilisateur +" l'utilisateur a choisi de rejouer au jeu Mastermind");
-            if (sasisieUtilisateur != "1") {
+            if (!sasisieUtilisateur.equals("1")) {
                 Logger.getLogger(Menu.class).error("l'utilisateur a saisi : "+ sasisieUtilisateur +" l'utilisateur ne devrait pas jouer au jeu Mastermind");
             }
 
         } else if (sasisieUtilisateur.equals("2")) {
             Menu.menuDemarrer();
             Logger.getLogger(Menu.class).info("l'utilisateur a saisi : "+ sasisieUtilisateur +" l'utilisateur a choisi de revenir au menu principal");
-            if (sasisieUtilisateur != "2") {
+            if (!sasisieUtilisateur.equals("2")) {
                 Logger.getLogger(Menu.class).error("l'utilisateur a saisi : "+ sasisieUtilisateur +" l'utilisateur ne devrait pas revenir au menu principal");
             }
 
@@ -222,7 +222,7 @@ public class Menu {
             System.out.println("                      FIN");
             Utils.hastagDecoration();
             Logger.getLogger(Menu.class).info("l'utilisateur a saisi "+ sasisieUtilisateur +"l'utilisateur a mis fin au jeu");
-            if (sasisieUtilisateur != "3") {
+            if (!sasisieUtilisateur.equals("3")) {
                 Logger.getLogger(Menu.class).error("l'utilisateur a saisi : "+ sasisieUtilisateur +"l'utilisateur ne devrait pas avoir mis fin au jeu");
             }
 

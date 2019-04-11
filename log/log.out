@@ -62,3 +62,309 @@ Démarrage de l'application
 2019-04-10 18:49:46,667 [INFO ] (Utils.java:algoMaster:85) - le chiffre 4 est bien placé
 2019-04-10 18:49:46,667 [INFO ] (Utils.java:algoMaster:85) - le chiffre 4 est bien placé
 2019-04-10 18:49:46,685 [INFO ] (Utils.java:algoMaster:98) - l'ordinateur a touver 0 présent et 4 bien palcé pour sa combinaison [4, 4, 4, 4] comparer a la défense [4, 4, 4, 4]
+2019-04-11 14:46:28,078 [INFO ] (Main.java:main:10) - Démarrage de l'application
+2019-04-11 14:48:36,573 [INFO ] (Main.java:main:10) - Démarrage de l'application
+2019-04-11 14:49:31,193 [INFO ] (ChallengerRecherche.java:algoChalengerRecherche:13) - l'utilisateur joue à Recherche +/- en mode challenger
+2019-04-11 14:49:31,201 [INFO ] (Utils.java:initialiseTableauRandomRecherche:236) - L'ordinateur a créé un chiffre mystère : [7, 7, 7]
+2019-04-11 14:49:43,188 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 359
+2019-04-11 14:49:43,191 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:49:43,192 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [3, 5, 9]
+2019-04-11 14:49:43,210 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@6591f517 et [I@345965f2
+2019-04-11 14:49:43,217 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 3 est plus petit que 7
+2019-04-11 14:49:43,217 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 5 est plus petit que 7
+2019-04-11 14:49:43,218 [INFO ] (Utils.java:algoPlusMoins:214) - le chiffre 9 est plus grand que 7
+2019-04-11 14:49:51,634 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 785
+2019-04-11 14:49:51,634 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:49:51,636 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [7, 8, 5]
+2019-04-11 14:49:51,636 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@491666ad et [I@345965f2
+2019-04-11 14:49:51,636 [INFO ] (Utils.java:algoPlusMoins:214) - le chiffre 8 est plus grand que 7
+2019-04-11 14:49:51,636 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 5 est plus petit que 7
+2019-04-11 14:50:08,538 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 767
+2019-04-11 14:50:08,538 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:50:08,538 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [7, 6, 7]
+2019-04-11 14:50:08,539 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@c8e4bb0 et [I@345965f2
+2019-04-11 14:50:08,539 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 6 est plus petit que 7
+2019-04-11 14:50:13,447 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 777
+2019-04-11 14:50:13,447 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:50:13,448 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [7, 7, 7]
+2019-04-11 14:50:13,448 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@6279cee3 et [I@345965f2
+2019-04-11 14:50:13,449 [INFO ] (ChallengerRecherche.java:algoChalengerRecherche:56) - le joueur à gagné avec la combinaison [7, 7, 7] il fallait trouver la combinaison : [7, 7, 7]
+2019-04-11 14:50:56,634 [INFO ] (Main.java:main:10) - Démarrage de l'application
+2019-04-11 14:51:05,463 [INFO ] (ChallengerRecherche.java:algoChalengerRecherche:13) - l'utilisateur joue à Recherche +/- en mode challenger
+2019-04-11 14:51:05,467 [INFO ] (Utils.java:initialiseTableauRandomRecherche:236) - L'ordinateur a créé un chiffre mystère : [9, 4, 5]
+2019-04-11 14:51:08,478 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 333
+2019-04-11 14:51:08,482 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:51:08,482 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [3, 3, 3]
+2019-04-11 14:51:08,498 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@6591f517 et [I@345965f2
+2019-04-11 14:51:08,503 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 3 est plus petit que 9
+2019-04-11 14:51:08,503 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 3 est plus petit que 4
+2019-04-11 14:51:08,504 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 3 est plus petit que 5
+2019-04-11 14:51:10,965 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 555
+2019-04-11 14:51:10,966 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:51:10,966 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [5, 5, 5]
+2019-04-11 14:51:10,966 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@491666ad et [I@345965f2
+2019-04-11 14:51:10,966 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 5 est plus petit que 9
+2019-04-11 14:51:10,967 [INFO ] (Utils.java:algoPlusMoins:214) - le chiffre 5 est plus grand que 4
+2019-04-11 14:51:26,046 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 743
+2019-04-11 14:51:26,046 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:51:26,046 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [7, 4, 3]
+2019-04-11 14:51:26,047 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@c8e4bb0 et [I@345965f2
+2019-04-11 14:51:26,048 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 7 est plus petit que 9
+2019-04-11 14:51:26,048 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 3 est plus petit que 5
+2019-04-11 14:51:51,025 [INFO ] (Main.java:main:10) - Démarrage de l'application
+2019-04-11 14:51:53,830 [INFO ] (ChallengerRecherche.java:algoChalengerRecherche:13) - l'utilisateur joue à Recherche +/- en mode challenger
+2019-04-11 14:51:53,838 [INFO ] (Utils.java:initialiseTableauRandomRecherche:236) - L'ordinateur a créé un chiffre mystère : [9, 2, 5]
+2019-04-11 14:51:56,141 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 333
+2019-04-11 14:51:56,144 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:51:56,144 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [3, 3, 3]
+2019-04-11 14:51:56,158 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@6591f517 et [I@345965f2
+2019-04-11 14:51:56,158 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 3 est plus petit que 9
+2019-04-11 14:51:56,158 [INFO ] (Utils.java:algoPlusMoins:214) - le chiffre 3 est plus grand que 2
+2019-04-11 14:51:56,158 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 3 est plus petit que 5
+2019-04-11 14:52:01,470 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 525
+2019-04-11 14:52:01,471 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:52:01,471 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [5, 2, 5]
+2019-04-11 14:52:01,471 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@491666ad et [I@345965f2
+2019-04-11 14:52:01,472 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 5 est plus petit que 9
+2019-04-11 14:52:13,630 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 111
+2019-04-11 14:52:13,632 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:52:13,632 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [1, 1, 1]
+2019-04-11 14:52:13,632 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@c8e4bb0 et [I@345965f2
+2019-04-11 14:52:13,632 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 1 est plus petit que 9
+2019-04-11 14:52:13,632 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 1 est plus petit que 2
+2019-04-11 14:52:13,632 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 1 est plus petit que 5
+2019-04-11 14:52:13,636 [INFO ] (ChallengerRecherche.java:algoChalengerRecherche:35) - le joueur n'a plus qu'un essai
+2019-04-11 14:52:43,801 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 333
+2019-04-11 14:52:43,801 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:52:43,801 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [3, 3, 3]
+2019-04-11 14:52:43,801 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@6279cee3 et [I@345965f2
+2019-04-11 14:52:43,801 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 3 est plus petit que 9
+2019-04-11 14:52:43,801 [INFO ] (Utils.java:algoPlusMoins:214) - le chiffre 3 est plus grand que 2
+2019-04-11 14:52:43,801 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 3 est plus petit que 5
+2019-04-11 14:52:43,807 [INFO ] (ChallengerRecherche.java:algoChalengerRecherche:44) - le joueur a perdu avec la proposition : [3, 3, 3] il fallait trouver : [9, 2, 5]
+2019-04-11 14:53:46,019 [INFO ] (DefenseurRecherche.java:algoDefenseurRecherche:14) - L'utilisateur joue à Recherche +/- en mode Défenseur
+2019-04-11 14:53:46,019 [INFO ] (Utils.java:initialiseTableauRandomRecherche:236) - L'ordinateur a créé un chiffre mystère : [3, 4, 5]
+2019-04-11 14:53:50,375 [INFO ] (Utils.java:saisieUtilisateurRecherche:288) - le chiffre mystère de l'utilisateur est : 989
+2019-04-11 14:53:50,376 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:53:50,376 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [9, 8, 9]
+2019-04-11 14:53:50,382 [INFO ] (Utils.java:algoComportementRandomRecherhe:299) - l'ordinateur compare les éléments des deux tableaux, attaquant : [3, 4, 5] et défenseur : [9, 8, 9]
+2019-04-11 14:53:50,382 [INFO ] (Utils.java:algoComportementRandomRecherhe:309) - le chiffre 3 est trop petit
+2019-04-11 14:53:50,386 [INFO ] (Utils.java:algoComportementRandomRecherhe:311) - le nouveau chiffre proposé par l'ordinateur est 7
+2019-04-11 14:53:50,386 [INFO ] (Utils.java:algoComportementRandomRecherhe:309) - le chiffre 4 est trop petit
+2019-04-11 14:53:50,386 [INFO ] (Utils.java:algoComportementRandomRecherhe:311) - le nouveau chiffre proposé par l'ordinateur est 4
+2019-04-11 14:53:50,386 [INFO ] (Utils.java:algoComportementRandomRecherhe:309) - le chiffre 5 est trop petit
+2019-04-11 14:53:50,386 [INFO ] (Utils.java:algoComportementRandomRecherhe:311) - le nouveau chiffre proposé par l'ordinateur est 7
+2019-04-11 14:53:50,386 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@4d826d77 et [I@61009542
+2019-04-11 14:53:50,389 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 7 est plus petit que 9
+2019-04-11 14:53:50,389 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 4 est plus petit que 8
+2019-04-11 14:53:50,389 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 7 est plus petit que 9
+2019-04-11 14:53:50,390 [INFO ] (Utils.java:algoComportementRandomRecherhe:299) - l'ordinateur compare les éléments des deux tableaux, attaquant : [7, 4, 7] et défenseur : [9, 8, 9]
+2019-04-11 14:53:50,390 [INFO ] (Utils.java:algoComportementRandomRecherhe:309) - le chiffre 7 est trop petit
+2019-04-11 14:53:50,390 [INFO ] (Utils.java:algoComportementRandomRecherhe:311) - le nouveau chiffre proposé par l'ordinateur est 8
+2019-04-11 14:53:50,390 [INFO ] (Utils.java:algoComportementRandomRecherhe:309) - le chiffre 4 est trop petit
+2019-04-11 14:53:50,390 [INFO ] (Utils.java:algoComportementRandomRecherhe:311) - le nouveau chiffre proposé par l'ordinateur est 8
+2019-04-11 14:53:50,390 [INFO ] (Utils.java:algoComportementRandomRecherhe:320) - le chiffre 8 est à la bonne place
+2019-04-11 14:53:50,390 [INFO ] (Utils.java:algoComportementRandomRecherhe:309) - le chiffre 7 est trop petit
+2019-04-11 14:53:50,390 [INFO ] (Utils.java:algoComportementRandomRecherhe:311) - le nouveau chiffre proposé par l'ordinateur est 7
+2019-04-11 14:53:50,390 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@4d826d77 et [I@61009542
+2019-04-11 14:53:50,393 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 8 est plus petit que 9
+2019-04-11 14:53:50,393 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 7 est plus petit que 9
+2019-04-11 14:53:50,393 [INFO ] (Utils.java:algoComportementRandomRecherhe:299) - l'ordinateur compare les éléments des deux tableaux, attaquant : [8, 8, 7] et défenseur : [9, 8, 9]
+2019-04-11 14:53:50,393 [INFO ] (Utils.java:algoComportementRandomRecherhe:309) - le chiffre 8 est trop petit
+2019-04-11 14:53:50,394 [INFO ] (Utils.java:algoComportementRandomRecherhe:311) - le nouveau chiffre proposé par l'ordinateur est 8
+2019-04-11 14:53:50,394 [INFO ] (Utils.java:algoComportementRandomRecherhe:320) - le chiffre 8 est à la bonne place
+2019-04-11 14:53:50,394 [INFO ] (Utils.java:algoComportementRandomRecherhe:309) - le chiffre 7 est trop petit
+2019-04-11 14:53:50,394 [INFO ] (Utils.java:algoComportementRandomRecherhe:311) - le nouveau chiffre proposé par l'ordinateur est 8
+2019-04-11 14:53:50,395 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@4d826d77 et [I@61009542
+2019-04-11 14:53:50,395 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 8 est plus petit que 9
+2019-04-11 14:53:50,395 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 8 est plus petit que 9
+2019-04-11 14:53:50,395 [INFO ] (DefenseurRecherche.java:algoDefenseurRecherche:44) - le joueur n'a plus qu'un essai
+2019-04-11 14:53:50,396 [INFO ] (Utils.java:algoComportementRandomRecherhe:299) - l'ordinateur compare les éléments des deux tableaux, attaquant : [8, 8, 8] et défenseur : [9, 8, 9]
+2019-04-11 14:53:50,396 [INFO ] (Utils.java:algoComportementRandomRecherhe:309) - le chiffre 8 est trop petit
+2019-04-11 14:53:50,396 [INFO ] (Utils.java:algoComportementRandomRecherhe:311) - le nouveau chiffre proposé par l'ordinateur est 8
+2019-04-11 14:53:50,396 [INFO ] (Utils.java:algoComportementRandomRecherhe:320) - le chiffre 8 est à la bonne place
+2019-04-11 14:53:50,397 [INFO ] (Utils.java:algoComportementRandomRecherhe:309) - le chiffre 8 est trop petit
+2019-04-11 14:53:50,397 [INFO ] (Utils.java:algoComportementRandomRecherhe:311) - le nouveau chiffre proposé par l'ordinateur est 8
+2019-04-11 14:53:50,397 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@4d826d77 et [I@61009542
+2019-04-11 14:53:50,398 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 8 est plus petit que 9
+2019-04-11 14:53:50,398 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 8 est plus petit que 9
+2019-04-11 14:53:50,400 [INFO ] (DefenseurRecherche.java:algoDefenseurRecherche:53) - le joueur a gagné !  l'odinateur a fait la proposition : [8, 8, 8]l'ordinateur n'a pas trouvé : [9, 8, 9]
+2019-04-11 14:54:30,815 [INFO ] (ChallengerRecherche.java:algoChalengerRecherche:13) - l'utilisateur joue à Recherche +/- en mode challenger
+2019-04-11 14:54:30,815 [INFO ] (Utils.java:initialiseTableauRandomRecherche:236) - L'ordinateur a créé un chiffre mystère : [1, 7, 0]
+2019-04-11 14:55:03,142 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 1E1
+2019-04-11 14:55:03,149 [WARN ] (Utils.java:essaiUtilisateurRecherche:271) - Utilisateur a saisie une mauvaise combinaison 1E1 n'est pas une proposition valide, la proposition doit comporter 3 chiffres allants de 0 à 9
+2019-04-11 14:55:10,606 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison EEEE
+2019-04-11 14:55:10,606 [WARN ] (Utils.java:essaiUtilisateurRecherche:271) - Utilisateur a saisie une mauvaise combinaison EEEE n'est pas une proposition valide, la proposition doit comporter 3 chiffres allants de 0 à 9
+2019-04-11 14:55:21,856 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 123E
+2019-04-11 14:55:21,856 [WARN ] (Utils.java:essaiUtilisateurRecherche:271) - Utilisateur a saisie une mauvaise combinaison 123E n'est pas une proposition valide, la proposition doit comporter 3 chiffres allants de 0 à 9
+2019-04-11 14:55:27,917 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison E123v
+2019-04-11 14:55:27,918 [WARN ] (Utils.java:essaiUtilisateurRecherche:271) - Utilisateur a saisie une mauvaise combinaison E123v n'est pas une proposition valide, la proposition doit comporter 3 chiffres allants de 0 à 9
+2019-04-11 14:55:33,093 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 123
+2019-04-11 14:55:33,093 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:55:33,094 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [1, 2, 3]
+2019-04-11 14:55:33,094 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@275710fc et [I@525f1e4e
+2019-04-11 14:55:33,095 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 2 est plus petit que 7
+2019-04-11 14:55:33,095 [INFO ] (Utils.java:algoPlusMoins:214) - le chiffre 3 est plus grand que 0
+2019-04-11 14:55:37,782 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison ===
+2019-04-11 14:55:37,783 [WARN ] (Utils.java:essaiUtilisateurRecherche:271) - Utilisateur a saisie une mauvaise combinaison === n'est pas une proposition valide, la proposition doit comporter 3 chiffres allants de 0 à 9
+2019-04-11 14:55:44,723 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 111
+2019-04-11 14:55:44,723 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:55:44,723 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [1, 1, 1]
+2019-04-11 14:55:44,723 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@75f9eccc et [I@525f1e4e
+2019-04-11 14:55:44,724 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 1 est plus petit que 7
+2019-04-11 14:55:44,724 [INFO ] (Utils.java:algoPlusMoins:214) - le chiffre 1 est plus grand que 0
+2019-04-11 14:56:00,778 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 232
+2019-04-11 14:56:00,779 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:56:00,780 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [2, 3, 2]
+2019-04-11 14:56:00,780 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@52aa2946 et [I@525f1e4e
+2019-04-11 14:56:00,781 [INFO ] (Utils.java:algoPlusMoins:214) - le chiffre 2 est plus grand que 1
+2019-04-11 14:56:00,781 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 3 est plus petit que 7
+2019-04-11 14:56:00,781 [INFO ] (Utils.java:algoPlusMoins:214) - le chiffre 2 est plus grand que 0
+2019-04-11 14:56:00,781 [INFO ] (ChallengerRecherche.java:algoChalengerRecherche:35) - le joueur n'a plus qu'un essai
+2019-04-11 14:56:05,448 [INFO ] (Utils.java:essaiUtilisateurRecherche:269) - l'utilisateur propose la combinaison 123
+2019-04-11 14:56:05,448 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:56:05,448 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [1, 2, 3]
+2019-04-11 14:56:05,448 [INFO ] (Utils.java:algoPlusMoins:203) - l'ordinateur compare les éléments des deux tableaux [I@4de5031f et [I@525f1e4e
+2019-04-11 14:56:05,448 [INFO ] (Utils.java:algoPlusMoins:208) - le chiffre 2 est plus petit que 7
+2019-04-11 14:56:05,449 [INFO ] (Utils.java:algoPlusMoins:214) - le chiffre 3 est plus grand que 0
+2019-04-11 14:56:05,449 [INFO ] (ChallengerRecherche.java:algoChalengerRecherche:44) - le joueur a perdu avec la proposition : [1, 2, 3] il fallait trouver : [1, 7, 0]
+2019-04-11 14:56:45,347 [INFO ] (Menu.java:menuFinRecherchePlusMoins:179) - l'utilisateur a saisi 3l'utilisateur a mis fin au jeu
+2019-04-11 14:56:45,348 [ERROR] (Menu.java:menuFinRecherchePlusMoins:181) - l'utilisateur a saisi : 3l'utilisateur ne devrait pas avoir mis fin au jeu
+2019-04-11 14:56:45,348 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) - 0 n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,348 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) - 4 n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,348 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) -  n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,349 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) - -1 n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,349 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) - 3  n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,349 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) - 321 n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,349 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) -  n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,349 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) -  n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,349 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) -  n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,349 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) -  n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,349 [INFO ] (Menu.java:menuModeDeJeuRecherchePlusMoins:69) - l'utilisateur a saisi : 1 l'utilisateur a choisi de jouer au jeu Recherche +/- en mode challenger
+2019-04-11 14:56:45,349 [ERROR] (Menu.java:menuModeDeJeuRecherchePlusMoins:71) - l'utilisateur a saisi : 1 l'utiisateur ne devrait pas jouer au jeu Recherche +/- en mode challenger
+2019-04-11 14:56:45,350 [INFO ] (Menu.java:menuFinRecherchePlusMoins:163) - l'utilisateur a saisi : 1 l'utilisateur a choisi de rejouer au jeu Recherche +/-
+2019-04-11 14:56:45,351 [ERROR] (Menu.java:menuFinRecherchePlusMoins:165) - l'utilisateur a saisi : 1 l'utilisateur ne devrait pas jouer au jeu Recherche +/-
+2019-04-11 14:56:45,351 [INFO ] (Menu.java:menuModeDeJeuRecherchePlusMoins:77) - l'utilisateur a saisi : 2 l'utilisateur a choisi de jouer au jeu Recherche +/- en mode défenseur
+2019-04-11 14:56:45,352 [ERROR] (Menu.java:menuModeDeJeuRecherchePlusMoins:79) - l'utilisateur a saisi : 2 l'utiisateur ne devrait pas jouer au jeu Recherche +/- en mode défenseur
+2019-04-11 14:56:45,352 [INFO ] (Menu.java:menuFinRecherchePlusMoins:163) - l'utilisateur a saisi : 1 l'utilisateur a choisi de rejouer au jeu Recherche +/-
+2019-04-11 14:56:45,352 [ERROR] (Menu.java:menuFinRecherchePlusMoins:165) - l'utilisateur a saisi : 1 l'utilisateur ne devrait pas jouer au jeu Recherche +/-
+2019-04-11 14:56:45,352 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) - 12 n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,352 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) -                                                                                                                                                                                                                                                                                                                                               n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,352 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) - '' n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,352 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) -   n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,352 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) -  n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,352 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) - T n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,352 [WARN ] (Menu.java:menuFinRecherchePlusMoins:186) - 4 n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu
+2019-04-11 14:56:45,352 [INFO ] (Menu.java:menuModeDeJeuRecherchePlusMoins:69) - l'utilisateur a saisi : 1 l'utilisateur a choisi de jouer au jeu Recherche +/- en mode challenger
+2019-04-11 14:56:45,352 [ERROR] (Menu.java:menuModeDeJeuRecherchePlusMoins:71) - l'utilisateur a saisi : 1 l'utiisateur ne devrait pas jouer au jeu Recherche +/- en mode challenger
+2019-04-11 14:56:45,352 [INFO ] (Menu.java:menuDemarrer:31) - l'utilisateur a saisi : 1 l'utilisateur a choisi de jouer au jeu Recherche +/-
+2019-04-11 14:56:45,352 [ERROR] (Menu.java:menuDemarrer:33) - l'utilisateur a saisi : 1 l'utilisateur ne devrait pas jouer au jeu Recherche +/-
+2019-04-11 14:57:15,974 [INFO ] (Main.java:main:10) - Démarrage de l'application
+2019-04-11 14:57:25,541 [INFO ] (DuelMaster.java:algoDuelMaster:11) - L'utilisateur joue à Mastermind en mode Duel
+2019-04-11 14:57:25,548 [INFO ] (Utils.java:initialiseTableauRandomMaster:23) - L'ordinateur a créé un chiffre mystère : [2, 1, 4, 6]
+2019-04-11 14:57:31,412 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:57:31,417 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [5, 6, 7, 8]
+2019-04-11 14:57:38,915 [INFO ] (Utils.java:essaiUtilisateurMaster:65) - L'utilisateur a essayé la combinaison : 6666
+2019-04-11 14:57:38,916 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:57:38,916 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [6, 6, 6, 6]
+2019-04-11 14:57:38,916 [INFO ] (Utils.java:initialiseTableauRandomMaster:23) - L'ordinateur a créé un chiffre mystère : [2, 6, 4, 6]
+2019-04-11 14:57:38,926 [INFO ] (Utils.java:algoComportementRandom:145) - l'ordinateur compare les éléments des deux tableaux, attaquant : [2, 6, 4, 6] et défenseur : [6, 6, 6, 6]
+2019-04-11 14:57:38,926 [INFO ] (Utils.java:algoComportementRandom:155) - le chiffre 2 est trop petit
+2019-04-11 14:57:38,927 [INFO ] (Utils.java:algoComportementRandom:157) - le nouveau chiffre proposé par l'ordinateur est 6
+2019-04-11 14:57:38,927 [INFO ] (Utils.java:algoComportementRandom:166) - le chiffre 6 est à la bonne place
+2019-04-11 14:57:38,927 [INFO ] (Utils.java:algoComportementRandom:166) - le chiffre 6 est à la bonne place
+2019-04-11 14:57:38,927 [INFO ] (Utils.java:algoComportementRandom:155) - le chiffre 4 est trop petit
+2019-04-11 14:57:38,927 [INFO ] (Utils.java:algoComportementRandom:157) - le nouveau chiffre proposé par l'ordinateur est 7
+2019-04-11 14:57:38,927 [INFO ] (Utils.java:algoComportementRandom:160) - le chiffre 7 est trop grand
+2019-04-11 14:57:38,927 [INFO ] (Utils.java:algoComportementRandom:162) - le nouveau chiffre proposé par l'ordinateur est 5
+2019-04-11 14:57:38,927 [INFO ] (Utils.java:algoComportementRandom:166) - le chiffre 6 est à la bonne place
+2019-04-11 14:57:38,935 [INFO ] (Utils.java:algoMaster:79) - l'odinateur verifie si dans sa combinaison : [2, 1, 4, 6] un nombre est bien placé ou présent 
+2019-04-11 14:57:38,936 [INFO ] (Utils.java:algoMaster:85) - le chiffre 6 est bien placé
+2019-04-11 14:57:38,951 [INFO ] (Utils.java:algoMaster:98) - l'ordinateur a touver 0 présent et 1 bien palcé pour sa combinaison [2, 1, 4, 6] comparer a la défense [6, 6, 6, 6]
+2019-04-11 14:57:38,953 [INFO ] (Utils.java:algoMaster:79) - l'odinateur verifie si dans sa combinaison : [5, 6, 7, 8] un nombre est bien placé ou présent 
+2019-04-11 14:57:38,954 [INFO ] (Utils.java:algoMaster:90) - le chiffre 5 est présent
+2019-04-11 14:57:38,954 [INFO ] (Utils.java:algoMaster:85) - le chiffre 6 est bien placé
+2019-04-11 14:57:38,954 [INFO ] (Utils.java:algoMaster:98) - l'ordinateur a touver 1 présent et 1 bien palcé pour sa combinaison [5, 6, 7, 8] comparer a la défense [6, 6, 5, 6]
+2019-04-11 14:58:21,127 [INFO ] (Utils.java:essaiUtilisateurMaster:65) - L'utilisateur a essayé la combinaison : 678
+2019-04-11 14:58:21,140 [WARN ] (Utils.java:essaiUtilisateurMaster:68) - Utilisateur a saisie une mauvaise combinaison 678 n'est pas valide, la proposition doit comporter 4 chiffres allants de 4 à 8
+2019-04-11 14:58:23,838 [INFO ] (Utils.java:essaiUtilisateurMaster:65) - L'utilisateur a essayé la combinaison : 5678
+2019-04-11 14:58:23,838 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:58:23,839 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [5, 6, 7, 8]
+2019-04-11 14:58:23,839 [INFO ] (Utils.java:initialiseTableauRandomMaster:23) - L'ordinateur a créé un chiffre mystère : [7, 7, 5, 7]
+2019-04-11 14:58:23,839 [INFO ] (Utils.java:algoComportementRandom:145) - l'ordinateur compare les éléments des deux tableaux, attaquant : [7, 7, 5, 7] et défenseur : [5, 6, 7, 8]
+2019-04-11 14:58:23,839 [INFO ] (Utils.java:algoComportementRandom:160) - le chiffre 7 est trop grand
+2019-04-11 14:58:23,840 [INFO ] (Utils.java:algoComportementRandom:162) - le nouveau chiffre proposé par l'ordinateur est 6
+2019-04-11 14:58:23,840 [INFO ] (Utils.java:algoComportementRandom:160) - le chiffre 7 est trop grand
+2019-04-11 14:58:23,840 [INFO ] (Utils.java:algoComportementRandom:162) - le nouveau chiffre proposé par l'ordinateur est 5
+2019-04-11 14:58:23,840 [INFO ] (Utils.java:algoComportementRandom:155) - le chiffre 5 est trop petit
+2019-04-11 14:58:23,841 [INFO ] (Utils.java:algoComportementRandom:157) - le nouveau chiffre proposé par l'ordinateur est 5
+2019-04-11 14:58:23,841 [INFO ] (Utils.java:algoComportementRandom:155) - le chiffre 7 est trop petit
+2019-04-11 14:58:23,841 [INFO ] (Utils.java:algoComportementRandom:157) - le nouveau chiffre proposé par l'ordinateur est 8
+2019-04-11 14:58:23,841 [INFO ] (Utils.java:algoComportementRandom:166) - le chiffre 8 est à la bonne place
+2019-04-11 14:58:23,842 [INFO ] (Utils.java:algoMaster:79) - l'odinateur verifie si dans sa combinaison : [2, 1, 4, 6] un nombre est bien placé ou présent 
+2019-04-11 14:58:23,843 [INFO ] (Utils.java:algoMaster:90) - le chiffre 6 est présent
+2019-04-11 14:58:23,843 [INFO ] (Utils.java:algoMaster:98) - l'ordinateur a touver 1 présent et 0 bien palcé pour sa combinaison [2, 1, 4, 6] comparer a la défense [5, 6, 7, 8]
+2019-04-11 14:58:23,845 [INFO ] (Utils.java:algoMaster:79) - l'odinateur verifie si dans sa combinaison : [5, 6, 7, 8] un nombre est bien placé ou présent 
+2019-04-11 14:58:23,845 [INFO ] (Utils.java:algoMaster:90) - le chiffre 5 est présent
+2019-04-11 14:58:23,845 [INFO ] (Utils.java:algoMaster:90) - le chiffre 6 est présent
+2019-04-11 14:58:23,845 [INFO ] (Utils.java:algoMaster:85) - le chiffre 8 est bien placé
+2019-04-11 14:58:23,845 [INFO ] (Utils.java:algoMaster:98) - l'ordinateur a touver 2 présent et 1 bien palcé pour sa combinaison [5, 6, 7, 8] comparer a la défense [6, 5, 5, 8]
+2019-04-11 14:58:55,116 [INFO ] (Utils.java:essaiUtilisateurMaster:65) - L'utilisateur a essayé la combinaison : 7658
+2019-04-11 14:58:55,116 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:58:55,116 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [7, 6, 5, 8]
+2019-04-11 14:58:55,117 [INFO ] (Utils.java:initialiseTableauRandomMaster:23) - L'ordinateur a créé un chiffre mystère : [4, 1, 7, 0]
+2019-04-11 14:58:55,117 [INFO ] (Utils.java:algoComportementRandom:145) - l'ordinateur compare les éléments des deux tableaux, attaquant : [4, 1, 7, 0] et défenseur : [7, 6, 5, 8]
+2019-04-11 14:58:55,117 [INFO ] (Utils.java:algoComportementRandom:155) - le chiffre 4 est trop petit
+2019-04-11 14:58:55,117 [INFO ] (Utils.java:algoComportementRandom:157) - le nouveau chiffre proposé par l'ordinateur est 5
+2019-04-11 14:58:55,117 [INFO ] (Utils.java:algoComportementRandom:155) - le chiffre 1 est trop petit
+2019-04-11 14:58:55,117 [INFO ] (Utils.java:algoComportementRandom:157) - le nouveau chiffre proposé par l'ordinateur est 1
+2019-04-11 14:58:55,118 [INFO ] (Utils.java:algoComportementRandom:160) - le chiffre 7 est trop grand
+2019-04-11 14:58:55,118 [INFO ] (Utils.java:algoComportementRandom:162) - le nouveau chiffre proposé par l'ordinateur est 5
+2019-04-11 14:58:55,118 [INFO ] (Utils.java:algoComportementRandom:166) - le chiffre 5 est à la bonne place
+2019-04-11 14:58:55,118 [INFO ] (Utils.java:algoComportementRandom:155) - le chiffre 0 est trop petit
+2019-04-11 14:58:55,118 [INFO ] (Utils.java:algoComportementRandom:157) - le nouveau chiffre proposé par l'ordinateur est 2
+2019-04-11 14:58:55,118 [INFO ] (Utils.java:algoMaster:79) - l'odinateur verifie si dans sa combinaison : [2, 1, 4, 6] un nombre est bien placé ou présent 
+2019-04-11 14:58:55,118 [INFO ] (Utils.java:algoMaster:90) - le chiffre 6 est présent
+2019-04-11 14:58:55,118 [INFO ] (Utils.java:algoMaster:98) - l'ordinateur a touver 1 présent et 0 bien palcé pour sa combinaison [2, 1, 4, 6] comparer a la défense [7, 6, 5, 8]
+2019-04-11 14:58:55,121 [INFO ] (Utils.java:algoMaster:79) - l'odinateur verifie si dans sa combinaison : [5, 6, 7, 8] un nombre est bien placé ou présent 
+2019-04-11 14:58:55,121 [INFO ] (Utils.java:algoMaster:85) - le chiffre 5 est bien placé
+2019-04-11 14:58:55,121 [INFO ] (Utils.java:algoMaster:98) - l'ordinateur a touver 0 présent et 1 bien palcé pour sa combinaison [5, 6, 7, 8] comparer a la défense [5, 1, 5, 2]
+2019-04-11 14:58:55,121 [INFO ] (DuelMaster.java:algoDuelMaster:58) - le joueur et l'ordinateur n'ont plus qu'un essai
+2019-04-11 14:59:02,959 [INFO ] (Utils.java:essaiUtilisateurMaster:65) - L'utilisateur a essayé la combinaison : 55555555
+2019-04-11 14:59:02,960 [WARN ] (Utils.java:essaiUtilisateurMaster:68) - Utilisateur a saisie une mauvaise combinaison 55555555 n'est pas valide, la proposition doit comporter 4 chiffres allants de 4 à 8
+2019-04-11 14:59:14,650 [INFO ] (Utils.java:essaiUtilisateurMaster:65) - L'utilisateur a essayé la combinaison : 88888
+2019-04-11 14:59:14,650 [WARN ] (Utils.java:essaiUtilisateurMaster:68) - Utilisateur a saisie une mauvaise combinaison 88888 n'est pas valide, la proposition doit comporter 4 chiffres allants de 4 à 8
+2019-04-11 14:59:24,029 [INFO ] (Utils.java:essaiUtilisateurMaster:65) - L'utilisateur a essayé la combinaison : 9999
+2019-04-11 14:59:24,030 [WARN ] (Utils.java:essaiUtilisateurMaster:68) - Utilisateur a saisie une mauvaise combinaison 9999 n'est pas valide, la proposition doit comporter 4 chiffres allants de 4 à 8
+2019-04-11 14:59:29,558 [INFO ] (Utils.java:essaiUtilisateurMaster:65) - L'utilisateur a essayé la combinaison : 9999
+2019-04-11 14:59:29,559 [WARN ] (Utils.java:essaiUtilisateurMaster:68) - Utilisateur a saisie une mauvaise combinaison 9999 n'est pas valide, la proposition doit comporter 4 chiffres allants de 4 à 8
+2019-04-11 14:59:34,259 [INFO ] (Utils.java:essaiUtilisateurMaster:65) - L'utilisateur a essayé la combinaison : 8888
+2019-04-11 14:59:34,260 [INFO ] (Utils.java:initialiseTableauUtilisateur:179) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-11 14:59:34,260 [INFO ] (Utils.java:initialiseTableauUtilisateur:186) - le tableau de l'utilisateur est : [8, 8, 8, 8]
+2019-04-11 14:59:34,260 [INFO ] (Utils.java:initialiseTableauRandomMaster:23) - L'ordinateur a créé un chiffre mystère : [0, 4, 3, 5]
+2019-04-11 14:59:34,260 [INFO ] (Utils.java:algoComportementRandom:145) - l'ordinateur compare les éléments des deux tableaux, attaquant : [0, 4, 3, 5] et défenseur : [8, 8, 8, 8]
+2019-04-11 14:59:34,260 [INFO ] (Utils.java:algoComportementRandom:155) - le chiffre 0 est trop petit
+2019-04-11 14:59:34,261 [INFO ] (Utils.java:algoComportementRandom:157) - le nouveau chiffre proposé par l'ordinateur est 8
+2019-04-11 14:59:34,261 [INFO ] (Utils.java:algoComportementRandom:166) - le chiffre 8 est à la bonne place
+2019-04-11 14:59:34,261 [INFO ] (Utils.java:algoComportementRandom:155) - le chiffre 4 est trop petit
+2019-04-11 14:59:34,261 [INFO ] (Utils.java:algoComportementRandom:157) - le nouveau chiffre proposé par l'ordinateur est 4
+2019-04-11 14:59:34,262 [INFO ] (Utils.java:algoComportementRandom:155) - le chiffre 3 est trop petit
+2019-04-11 14:59:34,262 [INFO ] (Utils.java:algoComportementRandom:157) - le nouveau chiffre proposé par l'ordinateur est 8
+2019-04-11 14:59:34,262 [INFO ] (Utils.java:algoComportementRandom:166) - le chiffre 8 est à la bonne place
+2019-04-11 14:59:34,262 [INFO ] (Utils.java:algoComportementRandom:155) - le chiffre 5 est trop petit
+2019-04-11 14:59:34,262 [INFO ] (Utils.java:algoComportementRandom:157) - le nouveau chiffre proposé par l'ordinateur est 8
+2019-04-11 14:59:34,262 [INFO ] (Utils.java:algoComportementRandom:166) - le chiffre 8 est à la bonne place
+2019-04-11 14:59:34,263 [INFO ] (Utils.java:algoMaster:79) - l'odinateur verifie si dans sa combinaison : [2, 1, 4, 6] un nombre est bien placé ou présent 
+2019-04-11 14:59:34,264 [INFO ] (Utils.java:algoMaster:98) - l'ordinateur a touver 0 présent et 0 bien palcé pour sa combinaison [2, 1, 4, 6] comparer a la défense [8, 8, 8, 8]
+2019-04-11 14:59:34,265 [INFO ] (Utils.java:algoMaster:79) - l'odinateur verifie si dans sa combinaison : [5, 6, 7, 8] un nombre est bien placé ou présent 
+2019-04-11 14:59:34,266 [INFO ] (Utils.java:algoMaster:85) - le chiffre 8 est bien placé
+2019-04-11 14:59:34,266 [INFO ] (Utils.java:algoMaster:98) - l'ordinateur a touver 0 présent et 1 bien palcé pour sa combinaison [5, 6, 7, 8] comparer a la défense [8, 4, 8, 8]
+2019-04-11 14:59:34,266 [INFO ] (DuelMaster.java:algoDuelMaster:68) - le joueur et l'odinateur ont tous deux perdu
+2019-04-11 14:59:34,267 [INFO ] (DuelMaster.java:algoDuelMaster:69) - le joueur devait trouver : [2, 1, 4, 6] sa dernière proposition est : [8, 8, 8, 8]
+2019-04-11 14:59:34,268 [INFO ] (DuelMaster.java:algoDuelMaster:70) - l'ordinateur devait trouver : [5, 6, 7, 8] sa dernière proposition est : [8, 4, 8, 8]
+2019-04-11 14:59:42,934 [INFO ] (Menu.java:menuFinMaster:224) - l'utilisateur a saisi 3l'utilisateur a mis fin au jeu
+2019-04-11 14:59:42,934 [ERROR] (Menu.java:menuFinMaster:226) - l'utilisateur a saisi : 3l'utilisateur ne devrait pas avoir mis fin au jeu
+2019-04-11 14:59:42,934 [INFO ] (Menu.java:menuModeDeJeuMaster:134) - l'utilisateur veut jouer à Mastermind en mode duel
+2019-04-11 14:59:42,935 [ERROR] (Menu.java:menuModeDeJeuMaster:136) - l'utilisateur a saisi : 3 l'utiisateur ne devrait pas jouer au jeu Mastermind en mode duel
+2019-04-11 14:59:42,935 [INFO ] (Menu.java:menuDemarrer:37) - l'utilisateur a saisi : 2 l'utilisateur a choisi de jouer au jeu Mastermind
+2019-04-11 14:59:42,936 [ERROR] (Menu.java:menuDemarrer:39) - l'utilisateur a saisi : 2 l'utilisateur ne devrait pas jouer jeu Mastermind

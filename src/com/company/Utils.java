@@ -187,6 +187,11 @@ public class Utils {
         return tabNbSecretUtil;
     }
 
+    //possibilité de passer en mode developpeur
+    public static void modeDev (boolean modeDev){
+        Logger.getLogger(Utils.class).info("");
+    }
+
     /************************************************************************************/
     /**************************** fonctions Recherche +/- *******************************/
 
