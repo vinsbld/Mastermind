@@ -42,6 +42,7 @@ public class DefenseurMaster {
 
             if (y == 1) {
 
+                Logger.getLogger(ChallengerMaster.class).info("le joueur n'a plus qu'un essai");
                 Utils.etoileDecorationPourMaster();
                 System.out.println("Attention dernier essai");
                 Utils.etoileDecorationPourMaster();
@@ -49,6 +50,7 @@ public class DefenseurMaster {
             }
             if (y == 0) {
 
+                Logger.getLogger(DefenseurMaster.class).info("le joueur a gagné !  l'odinateur a fait la proposition : "+ Arrays.toString(tabSaisieAttaquant)+"l'ordinateur n'a pas trouvé : "+ Arrays.toString(tabSaisieDefenseur));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                    GAGNÉ !");
@@ -60,6 +62,8 @@ public class DefenseurMaster {
             }
 
             if (Arrays.equals(tabSaisieAttaquant, tabSaisieDefenseur)) {
+
+                Logger.getLogger(DefenseurMaster.class).info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieAttaquant)+" l'odinateur a trouvé : "+ Arrays.toString(tabSaisieDefenseur));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                     PERDU !");

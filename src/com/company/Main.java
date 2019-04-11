@@ -2,7 +2,6 @@ package com.company;
 
 import org.apache.log4j.Logger;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 
 public class Main {

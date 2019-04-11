@@ -32,6 +32,7 @@ public class ChallengerRecherche {
 
             if (y == 1) {
 
+                Logger.getLogger(ChallengerMaster.class).info("le joueur n'a plus qu'un essai");
                 System.out.println();
                 Utils.etoileDecoration();
                 System.out.println("Attention dernier essai");
@@ -40,6 +41,7 @@ public class ChallengerRecherche {
             }
             if (y == 0) {
 
+                Logger.getLogger(DefenseurMaster.class).info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieUtilisateur)+" il fallait trouver : "+ Arrays.toString(tabSaisieOrdinateur));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                     PERDU !");
@@ -51,6 +53,7 @@ public class ChallengerRecherche {
             }
             if (Arrays.equals(tabSaisieOrdinateur, tabSaisieUtilisateur)) {
 
+                Logger.getLogger(ChallengerMaster.class).info("le joueur à gagné avec la combinaison "+ Arrays.toString(tabSaisieUtilisateur) +" il fallait trouver la combinaison : "+Arrays.toString(tabSaisieOrdinateur));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                    GAGNÉ !");

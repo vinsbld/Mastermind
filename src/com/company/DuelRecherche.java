@@ -55,6 +55,7 @@ public class DuelRecherche {
 
             if (i == 1) {
 
+                Logger.getLogger(DuelMaster.class).info("le joueur et l'ordinateur n'ont plus qu'un essai");
                 System.out.println();
                 Utils.etoileDecoration();
                 System.out.println("Attention dernier essai");
@@ -63,6 +64,11 @@ public class DuelRecherche {
             }
 
             if (i == 0) {
+
+                Logger.getLogger(DuelMaster.class).info("le joueur et l'odinateur ont tous deux perdu");
+
+                Logger.getLogger(DuelMaster.class).info("le joueur devait trouver : "+Arrays.toString(tabNbSecretCpu)+" sa dernière proposition est : "+Arrays.toString(tabEssaiUtilisateur));
+                Logger.getLogger(DuelMaster.class).info("l'ordinateur devait trouver : "+Arrays.toString(tabNbSecretUtil)+" sa dernière proposition est : "+Arrays.toString(tabEssaiCpu));
 
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
@@ -75,6 +81,8 @@ public class DuelRecherche {
             }
 
             if (Arrays.equals(tabEssaiCpu, tabNbSecretUtil)) {
+
+                Logger.getLogger(DuelMaster.class).info("l'odinateur a gagné avec la proosition : "+Arrays.toString(tabEssaiCpu)+" la combinaison a troouver été : "+ Arrays.toString(tabNbSecretUtil));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("             L'ordinateur a GAGNÉ !");
@@ -86,6 +94,8 @@ public class DuelRecherche {
             }
 
             if (Arrays.equals(tabEssaiUtilisateur, tabNbSecretCpu)) {
+
+                Logger.getLogger(DuelMaster.class).info("l'utilisateur a gagné avec la combinaison : "+Arrays.toString(tabEssaiUtilisateur)+" la combianison a trouver été bien : "+Arrays.toString(tabNbSecretCpu));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                    GAGNÉ !");

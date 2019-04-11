@@ -1,0 +1,64 @@
+Démarrage de l'application
+Démarrage de l'application
+2019-04-09 16:15:31,030 [INFO ] (Main.java:main:11) - Démarrage de l'application
+2019-04-10 10:23:55,822 [INFO ] (Main.java:main:11) - Démarrage de l'application
+2019-04-10 10:25:37,164 [INFO ] (Main.java:main:11) - Démarrage de l'application
+2019-04-10 10:25:59,523 [INFO ] (DefenseurMaster.java:algoDefenseurMaster:12) - L'utilisateur joue à Mastermind en mode Défenseur
+2019-04-10 10:25:59,528 [INFO ] (Utils.java:initialiseTableauRandomMaster:18) - L'ordinateur créer un chiffre mystère 
+2019-04-10 10:58:17,753 [INFO ] (Main.java:main:11) - Démarrage de l'application
+2019-04-10 18:25:59,964 [INFO ] (Main.java:main:11) - Démarrage de l'application
+2019-04-10 18:28:27,939 [INFO ] (Main.java:main:11) - Démarrage de l'application
+2019-04-10 18:30:55,963 [INFO ] (DefenseurMaster.java:algoDefenseurMaster:12) - L'utilisateur joue à Mastermind en mode Défenseur
+2019-04-10 18:30:55,976 [INFO ] (Utils.java:initialiseTableauRandomMaster:23) - L'ordinateur a créé un chiffre mystère : [3, 2, 0, 0]
+2019-04-10 18:30:59,757 [WARN ] (Utils.java:saisieUtilisateurMaster:44) - Utilisateur a saisie une mauvaise combinaison 3456789n'est pas valide, la proposition doit comporter 4 chiffres allants de 0 à 4
+2019-04-10 18:31:02,669 [WARN ] (Utils.java:saisieUtilisateurMaster:44) - Utilisateur a saisie une mauvaise combinaison SDFGHJJKn'est pas valide, la proposition doit comporter 4 chiffres allants de 0 à 4
+2019-04-10 18:31:05,555 [WARN ] (Utils.java:saisieUtilisateurMaster:44) - Utilisateur a saisie une mauvaise combinaison 1234n'est pas valide, la proposition doit comporter 4 chiffres allants de 0 à 4
+2019-04-10 18:40:13,150 [INFO ] (Main.java:main:11) - Démarrage de l'application
+2019-04-10 18:40:26,648 [INFO ] (DefenseurMaster.java:algoDefenseurMaster:12) - L'utilisateur joue à Mastermind en mode Défenseur
+2019-04-10 18:40:26,655 [INFO ] (Utils.java:initialiseTableauRandomMaster:23) - L'ordinateur a créé un chiffre mystère : [3, 1, 3, 1]
+2019-04-10 18:40:30,318 [WARN ] (Utils.java:saisieUtilisateurMaster:44) - Utilisateur a saisie une mauvaise combinaison 112345678 n'est pas valide, la proposition doit comporter 4 chiffres allants de 4 à 4
+2019-04-10 18:40:40,711 [INFO ] (Utils.java:initialiseTableauUtilisateur:150) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-10 18:40:40,712 [INFO ] (Utils.java:initialiseTableauUtilisateur:157) - le tableau de l'utilisateur est : [4, 4, 4, 4]
+2019-04-10 18:40:40,725 [INFO ] (Utils.java:algoComportementRandom:164) - l'ordinateur compare les éléments des deux tableaux, attaquant : [3, 1, 3, 1] et défenseur : [4, 4, 4, 4]
+2019-04-10 18:40:40,725 [INFO ] (Utils.java:algoComportementRandom:175) - le chiffre est trop petit, le nouveau chiffre proposé par l'ordinateur est 5
+2019-04-10 18:40:40,725 [INFO ] (Utils.java:algoComportementRandom:179) - le chiffre est trop grand, le nouveau chiffre proposé par l'ordinateur est 4
+2019-04-10 18:40:40,725 [INFO ] (Utils.java:algoComportementRandom:183) - le chiffre 4 est à la bonne place
+2019-04-10 18:40:40,725 [INFO ] (Utils.java:algoComportementRandom:175) - le chiffre est trop petit, le nouveau chiffre proposé par l'ordinateur est 5
+2019-04-10 18:40:40,725 [INFO ] (Utils.java:algoComportementRandom:179) - le chiffre est trop grand, le nouveau chiffre proposé par l'ordinateur est 4
+2019-04-10 18:40:40,725 [INFO ] (Utils.java:algoComportementRandom:183) - le chiffre 4 est à la bonne place
+2019-04-10 18:40:40,725 [INFO ] (Utils.java:algoComportementRandom:175) - le chiffre est trop petit, le nouveau chiffre proposé par l'ordinateur est 4
+2019-04-10 18:40:40,725 [INFO ] (Utils.java:algoComportementRandom:183) - le chiffre 4 est à la bonne place
+2019-04-10 18:40:40,725 [INFO ] (Utils.java:algoComportementRandom:175) - le chiffre est trop petit, le nouveau chiffre proposé par l'ordinateur est 4
+2019-04-10 18:40:40,730 [INFO ] (Utils.java:algoComportementRandom:183) - le chiffre 4 est à la bonne place
+2019-04-10 18:40:40,735 [INFO ] (Utils.java:algoMaster:79) - l'odinateur verifie si dans sa combinaison : [4, 4, 4, 4] un nombre est bien placé ou présent 
+2019-04-10 18:40:40,736 [INFO ] (Utils.java:algoMaster:85) - le chiffre 4 est bien placé
+2019-04-10 18:40:40,736 [INFO ] (Utils.java:algoMaster:85) - le chiffre 4 est bien placé
+2019-04-10 18:40:40,736 [INFO ] (Utils.java:algoMaster:85) - le chiffre 4 est bien placé
+2019-04-10 18:40:40,736 [INFO ] (Utils.java:algoMaster:85) - le chiffre 4 est bien placé
+2019-04-10 18:40:40,756 [INFO ] (Utils.java:algoMaster:98) - l'ordinateur a touver 0 présent et 4 bien palcé pour sa combinaison [4, 4, 4, 4] comparer a la défense [4, 4, 4, 4]
+2019-04-10 18:49:37,774 [INFO ] (Main.java:main:11) - Démarrage de l'application
+2019-04-10 18:49:43,298 [INFO ] (DefenseurMaster.java:algoDefenseurMaster:12) - L'utilisateur joue à Mastermind en mode Défenseur
+2019-04-10 18:49:43,308 [INFO ] (Utils.java:initialiseTableauRandomMaster:23) - L'ordinateur a créé un chiffre mystère : [2, 1, 2, 1]
+2019-04-10 18:49:46,641 [INFO ] (Utils.java:initialiseTableauUtilisateur:150) - conversion de la saisie Utilisateur en un tableau int[]
+2019-04-10 18:49:46,644 [INFO ] (Utils.java:initialiseTableauUtilisateur:157) - le tableau de l'utilisateur est : [4, 4, 4, 4]
+2019-04-10 18:49:46,648 [INFO ] (Utils.java:algoComportementRandom:164) - l'ordinateur compare les éléments des deux tableaux, attaquant : [2, 1, 2, 1] et défenseur : [4, 4, 4, 4]
+2019-04-10 18:49:46,648 [INFO ] (Utils.java:algoComportementRandom:174) - le chiffre 2 est trop petit
+2019-04-10 18:49:46,648 [INFO ] (Utils.java:algoComportementRandom:176) - le nouveau chiffre proposé par l'ordinateur est 4
+2019-04-10 18:49:46,648 [INFO ] (Utils.java:algoComportementRandom:185) - le chiffre 4 est à la bonne place
+2019-04-10 18:49:46,648 [INFO ] (Utils.java:algoComportementRandom:174) - le chiffre 1 est trop petit
+2019-04-10 18:49:46,648 [INFO ] (Utils.java:algoComportementRandom:176) - le nouveau chiffre proposé par l'ordinateur est 5
+2019-04-10 18:49:46,660 [INFO ] (Utils.java:algoComportementRandom:179) - le chiffre 5 est trop grand
+2019-04-10 18:49:46,660 [INFO ] (Utils.java:algoComportementRandom:181) - le nouveau chiffre proposé par l'ordinateur est 4
+2019-04-10 18:49:46,660 [INFO ] (Utils.java:algoComportementRandom:185) - le chiffre 4 est à la bonne place
+2019-04-10 18:49:46,660 [INFO ] (Utils.java:algoComportementRandom:174) - le chiffre 2 est trop petit
+2019-04-10 18:49:46,661 [INFO ] (Utils.java:algoComportementRandom:176) - le nouveau chiffre proposé par l'ordinateur est 4
+2019-04-10 18:49:46,661 [INFO ] (Utils.java:algoComportementRandom:185) - le chiffre 4 est à la bonne place
+2019-04-10 18:49:46,661 [INFO ] (Utils.java:algoComportementRandom:174) - le chiffre 1 est trop petit
+2019-04-10 18:49:46,661 [INFO ] (Utils.java:algoComportementRandom:176) - le nouveau chiffre proposé par l'ordinateur est 4
+2019-04-10 18:49:46,661 [INFO ] (Utils.java:algoComportementRandom:185) - le chiffre 4 est à la bonne place
+2019-04-10 18:49:46,666 [INFO ] (Utils.java:algoMaster:79) - l'odinateur verifie si dans sa combinaison : [4, 4, 4, 4] un nombre est bien placé ou présent 
+2019-04-10 18:49:46,667 [INFO ] (Utils.java:algoMaster:85) - le chiffre 4 est bien placé
+2019-04-10 18:49:46,667 [INFO ] (Utils.java:algoMaster:85) - le chiffre 4 est bien placé
+2019-04-10 18:49:46,667 [INFO ] (Utils.java:algoMaster:85) - le chiffre 4 est bien placé
+2019-04-10 18:49:46,667 [INFO ] (Utils.java:algoMaster:85) - le chiffre 4 est bien placé
+2019-04-10 18:49:46,685 [INFO ] (Utils.java:algoMaster:98) - l'ordinateur a touver 0 présent et 4 bien palcé pour sa combinaison [4, 4, 4, 4] comparer a la défense [4, 4, 4, 4]

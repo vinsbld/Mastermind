@@ -139,25 +139,6 @@ public class Utils {
         }return;
     }
 
-    /************************************************************************************/
-    /******************************* fonctions communes *********************************/
-
-    /*transforme la saisie utilisateur "String", chaque caractères
-    "charAt(j)" est en suite converti en un entier et est placé dan sun tableau de int[]
-    cela permet de pouvoir comperer le tableau Random et celui-ci*/
-    public static int[] initialiseTableauUtilisateur(int longueurDelaCombinaison, String saisieUtilisateur){
-
-        Logger.getLogger(Utils.class).info("conversion de la saisie Utilisateur en un tableau int[]");
-
-        int[] tabNbSecretUtil = new int[longueurDelaCombinaison];
-        for (int j = 0; j < tabNbSecretUtil.length; j++) {
-            int converter = Integer.parseInt(String.valueOf(saisieUtilisateur.charAt(j)));
-            tabNbSecretUtil[j] = converter;
-        }
-        Logger.getLogger(Utils.class).info("le tableau de l'utilisateur est : "+ Arrays.toString(tabNbSecretUtil));
-        return tabNbSecretUtil;
-    }
-
     /*algorithme qui defini le comportement de l'ordinateur pour trouver la combinaison secrete*/
     public static void algoComportementRandom(int tabSaisieAttaquant[], int tabSaisieDefenseur[]) {
 
@@ -185,6 +166,25 @@ public class Utils {
                 Logger.getLogger(Utils.class).info("le chiffre "+ tabSaisieAttaquant[i] +" est à la bonne place");
             }
         }
+    }
+
+    /************************************************************************************/
+    /******************************* fonctions communes *********************************/
+
+    /*transforme la saisie utilisateur "String", chaque caractères
+    "charAt(j)" est en suite converti en un entier et est placé dan sun tableau de int[]
+    cela permet de pouvoir comperer le tableau Random et celui-ci*/
+    public static int[] initialiseTableauUtilisateur(int longueurDelaCombinaison, String saisieUtilisateur){
+
+        Logger.getLogger(Utils.class).info("conversion de la saisie Utilisateur en un tableau int[]");
+
+        int[] tabNbSecretUtil = new int[longueurDelaCombinaison];
+        for (int j = 0; j < tabNbSecretUtil.length; j++) {
+            int converter = Integer.parseInt(String.valueOf(saisieUtilisateur.charAt(j)));
+            tabNbSecretUtil[j] = converter;
+        }
+        Logger.getLogger(Utils.class).info("le tableau de l'utilisateur est : "+ Arrays.toString(tabNbSecretUtil));
+        return tabNbSecretUtil;
     }
 
     /************************************************************************************/
