@@ -25,9 +25,6 @@ public class ChallengerMaster {
 
         int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-        boolean modeDev = true;
-        Utils.modeDev(modeDev,tabSaisieOrdinateur);
-
 
         for (int y =1; y <= nbEssaiMaster; y++){
 

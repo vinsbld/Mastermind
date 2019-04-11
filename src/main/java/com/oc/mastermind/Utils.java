@@ -207,7 +207,7 @@ public class Utils {
             if (tab1[i] < tab2[i]) {
                 System.out.print("+");
                 logger.info("le chiffre "+ tab1[i] +" est plus petit que "+ tab2[i]);
-                
+
             } else if (tab1[i] > tab2[i]) {
                 System.out.print("-");
                 logger.info("le chiffre "+ tab1[i] +" est plus grand que "+ tab2[i]);
