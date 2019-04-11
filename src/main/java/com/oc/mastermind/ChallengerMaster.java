@@ -1,15 +1,19 @@
-package com.company;
+package com.oc.mastermind;
 
-import org.apache.log4j.Logger;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 
 
 public class ChallengerMaster {
 
+   public static Logger logger = LogManager.getLogger();
+
     static void algoChallengerMaster() {
 
-        Logger.getLogger(ChallengerMaster.class).info("l'utilisateur joue à mastermind en mode challenger");
+        logger.info("l'utilisateur joue à mastermind en mode challenger");
 
         int longueurDeLaCombinaisonMaster = Config.longueurDeLaCombinaisonMaster;
         int nbEssaiMaster = Config.nbEssaiMaster;
@@ -33,7 +37,7 @@ public class ChallengerMaster {
 
             if (y == nbEssaiMaster - 1) {
 
-                Logger.getLogger(ChallengerMaster.class).info("le joueur n'a plus qu'un essai");
+                logger.info("le joueur n'a plus qu'un essai");
                 System.out.println();
                 Utils.etoileDecorationPourMaster();
                 System.out.println("Attention dernier essai");
@@ -42,7 +46,7 @@ public class ChallengerMaster {
             }
             if (y == nbEssaiMaster) {
 
-                Logger.getLogger(ChallengerMaster.class).info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieUtilisateur) +"  il fallait trouver : "+ Arrays.toString(tabSaisieOrdinateur));
+                logger.info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieUtilisateur) +"  il fallait trouver : "+ Arrays.toString(tabSaisieOrdinateur));
                 Utils.etoileDecorationPourMaster();
                 System.out.println();
                 Utils.etoileDecoration();
@@ -56,7 +60,7 @@ public class ChallengerMaster {
             }
             if (Arrays.equals(tabSaisieOrdinateur, tabSaisieUtilisateur)) {
 
-                Logger.getLogger(ChallengerMaster.class).info("le joueur à gagné avec la combinaison "+ Arrays.toString(tabSaisieUtilisateur) +" il fallait trouver la combinaison : "+Arrays.toString(tabSaisieOrdinateur));
+                logger.info("le joueur à gagné avec la combinaison "+ Arrays.toString(tabSaisieUtilisateur) +" il fallait trouver la combinaison : "+Arrays.toString(tabSaisieOrdinateur));
                 Utils.etoileDecorationPourMaster();
                 System.out.println();
                 Utils.etoileDecoration();

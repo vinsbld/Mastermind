@@ -1,16 +1,22 @@
-package com.company;
+package com.oc.mastermind;
 
-import org.apache.log4j.Logger;
+
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class ChallengerRecherche {
+
+    public static Logger logger = LogManager.getLogger();
+
     static Scanner nb = new Scanner(System.in);
 
     static void algoChalengerRecherche() {
 
-        Logger.getLogger(ChallengerRecherche.class).info("l'utilisateur joue à Recherche +/- en mode challenger");
+        logger.info("l'utilisateur joue à Recherche +/- en mode challenger");
 
         int longueurDeLaCombinaisonRecherche = Config.longueurDeLaCombinaisonRecherche;
         int nbEssaiRecherche = Config.nbEssaiRecherche;
@@ -19,6 +25,10 @@ public class ChallengerRecherche {
         Utils.exceptionNbEssais(nbEssaiRecherche);
 
         int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
+
+        if (Config.modeDev==1){
+            System.out.println(Arrays.toString(tabSaisieOrdinateur));
+        }
 
 
         for (int y =1; y <= nbEssaiRecherche; y++){
@@ -32,7 +42,7 @@ public class ChallengerRecherche {
 
             if (y == nbEssaiRecherche - 1) {
 
-                Logger.getLogger(ChallengerMaster.class).info("le joueur n'a plus qu'un essai");
+                logger.info("le joueur n'a plus qu'un essai");
                 System.out.println();
                 Utils.etoileDecoration();
                 System.out.println("Attention dernier essai");
@@ -41,7 +51,7 @@ public class ChallengerRecherche {
             }
             if (y == nbEssaiRecherche) {
 
-                Logger.getLogger(DefenseurMaster.class).info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieUtilisateur)+" il fallait trouver : "+ Arrays.toString(tabSaisieOrdinateur));
+                logger.info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieUtilisateur)+" il fallait trouver : "+ Arrays.toString(tabSaisieOrdinateur));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                     PERDU !");
@@ -53,7 +63,7 @@ public class ChallengerRecherche {
             }
             if (Arrays.equals(tabSaisieOrdinateur, tabSaisieUtilisateur)) {
 
-                Logger.getLogger(ChallengerMaster.class).info("le joueur à gagné avec la combinaison "+ Arrays.toString(tabSaisieUtilisateur) +" il fallait trouver la combinaison : "+Arrays.toString(tabSaisieOrdinateur));
+                logger.info("le joueur à gagné avec la combinaison "+ Arrays.toString(tabSaisieUtilisateur) +" il fallait trouver la combinaison : "+Arrays.toString(tabSaisieOrdinateur));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                    GAGNÉ !");

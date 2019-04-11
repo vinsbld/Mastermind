@@ -1,4 +1,4 @@
-package com.company;
+package com.oc.mastermind;
 
 import org.apache.log4j.Logger;
 

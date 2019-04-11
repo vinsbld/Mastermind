@@ -1,4 +1,4 @@
-package com.company;
+package com.oc.mastermind;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -37,7 +37,7 @@ public class Config {
             longueurDeLaCombinaisonRecherche = Integer.parseInt(prop.getProperty("recherche.nombre_case"));
             nbEssaiRecherche = Integer.parseInt(prop.getProperty("recherche.nombre_essai"));
 
-            modeDev = Integer.parseInt(prop.getProperty(""));
+            
 
 
         } catch (IOException ex) {
