@@ -203,7 +203,7 @@ public class Utils {
     si la valeur esy la même affiche "="*/
     public static void algoPlusMoins(int[] tab1, int[] tab2) {
 
-        Logger.getLogger(Utils.class).info("l'ordinateur compare les éléments des deux tableaux "+ tab1 + " et "+ tab2);
+        Logger.getLogger(Utils.class).info("l'ordinateur compare les éléments des deux tableaux "+ Arrays.toString(tab1) + " et "+ Arrays.toString(tab2));
 
         for (int i = 0; i < tab1.length; i++) {
             if (tab1[i] < tab2[i]) {
