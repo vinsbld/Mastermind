@@ -30,7 +30,7 @@ public class DuelMaster {
         Utils.etoileDecorationPourMaster();
         System.out.println();
 
-        for (int i = nbEssaiMaster; i >= 0; i--) {
+        for (int i = 1; i <= nbEssaiMaster; i++) {
 
             String essaiUtilisateur = Utils.essaiUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
@@ -53,7 +53,7 @@ public class DuelMaster {
             Utils.etoileDecorationPourMaster();
             System.out.println();
 
-            if (i == 1) {
+            if (i == nbEssaiMaster - 1) {
 
                 Logger.getLogger(DuelMaster.class).info("le joueur et l'ordinateur n'ont plus qu'un essai");
                 System.out.println();
@@ -63,7 +63,7 @@ public class DuelMaster {
                 System.out.println();
             }
 
-            if (i == 0) {
+            if (i == nbEssaiMaster) {
 
                 Logger.getLogger(DuelMaster.class).info("le joueur et l'odinateur ont tous deux perdu");
                 Logger.getLogger(DuelMaster.class).info("le joueur devait trouver : "+Arrays.toString(tabNbSecretCpu)+" sa dernière proposition est : "+Arrays.toString(tabEssaiUtilisateur));

@@ -30,7 +30,7 @@ public class DuelRecherche {
         Utils.etoileDecoration();
         System.out.println();
 
-        for (int i = nbEssaiRecherche; i >= 0; i--) {
+        for (int i = 1;i <= nbEssaiRecherche; i++) {
 
             String essaiUtilisateur = Utils.essaiUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
 
@@ -53,7 +53,7 @@ public class DuelRecherche {
             Utils.etoileDecorationPourMaster();
             System.out.println();
 
-            if (i == 1) {
+            if (i == nbEssaiRecherche - 1) {
 
                 Logger.getLogger(DuelMaster.class).info("le joueur et l'ordinateur n'ont plus qu'un essai");
                 System.out.println();
@@ -63,7 +63,7 @@ public class DuelRecherche {
                 System.out.println();
             }
 
-            if (i == 0) {
+            if (i == nbEssaiRecherche) {
 
                 Logger.getLogger(DuelMaster.class).info("le joueur et l'odinateur ont tous deux perdu");
 

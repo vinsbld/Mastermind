@@ -188,8 +188,11 @@ public class Utils {
     }
 
     //possibilité de passer en mode developpeur
-    public static void modeDev (boolean modeDev){
-        Logger.getLogger(Utils.class).info("");
+    public static void modeDev (boolean modeDev, int tab[]){
+        Logger.getLogger(Utils.class).info("le mode developpeur est activé");
+        if (modeDev==true) {
+            System.out.println(Arrays.toString(tab));
+        }
     }
 
     /************************************************************************************/

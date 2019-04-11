@@ -21,13 +21,17 @@ public class ChallengerMaster {
 
         int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-        for (int y = nbEssaiMaster; y >= 0; y--) {
+        boolean modeDev = true;
+        Utils.modeDev(modeDev,tabSaisieOrdinateur);
+
+
+        for (int y =1; y <= nbEssaiMaster; y++){
 
             String saisieUtilisateur = Utils.essaiUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
             int[] tabSaisieUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieUtilisateur);
 
-            if (y == 1) {
+            if (y == nbEssaiMaster - 1) {
 
                 Logger.getLogger(ChallengerMaster.class).info("le joueur n'a plus qu'un essai");
                 System.out.println();
@@ -36,7 +40,7 @@ public class ChallengerMaster {
                 Utils.etoileDecorationPourMaster();
                 System.out.println();
             }
-            if (y == 0) {
+            if (y == nbEssaiMaster) {
 
                 Logger.getLogger(ChallengerMaster.class).info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieUtilisateur) +"  il fallait trouver : "+ Arrays.toString(tabSaisieOrdinateur));
                 Utils.etoileDecorationPourMaster();

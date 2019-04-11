@@ -30,7 +30,7 @@ public class DefenseurRecherche {
         System.out.println("Votre code secret est " + Arrays.toString(tabSaisieDefenseur));
         Utils.etoileDecoration();
 
-        for (int y = nbEssaiRecherche; y >= 0; y--) {
+        for (int y = 1; y <= nbEssaiRecherche; y++) {
 
             Utils.algoComportementRandomRecherhe(tabSaisieAttaquant, tabSaisieDefenseur);
             Utils.etoileDecoration();
@@ -39,7 +39,7 @@ public class DefenseurRecherche {
             Utils.etoileDecoration();
             System.out.println();
 
-            if (y == 1) {
+            if (y == nbEssaiRecherche - 1) {
 
                 Logger.getLogger(ChallengerMaster.class).info("le joueur n'a plus qu'un essai");
                 Utils.etoileDecoration();
@@ -48,7 +48,7 @@ public class DefenseurRecherche {
                 System.out.println();
             }
 
-            if (y == 0) {
+            if (y == nbEssaiRecherche) {
 
                 Logger.getLogger(DefenseurMaster.class).info("le joueur a gagné !  l'odinateur a fait la proposition : "+ Arrays.toString(tabSaisieAttaquant)+"l'ordinateur n'a pas trouvé : "+ Arrays.toString(tabSaisieDefenseur));
                 Utils.etoileDecoration();

@@ -21,7 +21,7 @@ public class ChallengerRecherche {
         int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
 
-        for (int y = nbEssaiRecherche; y >= 0; y--) {
+        for (int y =1; y <= nbEssaiRecherche; y++){
 
             String saisieUtilisateur = Utils.essaiUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
 
@@ -30,7 +30,7 @@ public class ChallengerRecherche {
             System.out.print("Proposition : " + Arrays.toString(tabSaisieUtilisateur) + " | Réponse : ");
             Utils.algoPlusMoins(tabSaisieUtilisateur, tabSaisieOrdinateur);
 
-            if (y == 1) {
+            if (y == nbEssaiRecherche - 1) {
 
                 Logger.getLogger(ChallengerMaster.class).info("le joueur n'a plus qu'un essai");
                 System.out.println();
@@ -39,7 +39,7 @@ public class ChallengerRecherche {
                 Utils.etoileDecoration();
                 System.out.println();
             }
-            if (y == 0) {
+            if (y == nbEssaiRecherche) {
 
                 Logger.getLogger(DefenseurMaster.class).info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieUtilisateur)+" il fallait trouver : "+ Arrays.toString(tabSaisieOrdinateur));
                 Utils.etoileDecoration();
