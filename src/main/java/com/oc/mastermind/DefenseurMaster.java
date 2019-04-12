@@ -29,9 +29,7 @@ public class DefenseurMaster {
 
         int[] tabSaisieDefenseur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieDefenseur);
 
-        if (Config.modeDev == 1){
-            System.out.println("le code à trouver est : "+Arrays.toString(tabSaisieDefenseur));
-        }
+        //pas de mode developpeur pour ce mode car le code secret de l'utilisateur est affiché par défaut
         
         Utils.etoileDecorationPourMaster();
         System.out.println("Votre code secret est " + Arrays.toString(tabSaisieDefenseur));

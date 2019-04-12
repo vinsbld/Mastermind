@@ -26,7 +26,7 @@ public class ChallengerMaster {
         int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
         if (Config.modeDev==1){
-            System.out.println("le code à trouver est : "+Arrays.toString(tabSaisieOrdinateur));
+            System.out.println("le code de l'odinateur est : "+Arrays.toString(tabSaisieOrdinateur));
         }
 
         for (int y =1; y <= nbEssaiMaster; y++){

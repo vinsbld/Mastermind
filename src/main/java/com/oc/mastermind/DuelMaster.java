@@ -31,7 +31,7 @@ public class DuelMaster {
 
         int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieUtilisateur);
 
-        //pas de mode dev pour l'utilisateur car son code secret et affiché par défaut
+        //pas de mode developpeur pour l'utilisateur car son code secret et affiché par défaut
 
         //la condition est respectée, affiche le code secret
         Utils.etoileDecorationPourMaster();

@@ -33,7 +33,7 @@ public class DuelRecherche {
 
         int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, nbSecretUtilisateur);
 
-        //pas de mode dev pour l'utilisateur car son code secret et affiché par défaut
+        //pas de mode developpeur pour l'utilisateur car son code secret et affiché par défaut
 
         Utils.etoileDecoration();
         System.out.println("Votre code secret est : " + Arrays.toString(tabNbSecretUtil));
