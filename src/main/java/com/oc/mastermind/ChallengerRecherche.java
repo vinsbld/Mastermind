@@ -27,7 +27,7 @@ public class ChallengerRecherche {
         int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
         if (Config.modeDev==1){
-            System.out.println(Arrays.toString(tabSaisieOrdinateur));
+            System.out.println("le code à trouver est : "+Arrays.toString(tabSaisieOrdinateur));
         }
 
 

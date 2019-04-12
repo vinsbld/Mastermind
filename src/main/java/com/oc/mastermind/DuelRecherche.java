@@ -1,17 +1,21 @@
 package com.oc.mastermind;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
-import java.util.Random;
+
 import java.util.Scanner;
 
 public class DuelRecherche {
+    
     static Scanner nb = new Scanner(System.in);
+
+    public static Logger logger = LogManager.getLogger();
 
     static void algoDuelRecherche() {
 
-        Logger.getLogger(DuelRecherche.class).info("L'utilisateur joue à Recherche +/- en mode Duel");
+        logger.info("L'utilisateur joue à Recherche +/- en mode Duel");
 
         int longueurDeLaCombinaisonRecherche = Config.longueurDeLaCombinaisonRecherche;
         int nbEssaiRecherche = Config.nbEssaiRecherche;
@@ -21,9 +25,15 @@ public class DuelRecherche {
 
         int[] tabNbSecretCpu = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
+        if (Config.modeDev == 1){
+            System.out.println("le code secret ordinateur est : "+Arrays.toString(tabNbSecretCpu));
+        }
+
         String nbSecretUtilisateur = Utils.saisieUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
 
         int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, nbSecretUtilisateur);
+
+        //pas de mode dev pour l'utilisateur car son code secret et affiché par défaut
 
         Utils.etoileDecoration();
         System.out.println("Votre code secret est : " + Arrays.toString(tabNbSecretUtil));
@@ -55,7 +65,7 @@ public class DuelRecherche {
 
             if (i == nbEssaiRecherche - 1) {
 
-                Logger.getLogger(DuelMaster.class).info("le joueur et l'ordinateur n'ont plus qu'un essai");
+                logger.info("le joueur et l'ordinateur n'ont plus qu'un essai");
                 System.out.println();
                 Utils.etoileDecoration();
                 System.out.println("Attention dernier essai");
@@ -65,10 +75,10 @@ public class DuelRecherche {
 
             if (i == nbEssaiRecherche) {
 
-                Logger.getLogger(DuelMaster.class).info("le joueur et l'odinateur ont tous deux perdu");
+                logger.info("le joueur et l'odinateur ont tous deux perdu");
 
-                Logger.getLogger(DuelMaster.class).info("le joueur devait trouver : "+Arrays.toString(tabNbSecretCpu)+" sa dernière proposition est : "+Arrays.toString(tabEssaiUtilisateur));
-                Logger.getLogger(DuelMaster.class).info("l'ordinateur devait trouver : "+Arrays.toString(tabNbSecretUtil)+" sa dernière proposition est : "+Arrays.toString(tabEssaiCpu));
+                logger.info("le joueur devait trouver : "+Arrays.toString(tabNbSecretCpu)+" sa dernière proposition est : "+Arrays.toString(tabEssaiUtilisateur));
+                logger.info("l'ordinateur devait trouver : "+Arrays.toString(tabNbSecretUtil)+" sa dernière proposition est : "+Arrays.toString(tabEssaiCpu));
 
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
@@ -82,7 +92,7 @@ public class DuelRecherche {
 
             if (Arrays.equals(tabEssaiCpu, tabNbSecretUtil)) {
 
-                Logger.getLogger(DuelMaster.class).info("l'odinateur a gagné avec la proosition : "+Arrays.toString(tabEssaiCpu)+" la combinaison a troouver été : "+ Arrays.toString(tabNbSecretUtil));
+                logger.info("l'odinateur a gagné avec la proosition : "+Arrays.toString(tabEssaiCpu)+" la combinaison a troouver été : "+ Arrays.toString(tabNbSecretUtil));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("             L'ordinateur a GAGNÉ !");
@@ -95,7 +105,7 @@ public class DuelRecherche {
 
             if (Arrays.equals(tabEssaiUtilisateur, tabNbSecretCpu)) {
 
-                Logger.getLogger(DuelMaster.class).info("l'utilisateur a gagné avec la combinaison : "+Arrays.toString(tabEssaiUtilisateur)+" la combianison a trouver été bien : "+Arrays.toString(tabNbSecretCpu));
+                logger.info("l'utilisateur a gagné avec la combinaison : "+Arrays.toString(tabEssaiUtilisateur)+" la combianison a trouver été bien : "+Arrays.toString(tabNbSecretCpu));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                    GAGNÉ !");

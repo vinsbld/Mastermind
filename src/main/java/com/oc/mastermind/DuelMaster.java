@@ -1,14 +1,17 @@
 package com.oc.mastermind;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 
 public class DuelMaster {
 
+    public static Logger logger = LogManager.getLogger();
+
     static void algoDuelMaster() {
 
-        Logger.getLogger(DuelMaster.class).info("L'utilisateur joue à Mastermind en mode Duel");
+        logger.info("L'utilisateur joue à Mastermind en mode Duel");
 
         int longueurDeLaCombinaisonMaster = Config.longueurDeLaCombinaisonMaster;
         int nbEssaiMaster = Config.nbEssaiMaster;
@@ -20,9 +23,15 @@ public class DuelMaster {
 
         int[] tabNbSecretCpu = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
+        if (Config.modeDev == 1){
+            System.out.println("le code secret ordinateur est : "+Arrays.toString(tabNbSecretCpu));
+        }
+
         String saisieUtilisateur = Utils.saisieUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
         int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieUtilisateur);
+
+        //pas de mode dev pour l'utilisateur car son code secret et affiché par défaut
 
         //la condition est respectée, affiche le code secret
         Utils.etoileDecorationPourMaster();
@@ -55,7 +64,7 @@ public class DuelMaster {
 
             if (i == nbEssaiMaster - 1) {
 
-                Logger.getLogger(DuelMaster.class).info("le joueur et l'ordinateur n'ont plus qu'un essai");
+                logger.info("le joueur et l'ordinateur n'ont plus qu'un essai");
                 System.out.println();
                 Utils.etoileDecorationPourMaster();
                 System.out.println("Attention dernier essai");
@@ -65,9 +74,9 @@ public class DuelMaster {
 
             if (i == nbEssaiMaster) {
 
-                Logger.getLogger(DuelMaster.class).info("le joueur et l'odinateur ont tous deux perdu");
-                Logger.getLogger(DuelMaster.class).info("le joueur devait trouver : "+Arrays.toString(tabNbSecretCpu)+" sa dernière proposition est : "+Arrays.toString(tabEssaiUtilisateur));
-                Logger.getLogger(DuelMaster.class).info("l'ordinateur devait trouver : "+Arrays.toString(tabNbSecretUtil)+" sa dernière proposition est : "+Arrays.toString(tabEssaiCpu));
+                logger.info("le joueur et l'odinateur ont tous deux perdu");
+                logger.info("le joueur devait trouver : "+Arrays.toString(tabNbSecretCpu)+" sa dernière proposition est : "+Arrays.toString(tabEssaiUtilisateur));
+                logger.info("l'ordinateur devait trouver : "+Arrays.toString(tabNbSecretUtil)+" sa dernière proposition est : "+Arrays.toString(tabEssaiCpu));
 
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
@@ -80,7 +89,7 @@ public class DuelMaster {
             }
             if (Arrays.equals(tabEssaiCpu, tabNbSecretUtil)) {
 
-                Logger.getLogger(DuelMaster.class).info("l'odinateur a gagné avec la proosition : "+Arrays.toString(tabEssaiCpu)+" la combinaison a troouver été : "+ Arrays.toString(tabNbSecretUtil));
+                logger.info("l'odinateur a gagné avec la proosition : "+Arrays.toString(tabEssaiCpu)+" la combinaison a troouver été : "+ Arrays.toString(tabNbSecretUtil));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("             L'ordinateur a GAGNÉ !");
@@ -92,7 +101,7 @@ public class DuelMaster {
             }
             if (Arrays.equals(tabEssaiUtilisateur, tabNbSecretCpu)) {
 
-                Logger.getLogger(DuelMaster.class).info("l'utilisateur a gagné avec la combinaison : "+Arrays.toString(tabEssaiUtilisateur)+" la combianison a trouver été bien : "+Arrays.toString(tabNbSecretCpu));
+                logger.info("l'utilisateur a gagné avec la combinaison : "+Arrays.toString(tabEssaiUtilisateur)+" la combianison a trouver été bien : "+Arrays.toString(tabNbSecretCpu));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                    GAGNÉ !");

@@ -1,15 +1,18 @@
 package com.oc.mastermind;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 
 
 public class DefenseurMaster {
 
+    public static Logger logger = LogManager.getLogger();
+
     static void algoDefenseurMaster() {
 
-        Logger.getLogger(DefenseurMaster.class).info("L'utilisateur joue à Mastermind en mode Défenseur");
+        logger.info("L'utilisateur joue à Mastermind en mode Défenseur");
 
         int longueurDeLaCombinaisonMaster = Config.longueurDeLaCombinaisonMaster;
         int nbEssaiMaster = Config.nbEssaiMaster;
@@ -26,6 +29,10 @@ public class DefenseurMaster {
 
         int[] tabSaisieDefenseur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieDefenseur);
 
+        if (Config.modeDev == 1){
+            System.out.println("le code à trouver est : "+Arrays.toString(tabSaisieDefenseur));
+        }
+        
         Utils.etoileDecorationPourMaster();
         System.out.println("Votre code secret est " + Arrays.toString(tabSaisieDefenseur));
         Utils.etoileDecorationPourMaster();
@@ -42,7 +49,7 @@ public class DefenseurMaster {
 
             if (y == nbEssaiMaster - 1) {
 
-                Logger.getLogger(ChallengerMaster.class).info("le joueur n'a plus qu'un essai");
+                logger.info("le joueur n'a plus qu'un essai");
                 Utils.etoileDecorationPourMaster();
                 System.out.println("Attention dernier essai");
                 Utils.etoileDecorationPourMaster();
@@ -50,7 +57,7 @@ public class DefenseurMaster {
             }
             if (y == nbEssaiMaster) {
 
-                Logger.getLogger(DefenseurMaster.class).info("le joueur a gagné !  l'odinateur a fait la proposition : "+ Arrays.toString(tabSaisieAttaquant)+"l'ordinateur n'a pas trouvé : "+ Arrays.toString(tabSaisieDefenseur));
+                logger.info("le joueur a gagné !  l'odinateur a fait la proposition : "+ Arrays.toString(tabSaisieAttaquant)+"l'ordinateur n'a pas trouvé : "+ Arrays.toString(tabSaisieDefenseur));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                    GAGNÉ !");
@@ -63,7 +70,7 @@ public class DefenseurMaster {
 
             if (Arrays.equals(tabSaisieAttaquant, tabSaisieDefenseur)) {
 
-                Logger.getLogger(DefenseurMaster.class).info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieAttaquant)+" l'odinateur a trouvé : "+ Arrays.toString(tabSaisieDefenseur));
+                logger.info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieAttaquant)+" l'odinateur a trouvé : "+ Arrays.toString(tabSaisieDefenseur));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                     PERDU !");
