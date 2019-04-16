@@ -1,5 +1,8 @@
 package com.oc.mastermind;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,6 +18,7 @@ public class Config {
     static int nbEssaiRecherche;
 
     static int modeDev;
+    public static Logger logger = LogManager.getLogger();
 
 
     static void load(String fileName) {
@@ -23,11 +27,12 @@ public class Config {
         InputStream input = null;
 
         try {
-
-            input = new FileInputStream(fileName);
+            //logger.debug(ClassLoader.getSystemResource(".").getPath()+fileName);
+            input = new FileInputStream(ClassLoader.getSystemResource(".").getPath()+fileName);
 
             // load a properties file
             prop.load(input);
+            //logger.debug("normalement c'est 4 ? "+ prop.getProperty("master_nombre_case"));
 
             // get the property value and print it out
             longueurDeLaCombinaisonMaster = Integer.parseInt(prop.getProperty("master_nombre_case"));

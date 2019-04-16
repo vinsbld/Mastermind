@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         logger.info("Démarrage de l'application");
-        Config.load("resources/config.properties");
+        Config.load("config.properties");
         Menu.menuDemarrer();
     }
 }
