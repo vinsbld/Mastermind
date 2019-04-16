@@ -62,7 +62,7 @@ public class DefenseurRecherche {
                 System.out.println("                    GAGNÉ !");
                 Utils.hastagDecoration();
                 Utils.etoileDecoration();
-                System.out.println("l'ordinateur n'a pas trouver le code secret");
+                System.out.println("l'ordinateur n'a pas trouvé le code secret");
                 System.out.println("La combinaison secrette était : " + Arrays.toString(tabSaisieDefenseur));
                 break;
             }
@@ -75,7 +75,7 @@ public class DefenseurRecherche {
                 System.out.println("                     PERDU !");
                 Utils.hastagDecoration();
                 Utils.etoileDecoration();
-                System.out.println("l'ordinateur a trouver la combinaison secrete");
+                System.out.println("l'ordinateur a trouvé la combinaison secrete");
                 System.out.println("La combinaison été : " + Arrays.toString(tabSaisieDefenseur));
                 break;
             }

@@ -108,7 +108,7 @@ public class DuelMaster {
                 System.out.println("                    GAGNÉ !");
                 Utils.hastagDecoration();
                 Utils.etoileDecoration();
-                System.out.println("Vous avez trouver le code secret de l'ordinateur !");
+                System.out.println("Vous avez trouvé le code secret de l'ordinateur !");
                 System.out.println("Le code secret de l'ordinateur était : " + Arrays.toString(tabNbSecretCpu));
             }
         }

@@ -53,7 +53,7 @@ public class ChallengerRecherche {
                 System.out.println("                     PERDU !");
                 Utils.hastagDecoration();
                 Utils.etoileDecoration();
-                System.out.println("Vous n'avez pas trouver la combinaison secrete");
+                System.out.println("Vous n'avez pas trouvé la combinaison secrete");
                 System.out.println("La combinaison secrette était : " + Arrays.toString(tabSaisieOrdinateur));
                 break;
             }
@@ -65,7 +65,7 @@ public class ChallengerRecherche {
                 System.out.println("                    GAGNÉ !");
                 Utils.hastagDecoration();
                 Utils.etoileDecoration();
-                System.out.println("Vous avez trouver la combinaison secrete !");
+                System.out.println("Vous avez trouvé la combinaison secrete !");
                 System.out.println("La combinaison été : " + Arrays.toString(tabSaisieOrdinateur));
             }
         }
