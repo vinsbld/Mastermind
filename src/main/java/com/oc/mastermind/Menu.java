@@ -64,7 +64,7 @@ public class Menu {
         Utils.etoileDecoration();
 
         if (saisieUtilisateurMode.equals("1")) {
-            Config.ChallengerRecherche.algoChalengerRecherche();
+            ChallengerRecherche.algoChalengerRecherche();
             logger.info("l'utilisateur a saisi : "+ saisieUtilisateurMode +" l'utilisateur a choisi de jouer au jeu Recherche +/- en mode challenger");
 
 
