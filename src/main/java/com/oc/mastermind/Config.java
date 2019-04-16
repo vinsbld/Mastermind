@@ -1,8 +1,5 @@
 package com.oc.mastermind;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +15,7 @@ public class Config {
     static int nbEssaiRecherche;
 
     static int modeDev;
-    public static Logger logger = LogManager.getLogger();
+    //public static Logger logger = LogManager.getLogger();
 
 
     static void load(String fileName) {

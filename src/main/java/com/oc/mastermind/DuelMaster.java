@@ -24,7 +24,7 @@ public class DuelMaster {
 
         int[] tabNbSecretCpu = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-        if (Config.modeDev == 1){
+        if (modeDev == 1){
             System.out.println("le code secret ordinateur est : "+Arrays.toString(tabNbSecretCpu));
         }
 

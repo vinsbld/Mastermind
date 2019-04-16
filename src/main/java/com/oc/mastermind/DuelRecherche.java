@@ -26,7 +26,7 @@ public class DuelRecherche {
 
         int[] tabNbSecretCpu = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
-        if (Config.modeDev == 1){
+        if (modeDev == 1){
             System.out.println("le code secret ordinateur est : "+Arrays.toString(tabNbSecretCpu));
         }
 

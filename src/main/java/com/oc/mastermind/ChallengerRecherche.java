@@ -22,7 +22,7 @@ public class ChallengerRecherche {
 
         int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
-        if (Config.modeDev==1){
+        if (modeDev == 1){
             System.out.println("le code secret de l'ordinateur est : "+Arrays.toString(tabSaisieOrdinateur));
         }
 
