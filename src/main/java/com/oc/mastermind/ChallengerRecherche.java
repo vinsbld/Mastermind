@@ -1,18 +1,13 @@
 package com.oc.mastermind;
 
-
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class ChallengerRecherche {
 
     public static Logger logger = LogManager.getLogger();
-
-    static Scanner nb = new Scanner(System.in);
 
     static void algoChalengerRecherche() {
 
@@ -77,4 +72,3 @@ public class ChallengerRecherche {
         Menu.menuFinRecherchePlusMoins();
     }
 }
-

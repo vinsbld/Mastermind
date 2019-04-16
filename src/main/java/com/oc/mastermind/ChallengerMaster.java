@@ -18,6 +18,7 @@ public class ChallengerMaster {
         int longueurDeLaCombinaisonMaster = Config.longueurDeLaCombinaisonMaster;
         int nbEssaiMaster = Config.nbEssaiMaster;
         int nbChiffreAleatoireMaster = Config.nbChiffreAleatoireMaster;
+        int modeDev = Config.modeDev;
 
         Utils.exceptionLongueur(longueurDeLaCombinaisonMaster);
         Utils.exceptionNbEssais(nbEssaiMaster);
