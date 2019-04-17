@@ -1,6 +1,12 @@
 package com.oc.mastermind;
 
 
+import com.oc.mastermind.mastermind.ChallengerMaster;
+import com.oc.mastermind.mastermind.DefenseurMaster;
+import com.oc.mastermind.mastermind.DuelMaster;
+import com.oc.mastermind.recherche.ChallengerRecherche;
+import com.oc.mastermind.recherche.DefenseurRecherche;
+import com.oc.mastermind.recherche.DuelRecherche;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -44,7 +50,7 @@ public class Menu {
         }
     }
 
-    static void menuModeDeJeuRecherchePlusMoins() {
+   public static void menuModeDeJeuRecherchePlusMoins() {
 
         System.out.println("*         CHOISISSEZ UN MODE DE JEUX          *");
         Utils.etoileDecoration();
@@ -85,7 +91,7 @@ public class Menu {
         }
     }
 
-    static void menuModeDeJeuMaster() {
+   public static void menuModeDeJeuMaster() {
 
         System.out.println("*         CHOISISSEZ UN MODE DE JEUX          *");
         Utils.etoileDecoration();
@@ -126,7 +132,7 @@ public class Menu {
         }
     }
 
-    static void menuFinRecherchePlusMoins() {
+   public static void menuFinRecherchePlusMoins() {
 
         Utils.hastagDecoration();
         System.out.println();
@@ -165,7 +171,7 @@ public class Menu {
         }
     }
 
-    static void menuFinMaster() {
+   public static void menuFinMaster() {
 
         Utils.hastagDecoration();
         System.out.println();

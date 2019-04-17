@@ -7,25 +7,35 @@ import java.util.Properties;
 
 public class Config {
 
-    static int longueurDeLaCombinaisonMaster;
-    static int nbEssaiMaster;
-    static int nbChiffreAleatoireMaster;
+    public int longueurDeLaCombinaisonMaster;
+    public int nbEssaiMaster;
+    public int nbChiffreAleatoireMaster;
 
-    static int longueurDeLaCombinaisonRecherche;
-    static int nbEssaiRecherche;
+    public int longueurDeLaCombinaisonRecherche;
+    public int nbEssaiRecherche;
 
-    static int modeDev;
+    public int modeDev;
     //public static Logger logger = LogManager.getLogger();
 
+    private static Config c = new Config();
 
-    static void load(String fileName) {
+   private Config() {
+
+   load("config.properties");
+   }
+
+    public static Config getInstance(){
+     return c;
+    }
+
+    void load(String fileName) {
 
         Properties prop = new Properties();
         InputStream input = null;
 
         try {
             //logger.debug(ClassLoader.getSystemResource(".").getPath()+fileName);
-            input = new FileInputStream(ClassLoader.getSystemResource(".").getPath()+fileName);
+            input = getClass().getClassLoader().getResourceAsStream(fileName);
 
             // load a properties file
             prop.load(input);
@@ -39,6 +49,7 @@ public class Config {
             longueurDeLaCombinaisonRecherche = Integer.parseInt(prop.getProperty("recherche_nombre_case"));
             nbEssaiRecherche = Integer.parseInt(prop.getProperty("recherche_nombre_essai"));
 
+            modeDev = Integer.parseInt(prop.getProperty("mode_dev"));
 
         } catch (IOException ex) {
             ex.printStackTrace();

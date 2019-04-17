@@ -1,55 +1,59 @@
-package com.oc.mastermind;
+package com.oc.mastermind.mastermind;
 
+import com.oc.mastermind.Config;
+import com.oc.mastermind.Menu;
+import com.oc.mastermind.Utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 
-import java.util.Scanner;
-
-public class DuelRecherche {
-    
-    static Scanner nb = new Scanner(System.in);
+public class DuelMaster {
 
     public static Logger logger = LogManager.getLogger();
 
-    static void algoDuelRecherche() {
+   public static void algoDuelMaster() {
 
-        logger.info("L'utilisateur joue à Recherche +/- en mode Duel");
+        logger.info("L'utilisateur joue à Mastermind en mode Duel");
 
-        int longueurDeLaCombinaisonRecherche = Config.longueurDeLaCombinaisonRecherche;
-        int nbEssaiRecherche = Config.nbEssaiRecherche;
-        int modeDev = Config.modeDev;
+        Config myConfig = Config.getInstance();
 
-        Utils.exceptionLongueur(longueurDeLaCombinaisonRecherche);
-        Utils.exceptionNbEssais(nbEssaiRecherche);
+        int longueurDeLaCombinaisonMaster = myConfig.longueurDeLaCombinaisonMaster;
+        int nbEssaiMaster = myConfig.nbEssaiMaster;
+        int nbChiffreAleatoireMaster = myConfig.nbChiffreAleatoireMaster;
+        int modeDev = myConfig.modeDev;
 
-        int[] tabNbSecretCpu = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
+        Utils.exceptionLongueur(longueurDeLaCombinaisonMaster);
+        Utils.exceptionNbEssais(nbEssaiMaster);
+        Utils.exceptionNbAleatoireMaster(nbChiffreAleatoireMaster);
+
+        int[] tabNbSecretCpu = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
         if (modeDev == 1){
             System.out.println("le code secret ordinateur est : "+Arrays.toString(tabNbSecretCpu));
         }
 
-        String nbSecretUtilisateur = Utils.saisieUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
+        String saisieUtilisateur = Utils.saisieUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-        int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, nbSecretUtilisateur);
+        int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieUtilisateur);
 
         //pas de mode developpeur pour l'utilisateur car son code secret et affiché par défaut
 
-        Utils.etoileDecoration();
+        //la condition est respectée, affiche le code secret
+        Utils.etoileDecorationPourMaster();
         System.out.println("Votre code secret est : " + Arrays.toString(tabNbSecretUtil));
-        Utils.etoileDecoration();
+        Utils.etoileDecorationPourMaster();
         System.out.println();
 
-        for (int i = 1;i <= nbEssaiRecherche; i++) {
+        for (int i = 1; i <= nbEssaiMaster; i++) {
 
-            String essaiUtilisateur = Utils.essaiUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
+            String essaiUtilisateur = Utils.essaiUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-            int[] tabEssaiUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, essaiUtilisateur);
+            int[] tabEssaiUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, essaiUtilisateur);
 
-            int[] tabEssaiCpu = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
+            int[] tabEssaiCpu = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-            Utils.algoComportementRandomRecherhe(tabEssaiCpu, tabEssaiUtilisateur);
+            Utils.algoComportementRandom(tabEssaiCpu, tabEssaiUtilisateur);
 
             System.out.println();
             Utils.etoileDecorationPourMaster();
@@ -64,20 +68,19 @@ public class DuelRecherche {
             Utils.etoileDecorationPourMaster();
             System.out.println();
 
-            if (i == nbEssaiRecherche - 1) {
+            if (i == nbEssaiMaster - 1) {
 
                 logger.info("le joueur et l'ordinateur n'ont plus qu'un essai");
                 System.out.println();
-                Utils.etoileDecoration();
+                Utils.etoileDecorationPourMaster();
                 System.out.println("Attention dernier essai");
-                Utils.etoileDecoration();
+                Utils.etoileDecorationPourMaster();
                 System.out.println();
             }
 
-            if (i == nbEssaiRecherche) {
+            if (i == nbEssaiMaster) {
 
                 logger.info("le joueur et l'odinateur ont tous deux perdu");
-
                 logger.info("le joueur devait trouver : "+Arrays.toString(tabNbSecretCpu)+" sa dernière proposition est : "+Arrays.toString(tabEssaiUtilisateur));
                 logger.info("l'ordinateur devait trouver : "+Arrays.toString(tabNbSecretUtil)+" sa dernière proposition est : "+Arrays.toString(tabEssaiCpu));
 
@@ -90,7 +93,6 @@ public class DuelRecherche {
                 System.out.println("Le code secret du joueur était : " + Arrays.toString(tabNbSecretUtil));
                 break;
             }
-
             if (Arrays.equals(tabEssaiCpu, tabNbSecretUtil)) {
 
                 logger.info("l'odinateur a gagné avec la proosition : "+Arrays.toString(tabEssaiCpu)+" la combinaison a troouver été : "+ Arrays.toString(tabNbSecretUtil));
@@ -103,7 +105,6 @@ public class DuelRecherche {
                 System.out.println("La combinaison été : " + Arrays.toString(tabEssaiUtilisateur));
                 break;
             }
-
             if (Arrays.equals(tabEssaiUtilisateur, tabNbSecretCpu)) {
 
                 logger.info("l'utilisateur a gagné avec la combinaison : "+Arrays.toString(tabEssaiUtilisateur)+" la combianison a trouver été bien : "+Arrays.toString(tabNbSecretCpu));
@@ -117,6 +118,6 @@ public class DuelRecherche {
             }
         }
         Utils.etoileDecoration();
-        Menu.menuFinRecherchePlusMoins();
+        Menu.menuFinMaster();
     }
 }

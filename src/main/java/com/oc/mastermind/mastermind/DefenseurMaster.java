@@ -1,5 +1,8 @@
-package com.oc.mastermind;
+package com.oc.mastermind.mastermind;
 
+import com.oc.mastermind.Config;
+import com.oc.mastermind.Menu;
+import com.oc.mastermind.Utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -10,13 +13,15 @@ public class DefenseurMaster {
 
     public static Logger logger = LogManager.getLogger();
 
-    static void algoDefenseurMaster() {
+    public static void algoDefenseurMaster() {
 
         logger.info("L'utilisateur joue à Mastermind en mode Défenseur");
 
-        int longueurDeLaCombinaisonMaster = Config.longueurDeLaCombinaisonMaster;
-        int nbEssaiMaster = Config.nbEssaiMaster;
-        int nbChiffreAleatoireMaster = Config.nbChiffreAleatoireMaster;
+        Config myConfig = Config.getInstance();
+
+        int longueurDeLaCombinaisonMaster = myConfig.longueurDeLaCombinaisonMaster;
+        int nbEssaiMaster = myConfig.nbEssaiMaster;
+        int nbChiffreAleatoireMaster = myConfig.nbChiffreAleatoireMaster;
 
         Utils.exceptionLongueur(longueurDeLaCombinaisonMaster);
         Utils.exceptionNbEssais(nbEssaiMaster);

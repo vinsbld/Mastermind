@@ -1,6 +1,9 @@
-package com.oc.mastermind;
+package com.oc.mastermind.mastermind;
 
 
+import com.oc.mastermind.Config;
+import com.oc.mastermind.Menu;
+import com.oc.mastermind.Utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,14 +14,16 @@ public class ChallengerMaster {
 
    public static Logger logger = LogManager.getLogger();
 
-    static void algoChallengerMaster() {
+  public static void algoChallengerMaster() {
 
         logger.info("l'utilisateur joue à mastermind en mode challenger");
 
-        int longueurDeLaCombinaisonMaster = Config.longueurDeLaCombinaisonMaster;
-        int nbEssaiMaster = Config.nbEssaiMaster;
-        int nbChiffreAleatoireMaster = Config.nbChiffreAleatoireMaster;
-        int modeDev = Config.modeDev;
+        Config myConfig = Config.getInstance();
+
+        int longueurDeLaCombinaisonMaster = myConfig.longueurDeLaCombinaisonMaster;
+        int nbEssaiMaster = myConfig.nbEssaiMaster;
+        int nbChiffreAleatoireMaster = myConfig.nbChiffreAleatoireMaster;
+        int modeDev = myConfig.modeDev;
 
         Utils.exceptionLongueur(longueurDeLaCombinaisonMaster);
         Utils.exceptionNbEssais(nbEssaiMaster);

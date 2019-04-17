@@ -1,5 +1,8 @@
-package com.oc.mastermind;
+package com.oc.mastermind.recherche;
 
+import com.oc.mastermind.Config;
+import com.oc.mastermind.Menu;
+import com.oc.mastermind.Utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,13 +12,15 @@ public class ChallengerRecherche {
 
     public static Logger logger = LogManager.getLogger();
 
-    static void algoChalengerRecherche() {
+    public static void algoChalengerRecherche() {
 
         logger.info("l'utilisateur joue à Recherche +/- en mode challenger");
 
-        int longueurDeLaCombinaisonRecherche = Config.longueurDeLaCombinaisonRecherche;
-        int nbEssaiRecherche = Config.nbEssaiRecherche;
-        int modeDev = Config.modeDev;
+        Config myConfig = Config.getInstance();
+
+        int longueurDeLaCombinaisonRecherche = myConfig.longueurDeLaCombinaisonRecherche;
+        int nbEssaiRecherche = myConfig.nbEssaiRecherche;
+        int modeDev = myConfig.modeDev;
 
         Utils.exceptionLongueur(longueurDeLaCombinaisonRecherche);
         Utils.exceptionNbEssais(nbEssaiRecherche);

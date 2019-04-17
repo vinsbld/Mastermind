@@ -1,5 +1,8 @@
-package com.oc.mastermind;
+package com.oc.mastermind.recherche;
 
+import com.oc.mastermind.Config;
+import com.oc.mastermind.Menu;
+import com.oc.mastermind.Utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,12 +16,14 @@ public class DefenseurRecherche {
     
     static Scanner nb = new Scanner(System.in);
 
-    static void algoDefenseurRecherche() {
+    public static void algoDefenseurRecherche() {
 
         logger.info("L'utilisateur joue à Recherche +/- en mode Défenseur");
 
-        int longueurDeLaCombinaisonRecherche = Config.longueurDeLaCombinaisonRecherche;
-        int nbEssaiRecherche = Config.nbEssaiRecherche;
+        Config myConfig = Config.getInstance();
+
+        int longueurDeLaCombinaisonRecherche = myConfig.longueurDeLaCombinaisonRecherche;
+        int nbEssaiRecherche = myConfig.nbEssaiRecherche;
 
         Utils.exceptionLongueur(longueurDeLaCombinaisonRecherche);
         Utils.exceptionNbEssais(nbEssaiRecherche);
