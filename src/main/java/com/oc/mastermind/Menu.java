@@ -12,13 +12,25 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Scanner;
 
+/**
+ * ceci est la Class Menu
+ * on y retrouve tous les menus et sous menus des jeux
+ */
+
+
 public class Menu {
+
 
     static Scanner nb = new Scanner(System.in);
     
     public static Logger logger = LogManager.getLogger();
     
     static void menuDemarrer() {
+        /**
+         * la methode MenuDemarrer est la méthode du Menu princcipal
+         * l'utilisateur fait le choix entre deux jeux :
+         * Recherche ou Mastermind
+         */
 
         Utils.etoileDecoration();
         System.out.println();
@@ -49,6 +61,12 @@ public class Menu {
             logger.warn(saisieUtilisateurJeux +" n'est pas un choix valide, l'utilisateur retourne au menu principal");
         }
     }
+
+    /**
+     * Cette methode permet de choisir le mode de jeu pour le jeu Recherche
+     * l'utilisateur a le choix entre trois modes :
+     * Challenger, Défenseur et Duel
+     */
 
    public static void menuModeDeJeuRecherchePlusMoins() {
 
@@ -91,6 +109,12 @@ public class Menu {
         }
     }
 
+    /**
+     * Cette methode permet de choisir le mode de jeu pour le jeu Mastermind
+     * l'utilisateur a le choix entre trois modes :
+     * Challenger, Défenseur et Duel
+     */
+
    public static void menuModeDeJeuMaster() {
 
         System.out.println("*         CHOISISSEZ UN MODE DE JEUX          *");
@@ -131,6 +155,13 @@ public class Menu {
             logger.warn(saisieUtilisateurMode +" n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu");
         }
     }
+
+    /**
+     * Cette methode permet à l'utilisateur de choisir si :
+     * il veut rejouer au même jeu
+     * l'utilisateur a le choix entre trois modes :
+     * Challenger, Défenseur et Duel
+     */
 
    public static void menuFinRecherchePlusMoins() {
 
