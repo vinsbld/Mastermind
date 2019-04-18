@@ -17,13 +17,12 @@ public class Utils {
     /************************** fonctions pour Mastermind *******************************/
 
     /**
-     * fonction qui céer un nombre aléatoire entre 0 - 4 a 10
-     * "int nombreDeChiffre" et place chaque chiffre dans un tableau
+     * génére des chiffres de façon aléatoire
      * @param longueurDelaCombinaison
      * @param nombreDeChiffre
-     * @return
+     * @return tabSaisieOrdinateur
      */
-    //céer un nombre aléatoire entre 0 - 4 a 10 "int nombreDeChiffre" et place chaque chiffre dans un tableau
+    //céer un nombre aléatoire entre 4 a 10 "int nombreDeChiffre" et place chaque chiffre dans un tableau
     public static int[] initialiseTableauRandomMaster(int longueurDelaCombinaison, int nombreDeChiffre) {
 
         Random nbAleatoire = new Random();
@@ -36,6 +35,12 @@ public class Utils {
 
     }
 
+    /**
+     * transforme la saisie utilisateur String en un entier
+     * @param longueurDelaCombinaison
+     * @param nbChiffreAleatoire
+     * @return nbSecretUtilisateur
+     */
     /*tant que la condition n'est pas respectée alors revoi l'utilisateur vers une
        nouvelle saisie en lui indiquant les prérequis d'une saisie valide*/
     public static String saisieUtilisateurMaster(int longueurDelaCombinaison, int nbChiffreAleatoire) {
@@ -58,6 +63,14 @@ public class Utils {
         return nbSecretUtilisateur;
     }
 
+
+    /**
+     * fonction utilisée pour le mode duel
+     * convertie un String en un int
+     * @param longueurDelaCombinaison
+     * @param nbChiffreAleatoire
+     * @return nbSecretUtilisateur
+     */
     /*tant que la condition n'est pas respectée alors revoi l'utilisateur vers une
        nouvelle saisie en lui indiquant les prérequis d'une saisie valide*/
     public static String essaiUtilisateurMaster(int longueurDelaCombinaison, int nbChiffreAleatoire) {
@@ -83,6 +96,12 @@ public class Utils {
         return nbSecretUtilisateur;
     }
 
+
+    /**
+     * compotement de l'odinateur pour trouver le nombre secret pour le jeu mastermind
+     * @param combinaisonSecrete
+     * @param attaque
+     */
     /*algorithme mastermind, première boucle indique si un élément est bien placé,
     la deuxième boucle indique si un élément et présent dans le tableau,
     la condition != indique que si l'élément est bien placé alors il ne faut pas le prendre en concidèration*/
@@ -109,6 +128,9 @@ public class Utils {
         logger.info("l'ordinateur a touver "+ present +" présent et "+ bienPlace +" bien palcé pour sa combinaison "+ Arrays.toString(attaque) + " comparer a la défense "+ Arrays.toString(combinaisonSecrete));
     }
 
+    /**
+     * decoration en forme d'étoiles
+     */
     //décoration * pour Maestermind
     public static void etoileDecorationPourMaster() {
         for (int i = 1; i <= 60; i++) {
@@ -120,6 +142,11 @@ public class Utils {
     /************************************************************************************/
     /******************************* fonctions config.properties *********************************/
 
+
+    /**
+     * exception lié au fichier config.properties
+     * @param nbChiffreAleatoire
+     */
     //renvoie un message d'erreur quand le chiffre n'est pas conforme
     public static void exceptionNbAleatoireMaster(int nbChiffreAleatoire) {
 
@@ -131,6 +158,10 @@ public class Utils {
         }return;
     }
 
+    /**
+     * exception lié au fichier config.properties
+     * @param longueurDeLaCombinaison
+     */
     //la longueur de la combinaison ne doit pas etre inferieure à 3 et suppérieure à 10 "Mastermind"
     public static void exceptionLongueur (int longueurDeLaCombinaison){
 
@@ -141,7 +172,10 @@ public class Utils {
         }return;
     }
 
-
+    /**
+     * exception lié fichier config.properties
+     * @param nbEssai
+     */
     //le nombre d'essais ne peut pas être inférieur ou égale à 0
     public static void exceptionNbEssais (int nbEssai){
 
@@ -150,6 +184,12 @@ public class Utils {
         }return;
     }
 
+    /**
+     * Fonction utilisée pour le mode défenseur et le mode duel
+     * détermine le comportement de l'ordinateur pour trouver la combinaison secrete
+     * @param tabSaisieAttaquant
+     * @param tabSaisieDefenseur
+     */
     /*algorithme qui defini le comportement de l'ordinateur pour trouver la combinaison secrete*/
     public static void algoComportementRandom(int tabSaisieAttaquant[], int tabSaisieDefenseur[]) {
 
@@ -182,6 +222,13 @@ public class Utils {
     /************************************************************************************/
     /******************************* fonctions communes *********************************/
 
+    /**
+     * fonction utilisée dans le mode duel
+     * convertie un String en int
+     * @param longueurDelaCombinaison
+     * @param saisieUtilisateur
+     * @return tabNbSecretUtil
+     */
     /*transforme la saisie utilisateur "String", chaque caractères
     "charAt(j)" est en suite converti en un entier et est placé dan sun tableau de int[]
     cela permet de pouvoir comperer le tableau Random et celui-ci*/
@@ -202,6 +249,11 @@ public class Utils {
     /************************************************************************************/
     /**************************** fonctions Recherche +/- *******************************/
 
+    /**
+     * affiche si le chiffre est bien positionné ou si celui-ci est plus grand ou plus petit
+     * @param tab1
+     * @param tab2
+     */
     /*si la valeur saisie est inferieur affiche "+"
     si elle est inférieure affiche "-"
     si la valeur esy la même affiche "="*/
@@ -227,6 +279,11 @@ public class Utils {
         System.out.println();
     }
 
+    /**
+     * créer un nombre random pour le jeu recherche
+     * @param longueurDelaCombinaison
+     * @return tabSaisieOrdinateur
+     */
     public static int[] initialiseTableauRandomRecherche(int longueurDelaCombinaison) {
 
         Random nbAleatoire = new Random();
@@ -238,6 +295,9 @@ public class Utils {
         return tabSaisieOrdinateur;
     }
 
+    /**
+     * affiche des étoiles
+     */
     //décoration * pour menus et recherche +/-
     public static void etoileDecoration() {
         for (int i = 1; i <= 47; i++) {
@@ -246,6 +306,9 @@ public class Utils {
         System.out.println();
     }
 
+    /**
+     * affiche des hastags
+     */
     //décoration # pour menus et recherche +/-
     public static void hastagDecoration() {
         for (int i = 1; i <= 47; i++) {
@@ -254,6 +317,13 @@ public class Utils {
         System.out.println();
     }
 
+
+    /**
+     * fonction utilisée en mode recherche
+     * transforme la saisie utilisateur String en un entier
+     * @param longueurDelaCombinaison
+     * @return
+     */
     public static String essaiUtilisateurRecherche(int longueurDelaCombinaison) {
 
         boolean isUnNombre;
@@ -303,6 +373,11 @@ public class Utils {
         return nbSecretUtilisateur;
     }
 
+    /**
+     * compotement de l'odinateur pour trouver le nombre secret pour le jeu recherche
+     * @param tabSaisieAttaquant
+     * @param tabSaisieDefenseur
+     */
     public static void algoComportementRandomRecherhe(int tabSaisieAttaquant[], int tabSaisieDefenseur[]) {
 
         logger.info("l'ordinateur compare les éléments des deux tableaux, attaquant : "+ Arrays.toString(tabSaisieAttaquant )+" et défenseur : "+ Arrays.toString(tabSaisieDefenseur));
