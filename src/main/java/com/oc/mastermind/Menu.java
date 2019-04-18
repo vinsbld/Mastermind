@@ -24,13 +24,14 @@ public class Menu {
     static Scanner nb = new Scanner(System.in);
     
     public static Logger logger = LogManager.getLogger();
+
+    /**
+     * la methode MenuDemarrer est la méthode du Menu princcipal
+     * l'utilisateur fait le choix entre deux jeux :
+     * Recherche ou Mastermind
+     */
     
     static void menuDemarrer() {
-        /**
-         * la methode MenuDemarrer est la méthode du Menu princcipal
-         * l'utilisateur fait le choix entre deux jeux :
-         * Recherche ou Mastermind
-         */
 
         Utils.etoileDecoration();
         System.out.println();
@@ -157,10 +158,12 @@ public class Menu {
     }
 
     /**
+     * Une fois le jeu terminé,
      * Cette methode permet à l'utilisateur de choisir si :
-     * il veut rejouer au même jeu
-     * l'utilisateur a le choix entre trois modes :
+     * il veut rejouer au même jeu ou revenir au menu principal
+     * si il choisi de rejouer au même jeu, il a alors le choix entre les modes de jeu
      * Challenger, Défenseur et Duel
+     * ou bien propose au joueur de mettre fin au jeu
      */
 
    public static void menuFinRecherchePlusMoins() {
@@ -201,6 +204,15 @@ public class Menu {
             logger.warn(sasisieUtilisateur +" n'est pas un choix valide, l'utilisateur retourne au menu choix du mode de jeu");
         }
     }
+
+    /**
+     * Une fois le jeu terminé,
+     * Cette methode permet à l'utilisateur de choisir si :
+     * il veut rejouer au même jeu ou revenir au menu principal
+     * si il choisi de rejouer au même jeu, il a alors le choix entre les modes de jeu
+     * Challenger, Défenseur et Duel
+     * ou bien propose au joueur de mettre fin au jeu
+     */
 
    public static void menuFinMaster() {
 

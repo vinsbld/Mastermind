@@ -16,6 +16,13 @@ public class Utils {
     /************************************************************************************/
     /************************** fonctions pour Mastermind *******************************/
 
+    /**
+     * fonction qui céer un nombre aléatoire entre 0 - 4 a 10
+     * "int nombreDeChiffre" et place chaque chiffre dans un tableau
+     * @param longueurDelaCombinaison
+     * @param nombreDeChiffre
+     * @return
+     */
     //céer un nombre aléatoire entre 0 - 4 a 10 "int nombreDeChiffre" et place chaque chiffre dans un tableau
     public static int[] initialiseTableauRandomMaster(int longueurDelaCombinaison, int nombreDeChiffre) {
 
@@ -268,6 +275,14 @@ public class Utils {
         return nbSecretUtilisateur;
     }
 
+    /**
+     * fonction qui demande a l'utilisateur de saisir une proposition
+     * tant que celle ci n'est pas un chiffre entre 0 et 9
+     * ou que la longueur de la proposition n'est pas identique à la longueur du tableau
+     * alors on lui proposaera sans cesse de saisir une valeur valide
+     * @param longueurDelaCombinaison
+     * @return
+     */
     public static String saisieUtilisateurRecherche(int longueurDelaCombinaison) {
 
         boolean isUnNombre;
