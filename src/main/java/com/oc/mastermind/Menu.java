@@ -26,8 +26,8 @@ public class Menu {
     public static Logger logger = LogManager.getLogger();
 
     /**
-     * la methode MenuDemarrer est la méthode du Menu princcipal
-     * l'utilisateur fait le choix entre deux jeux :
+     * la methode MenuDemarrer est la méthode du Menu principal
+     * permet à l'utilisateur de faire le choix entre deux jeux :
      * Recherche ou Mastermind
      */
     
@@ -87,7 +87,7 @@ public class Menu {
         System.out.println("Pour choisir un Mode entrer 1, 2 ou 3 : ");
 
         String saisieUtilisateurMode = nb.nextLine();
-        Utils.etoileDecoration();
+
 
         if (saisieUtilisateurMode.equals("1")) {
             ChallengerRecherche.algoChalengerRecherche();
@@ -134,7 +134,7 @@ public class Menu {
         System.out.println("Pour choisir un Mode entrer 1, 2 ou 3 : ");
 
         String saisieUtilisateurMode = nb.nextLine();
-        Utils.etoileDecoration();
+
 
         if (saisieUtilisateurMode.equals("1")) {
             ChallengerMaster.algoChallengerMaster();
@@ -180,7 +180,7 @@ public class Menu {
         System.out.println("Pour choisir un Mode entrer 1, 2 ou 3 : ");
 
         String sasisieUtilisateur = nb.nextLine();
-        Utils.etoileDecoration();
+
 
         if (sasisieUtilisateur.equals("1")) {
             Menu.menuModeDeJeuRecherchePlusMoins();
@@ -228,7 +228,7 @@ public class Menu {
         System.out.println("Pour choisir un Mode entrer 1, 2 ou 3 : ");
 
         String sasisieUtilisateur = nb.nextLine();
-        Utils.etoileDecoration();
+
 
         if (sasisieUtilisateur.equals("1")) {
             Menu.menuModeDeJeuMaster();

@@ -16,6 +16,16 @@ public class DuelRecherche {
 
     public static Logger logger = LogManager.getLogger();
 
+    /**
+     * Méthode pour mode duel jeu mastermind
+     * propose au joueur et d'entrer un nombre "secret"
+     * l'odinateur crée un nombre "secret" aléatoire
+     * à chaque tour :
+     * -propose au joueur et d'entrer un nombre
+     * -l'odinateur crée un nombre aléatoire
+     * compare le nombre aléatoire au nombre "secret" du joueur
+     * compare le nombre proposé par le joueur au nombre "secret aléatoire"
+     */
   public static void algoDuelRecherche() {
 
         logger.info("L'utilisateur joue à Recherche +/- en mode Duel");

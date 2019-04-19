@@ -15,8 +15,9 @@ public class DefenseurMaster {
 
     /**
      * Méthode pour mode défenseur jeu mastermind
-     * le joueur créer une combinaison secrete
-     * l'ordinateur doit trouver la combinaison secrete que le joueur a créé
+     * propose au joueur d'entrer un nombre "secret"
+     * l'ordinateur crée un nombre aléatoire
+     * compare le nombre aléatoire au nombre secret du joueur
      */
     public static void algoDefenseurMaster() {
 

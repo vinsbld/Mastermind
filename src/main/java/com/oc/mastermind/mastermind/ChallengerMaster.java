@@ -15,41 +15,69 @@ public class ChallengerMaster {
    public static Logger logger = LogManager.getLogger();
 
     /**
-     * Méthode mode challenger pour mastermind
-     * l'odinateur creer un nombre secret
-     * l'utilisateur fait des propositions pour le trouver
+     * Méthode mode challenger pour jeu mastermind
+     * crée un nombre "secret" aléatoire
+     * permet à l'utiliateur d'entrer une proposotion
+     * compare la proposition utilisateur et le nombre "secret" aléatoire
      */
   public static void algoChallengerMaster() {
 
         logger.info("l'utilisateur joue à mastermind en mode challenger");
-
-        Config myConfig = Config.getInstance();
+      /**
+       * charge les paramètres de jeu
+       */
+      Config myConfig = Config.getInstance();
 
         int longueurDeLaCombinaisonMaster = myConfig.longueurDeLaCombinaisonMaster;
         int nbEssaiMaster = myConfig.nbEssaiMaster;
         int nbChiffreAleatoireMaster = myConfig.nbChiffreAleatoireMaster;
         int modeDev = myConfig.modeDev;
 
+      /**
+       * exceptions pour les paramètres de jeux
+       */
         Utils.exceptionLongueur(longueurDeLaCombinaisonMaster);
         Utils.exceptionNbEssais(nbEssaiMaster);
         Utils.exceptionNbAleatoireMaster(nbChiffreAleatoireMaster);
 
-        int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
+      /**
+       * crée un nombre aléatoire dans un tableau int
+       */
+      int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
+      Utils.etoileDecorationPourMaster();
+      System.out.println("l'ordinateur a créé un nombre mystère !");
+      Utils.etoileDecorationPourMaster();
+      System.out.println();
+      /**
+       * si le mode developpeur est activé
+       */
         if (modeDev == 1){
             System.out.println("le code de l'odinateur est : "+Arrays.toString(tabSaisieOrdinateur));
         }
 
         for (int y =1; y <= nbEssaiMaster; y++){
 
+            /**
+             * demande au joueur de saisir un nombre
+             */
             String saisieUtilisateur = Utils.essaiUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
+            /**
+             * convertie la saisie String utilisateur en un tableau int
+             */
             int[] tabSaisieUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieUtilisateur);
+
+            /**
+             * compare les tableaux tabSaisieOrdinateur et tabSaisieUtilisateur
+             */
+            System.out.print("Essai n°"+ y +" Proposition : " + Arrays.toString(tabSaisieUtilisateur) + " | Réponse : ");
+            Utils.algoMaster(tabSaisieOrdinateur, tabSaisieUtilisateur);
+            System.out.println();
 
             if (y == nbEssaiMaster - 1) {
 
                 logger.info("le joueur n'a plus qu'un essai");
-                System.out.println();
                 Utils.etoileDecorationPourMaster();
                 System.out.println("Attention dernier essai");
                 Utils.etoileDecorationPourMaster();

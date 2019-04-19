@@ -1,10 +1,12 @@
 package com.oc.mastermind;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * Méthode contenant les différents paramètres des jeux
+ */
 public class Config {
 
     public int longueurDeLaCombinaisonMaster;
@@ -28,6 +30,10 @@ public class Config {
      return c;
     }
 
+    /**
+     * récupére les différents paramètres entrés dans le fichier config.properties
+     * @param fileName
+     */
     void load(String fileName) {
 
         Properties prop = new Properties();

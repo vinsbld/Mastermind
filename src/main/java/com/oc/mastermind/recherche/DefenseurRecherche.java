@@ -16,6 +16,12 @@ public class DefenseurRecherche {
     
     static Scanner nb = new Scanner(System.in);
 
+    /**
+     * Méthode pour mode défenseur jeu recherche
+     * propose au joueur d'entrer un nombre "secret"
+     * l'ordinateur crée un nombre aléatoire
+     * compare le nombre aléatoire au nombre secret du joueur
+     */
     public static void algoDefenseurRecherche() {
 
         logger.info("L'utilisateur joue à Recherche +/- en mode Défenseur");

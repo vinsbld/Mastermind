@@ -12,21 +12,44 @@ public class ChallengerRecherche {
 
     public static Logger logger = LogManager.getLogger();
 
+    /**
+     * Méthode mode challenger pour jeu recherche
+     * crée un nombre "secret" aléatoire
+     * permet à l'utiliateur d'entrer une proposotion
+     * compare la proposition utilisateur et le nombre "secret" aléatoire
+     */
     public static void algoChalengerRecherche() {
 
         logger.info("l'utilisateur joue à Recherche +/- en mode challenger");
 
+        /**
+         * charge les paramètres de jeu
+         */
         Config myConfig = Config.getInstance();
 
         int longueurDeLaCombinaisonRecherche = myConfig.longueurDeLaCombinaisonRecherche;
         int nbEssaiRecherche = myConfig.nbEssaiRecherche;
         int modeDev = myConfig.modeDev;
 
+        /**
+         * exceptions pour les paramètres de jeux
+         */
         Utils.exceptionLongueur(longueurDeLaCombinaisonRecherche);
         Utils.exceptionNbEssais(nbEssaiRecherche);
 
+        /**
+         * crée un nombre aléatoire dans un tableau int
+         */
         int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
+        Utils.etoileDecorationPourMaster();
+        System.out.println("l'ordinateur a créé un nombre mystère !");
+        Utils.etoileDecorationPourMaster();
+        System.out.println();
+
+        /**
+         * si le mode developpeur est activé
+         */
         if (modeDev == 1){
             System.out.println("le code secret de l'ordinateur est : "+Arrays.toString(tabSaisieOrdinateur));
         }
@@ -34,11 +57,20 @@ public class ChallengerRecherche {
 
         for (int y =1; y <= nbEssaiRecherche; y++){
 
+            /**
+             * demande au joueur de saisir un nombre
+             */
             String saisieUtilisateur = Utils.essaiUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
 
+            /**
+             * convertie la saisie String utilisateur en un tableau int
+             */
             int[] tabSaisieUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, saisieUtilisateur);
 
-            System.out.print("Proposition : " + Arrays.toString(tabSaisieUtilisateur) + " | Réponse : ");
+            /**
+             * compare les tableaux tabSaisieOrdinateur et tabSaisieUtilisateur
+             */
+            System.out.print("Essai n°"+ y +" Proposition : " + Arrays.toString(tabSaisieUtilisateur) + " | Réponse : ");
             Utils.algoPlusMoins(tabSaisieUtilisateur, tabSaisieOrdinateur);
 
             if (y == nbEssaiRecherche - 1) {

@@ -15,9 +15,13 @@ public class DuelMaster {
 
     /**
      * Méthode pour mode duel jeu mastermind
-     * le joueur et l'ordinateur créent un code secret chacun
-     * le joueur et l'ordinateur à tour de rôle font une proposition
-     * afin de trouver la combinaison secrete de l'autre
+     * l'odinateur crée un nombre "secret" aléatoire
+     * propose au joueur et d'entrer un nombre "secret"
+     * à chaque tour :
+     * -propose au joueur et d'entrer un nombre
+     * -l'odinateur crée un nombre aléatoire
+     * compare le nombre aléatoire au nombre "secret" du joueur
+     * compare le nombre proposé par le joueur au nombre "secret aléatoire"
      */
    public static void algoDuelMaster() {
 
@@ -34,13 +38,13 @@ public class DuelMaster {
         Utils.exceptionNbEssais(nbEssaiMaster);
         Utils.exceptionNbAleatoireMaster(nbChiffreAleatoireMaster);
 
-        int[] tabNbSecretCpu = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
+       int[] tabNbSecretCpu = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
         if (modeDev == 1){
             System.out.println("le code secret ordinateur est : "+Arrays.toString(tabNbSecretCpu));
         }
 
-        String saisieUtilisateur = Utils.saisieUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
+       String saisieUtilisateur = Utils.saisieUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
         int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieUtilisateur);
 
