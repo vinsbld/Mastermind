@@ -12,6 +12,13 @@ public class DuelMaster {
 
     public static Logger logger = LogManager.getLogger();
 
+
+    /**
+     * Méthode pour mode duel jeu mastermind
+     * le joueur et l'ordinateur créent un code secret chacun
+     * le joueur et l'ordinateur à tour de rôle font une proposition
+     * afin de trouver la combinaison secrete de l'autre
+     */
    public static void algoDuelMaster() {
 
         logger.info("L'utilisateur joue à Mastermind en mode Duel");

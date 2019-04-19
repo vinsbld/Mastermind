@@ -13,6 +13,11 @@ public class DefenseurMaster {
 
     public static Logger logger = LogManager.getLogger();
 
+    /**
+     * Méthode pour mode défenseur jeu mastermind
+     * le joueur créer une combinaison secrete
+     * l'ordinateur doit trouver la combinaison secrete que le joueur a créé
+     */
     public static void algoDefenseurMaster() {
 
         logger.info("L'utilisateur joue à Mastermind en mode Défenseur");

@@ -14,6 +14,11 @@ public class ChallengerMaster {
 
    public static Logger logger = LogManager.getLogger();
 
+    /**
+     * Méthode mode challenger pour mastermind
+     * l'odinateur creer un nombre secret
+     * l'utilisateur fait des propositions pour le trouver
+     */
   public static void algoChallengerMaster() {
 
         logger.info("l'utilisateur joue à mastermind en mode challenger");

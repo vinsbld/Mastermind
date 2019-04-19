@@ -14,7 +14,6 @@ public class Main {
         logger.info("Démarrage de l'application");
 
         Config myConfig = Config.getInstance();
-
         if (args.length > 0 && args[0].equals("dev")){
             myConfig.modeDev = 1;
         }
