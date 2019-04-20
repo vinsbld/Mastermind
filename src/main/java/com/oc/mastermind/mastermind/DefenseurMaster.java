@@ -45,13 +45,14 @@ public class DefenseurMaster {
         Utils.etoileDecorationPourMaster();
         System.out.println("Votre code secret est " + Arrays.toString(tabSaisieDefenseur));
         Utils.etoileDecorationPourMaster();
+        System.out.println();
 
         for (int y = 1; y <= nbEssaiMaster ;y++) {
 
             Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
 
             Utils.etoileDecorationPourMaster();
-            System.out.print("Proposition : " + Arrays.toString(tabSaisieAttaquant) + " | Réponse : ");
+            System.out.print("Essai n°"+ y +" Proposition : " + Arrays.toString(tabSaisieAttaquant) + " | Réponse : ");
             Utils.algoMaster(tabSaisieDefenseur, tabSaisieAttaquant);
             Utils.etoileDecorationPourMaster();
             System.out.println();

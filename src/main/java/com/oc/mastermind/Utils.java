@@ -18,11 +18,11 @@ public class Utils {
 
     /**
      * génére des chiffres de façon aléatoire
+     * céer un nombre aléatoire entre 4 a 10 "int nombreDeChiffre" et place chaque chiffre dans un tableau
      * @param longueurDelaCombinaison
      * @param nombreDeChiffre
      * @return tabSaisieOrdinateur
      */
-    //céer un nombre aléatoire entre 4 a 10 "int nombreDeChiffre" et place chaque chiffre dans un tableau
     public static int[] initialiseTableauRandomMaster(int longueurDelaCombinaison, int nombreDeChiffre) {
 
         Random nbAleatoire = new Random();
@@ -100,12 +100,12 @@ public class Utils {
 
     /**
      * compotement de l'odinateur pour trouver le nombre secret pour le jeu mastermind
+     * algorithme mastermind, première boucle indique si un élément est bien placé,
+     * la deuxième boucle indique si un élément et présent dans le tableau,
+     *     la condition != indique que si l'élément est bien placé alors il ne faut pas le prendre en concidèration
      * @param combinaisonSecrete
      * @param attaque
      */
-    /*algorithme mastermind, première boucle indique si un élément est bien placé,
-    la deuxième boucle indique si un élément et présent dans le tableau,
-    la condition != indique que si l'élément est bien placé alors il ne faut pas le prendre en concidèration*/
     public static void algoMaster(int[] combinaisonSecrete, int[] attaque) {
         logger.info("l'odinateur verifie si dans sa combinaison : "+ Arrays.toString(attaque) +" un nombre est bien placé ou présent ");
         int present = 0;
@@ -130,9 +130,8 @@ public class Utils {
     }
 
     /**
-     * decoration en forme d'étoiles
+     * décoration * pour Maestermind
      */
-    //décoration * pour Maestermind
     public static void etoileDecorationPourMaster() {
         for (int i = 1; i <= 60; i++) {
             System.out.print("*");
@@ -161,9 +160,9 @@ public class Utils {
 
     /**
      * exception lié au fichier config.properties
+     * la longueur de la combinaison ne doit pas etre inferieure à 3 et suppérieure à 10 "Mastermind"
      * @param longueurDeLaCombinaison
      */
-    //la longueur de la combinaison ne doit pas etre inferieure à 3 et suppérieure à 10 "Mastermind"
     public static void exceptionLongueur (int longueurDeLaCombinaison){
 
         if (longueurDeLaCombinaison < 3 || longueurDeLaCombinaison > 10) {
@@ -175,9 +174,9 @@ public class Utils {
 
     /**
      * exception lié fichier config.properties
+     * le nombre d'essais ne peut pas être inférieur ou égale à 0
      * @param nbEssai
      */
-    //le nombre d'essais ne peut pas être inférieur ou égale à 0
     public static void exceptionNbEssais (int nbEssai){
 
         if (nbEssai <= 0){
@@ -191,7 +190,6 @@ public class Utils {
      * @param tabSaisieAttaquant
      * @param tabSaisieDefenseur
      */
-    /*algorithme qui defini le comportement de l'ordinateur pour trouver la combinaison secrete*/
     public static void algoComportementRandom(int tabSaisieAttaquant[], int tabSaisieDefenseur[]) {
 
         logger.info("l'ordinateur compare les éléments des deux tableaux, attaquant : "+ Arrays.toString(tabSaisieAttaquant )+" et défenseur : "+ Arrays.toString(tabSaisieDefenseur));
@@ -252,12 +250,12 @@ public class Utils {
 
     /**
      * affiche si le chiffre est bien positionné ou si celui-ci est plus grand ou plus petit
+     * si la valeur saisie est inferieur affiche "+"
+     * si elle est inférieure affiche "-"
+     * si la valeur esy la même affiche "="
      * @param tab1
      * @param tab2
      */
-    /*si la valeur saisie est inferieur affiche "+"
-    si elle est inférieure affiche "-"
-    si la valeur esy la même affiche "="*/
     public static void algoPlusMoins(int[] tab1, int[] tab2) {
 
         logger.info("l'ordinateur compare les éléments des deux tableaux "+ Arrays.toString(tab1) + " et "+ Arrays.toString(tab2));
@@ -298,8 +296,8 @@ public class Utils {
 
     /**
      * affiche des étoiles
+     * décoration * pour menus et recherche +/-
      */
-    //décoration * pour menus et recherche +/-
     public static void etoileDecoration() {
         for (int i = 1; i <= 47; i++) {
             System.out.print("*");
@@ -309,8 +307,8 @@ public class Utils {
 
     /**
      * affiche des hastags
+     * décoration # pour menus et recherche +/-
      */
-    //décoration # pour menus et recherche +/-
     public static void hastagDecoration() {
         for (int i = 1; i <= 47; i++) {
             System.out.print("#");
@@ -375,6 +373,9 @@ public class Utils {
 
     /**
      * compotement de l'odinateur pour trouver le nombre secret pour le jeu recherche
+     * si le nombre generé et inferieur ou supereieur à la valeur cible
+     * l'ordinateur génére un chiffre entre la valeur [i] et 9 si resultat est +.
+     * l'ordinateur génére un chiffre entre la valeur [i] et 0 si resultat est -.
      * @param tabSaisieAttaquant
      * @param tabSaisieDefenseur
      */
@@ -385,10 +386,6 @@ public class Utils {
         Random r = new Random();
         for (int i = 0; i < tabSaisieDefenseur.length; i++) {
 
-                /*si le nombre generé et inferieur ou supereieur à la valeur cible
-                   l'ordinateur génére un chiffre entre la valeur [i] et 9 si resultat est +.
-                   l'ordinateur génére un chiffre entre la valeur [i] et 0 si resultat est -.
-                 */
             if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
                 logger.info("le chiffre "+ tabSaisieAttaquant[i] +" est trop petit");
                 tabSaisieAttaquant[i] = r.nextInt((9 - tabSaisieAttaquant[i]) ) + tabSaisieAttaquant[i];

@@ -46,12 +46,13 @@ public class DefenseurRecherche {
         Utils.etoileDecoration();
         System.out.println("Votre code secret est " + Arrays.toString(tabSaisieDefenseur));
         Utils.etoileDecoration();
+        System.out.println();
 
         for (int y = 1; y <= nbEssaiRecherche; y++) {
 
             Utils.algoComportementRandomRecherhe(tabSaisieAttaquant, tabSaisieDefenseur);
             Utils.etoileDecoration();
-            System.out.print("Proposition : " + Arrays.toString(tabSaisieAttaquant) + " | Réponse : ");
+            System.out.print("Essai n°"+ y +" Proposition : " + Arrays.toString(tabSaisieAttaquant) + " | Réponse : ");
             Utils.algoPlusMoins(tabSaisieAttaquant, tabSaisieDefenseur);
             Utils.etoileDecoration();
             System.out.println();

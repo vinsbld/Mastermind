@@ -23,7 +23,7 @@ public class ChallengerMaster {
   public static void algoChallengerMaster() {
 
         logger.info("l'utilisateur joue à mastermind en mode challenger");
-      /**
+      /*
        * charge les paramètres de jeu
        */
       Config myConfig = Config.getInstance();
@@ -33,14 +33,14 @@ public class ChallengerMaster {
         int nbChiffreAleatoireMaster = myConfig.nbChiffreAleatoireMaster;
         int modeDev = myConfig.modeDev;
 
-      /**
+      /*
        * exceptions pour les paramètres de jeux
        */
         Utils.exceptionLongueur(longueurDeLaCombinaisonMaster);
         Utils.exceptionNbEssais(nbEssaiMaster);
         Utils.exceptionNbAleatoireMaster(nbChiffreAleatoireMaster);
 
-      /**
+      /*
        * crée un nombre aléatoire dans un tableau int
        */
       int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
@@ -49,7 +49,7 @@ public class ChallengerMaster {
       System.out.println("l'ordinateur a créé un nombre mystère !");
       Utils.etoileDecorationPourMaster();
       System.out.println();
-      /**
+      /*
        * si le mode developpeur est activé
        */
         if (modeDev == 1){
@@ -58,17 +58,17 @@ public class ChallengerMaster {
 
         for (int y =1; y <= nbEssaiMaster; y++){
 
-            /**
-             * demande au joueur de saisir un nombre
+            /*
+             * demande au joueur de saisir un nombre String
              */
             String saisieUtilisateur = Utils.essaiUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-            /**
+            /*
              * convertie la saisie String utilisateur en un tableau int
              */
             int[] tabSaisieUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieUtilisateur);
 
-            /**
+            /*
              * compare les tableaux tabSaisieOrdinateur et tabSaisieUtilisateur
              */
             System.out.print("Essai n°"+ y +" Proposition : " + Arrays.toString(tabSaisieUtilisateur) + " | Réponse : ");

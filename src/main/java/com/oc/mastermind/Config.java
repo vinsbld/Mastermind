@@ -21,17 +21,20 @@ public class Config {
 
     private static Config c = new Config();
 
-   private Config() {
+    private Config() {
 
-   load("config.properties");
-   }
+        load("config.properties");
 
-    public static Config getInstance(){
-     return c;
+    }
+
+    public static Config getInstance() {
+
+        return c;
     }
 
     /**
      * récupére les différents paramètres entrés dans le fichier config.properties
+     *
      * @param fileName
      */
     void load(String fileName) {

@@ -22,7 +22,7 @@ public class ChallengerRecherche {
 
         logger.info("l'utilisateur joue à Recherche +/- en mode challenger");
 
-        /**
+        /*
          * charge les paramètres de jeu
          */
         Config myConfig = Config.getInstance();
@@ -31,13 +31,13 @@ public class ChallengerRecherche {
         int nbEssaiRecherche = myConfig.nbEssaiRecherche;
         int modeDev = myConfig.modeDev;
 
-        /**
+        /*
          * exceptions pour les paramètres de jeux
          */
         Utils.exceptionLongueur(longueurDeLaCombinaisonRecherche);
         Utils.exceptionNbEssais(nbEssaiRecherche);
 
-        /**
+        /*
          * crée un nombre aléatoire dans un tableau int
          */
         int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
@@ -47,7 +47,7 @@ public class ChallengerRecherche {
         Utils.etoileDecorationPourMaster();
         System.out.println();
 
-        /**
+        /*
          * si le mode developpeur est activé
          */
         if (modeDev == 1){
@@ -57,17 +57,17 @@ public class ChallengerRecherche {
 
         for (int y =1; y <= nbEssaiRecherche; y++){
 
-            /**
-             * demande au joueur de saisir un nombre
+            /*
+             * demande au joueur de saisir un nombre String
              */
             String saisieUtilisateur = Utils.essaiUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
 
-            /**
+            /*
              * convertie la saisie String utilisateur en un tableau int
              */
             int[] tabSaisieUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, saisieUtilisateur);
 
-            /**
+            /*
              * compare les tableaux tabSaisieOrdinateur et tabSaisieUtilisateur
              */
             System.out.print("Essai n°"+ y +" Proposition : " + Arrays.toString(tabSaisieUtilisateur) + " | Réponse : ");
