@@ -72,7 +72,7 @@ public class DuelRecherche {
 
             Utils.etoileDecorationPourMaster();
             System.out.print("Essai n°" + i + " " + Arrays.toString(tabEssaiUtilisateur) + " Réponse pour joueur : ");
-            Utils.algoMaster(tabEssaiUtilisateur, tabNbSecretCpu);
+            Utils.algoPlusMoins(tabEssaiUtilisateur, tabNbSecretCpu);
             Utils.etoileDecorationPourMaster();
 
             System.out.println();
