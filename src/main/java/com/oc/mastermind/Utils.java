@@ -28,7 +28,7 @@ public class Utils {
         Random nbAleatoire = new Random();
         int[] tabSaisieOrdinateur = new int[longueurDelaCombinaison];
         for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
-            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(nombreDeChiffre);
+            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(nombreDeChiffre - 4) + 4;
         }
         logger.info("L'ordinateur a créé un chiffre mystère : "+ Arrays.toString(tabSaisieOrdinateur));
         return tabSaisieOrdinateur;
@@ -187,6 +187,9 @@ public class Utils {
     /**
      * Fonction utilisée pour le mode défenseur et le mode duel
      * détermine le comportement de l'ordinateur pour trouver la combinaison secrete
+     * si le nombre generé et inferieur ou supereieur à la valeur cible
+     * l'ordinateur génére un chiffre entre la valeur [i] et 9 si resultat est +.
+     * l'ordinateur génére un chiffre entre la valeur [i] et 4 si resultat est -.
      * @param tabSaisieAttaquant
      * @param tabSaisieDefenseur
      */
@@ -197,10 +200,6 @@ public class Utils {
         Random r = new Random();
         for (int i = 0; i < tabSaisieDefenseur.length; i++) {
 
-                /*si le nombre generé et inferieur ou supereieur à la valeur cible
-                   l'ordinateur génére un chiffre entre la valeur [i] et 9 si resultat est +.
-                   l'ordinateur génére un chiffre entre la valeur [i] et 4 si resultat est -.
-                 */
             if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
                 logger.info("le chiffre "+ tabSaisieAttaquant[i] +" est trop petit");
                 tabSaisieAttaquant[i] = r.nextInt((9 - tabSaisieAttaquant[i]) ) + tabSaisieAttaquant[i];

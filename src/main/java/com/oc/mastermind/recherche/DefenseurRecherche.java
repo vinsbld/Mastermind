@@ -35,11 +35,11 @@ public class DefenseurRecherche {
         Utils.exceptionNbEssais(nbEssaiRecherche);
 
 
-        int[] tabSaisieAttaquant = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
-
         String saisieDefenseur = Utils.saisieUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
 
         int[] tabSaisieDefenseur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, saisieDefenseur);
+
+        int[] tabSaisieAttaquant = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
 
         //pas de mode developpeur pour ce mode car le code secret de l'utilisateur est affiché par défaut
 

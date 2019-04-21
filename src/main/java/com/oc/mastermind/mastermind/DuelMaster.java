@@ -23,7 +23,7 @@ public class DuelMaster {
      * compare le nombre aléatoire au nombre "secret" du joueur
      * compare le nombre proposé par le joueur au nombre "secret aléatoire"
      */
-   public static void algoDuelMaster() {
+    public static void algoDuelMaster() {
 
         logger.info("L'utilisateur joue à Mastermind en mode Duel");
 
@@ -38,19 +38,23 @@ public class DuelMaster {
         Utils.exceptionNbEssais(nbEssaiMaster);
         Utils.exceptionNbAleatoireMaster(nbChiffreAleatoireMaster);
 
-       int[] tabNbSecretCpu = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
+        int[] tabNbSecretCpu = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
-        if (modeDev == 1){
-            System.out.println("le code secret ordinateur est : "+Arrays.toString(tabNbSecretCpu));
+        if (modeDev == 1) {
+            System.out.println("le code secret ordinateur est : " + Arrays.toString(tabNbSecretCpu));
         }
 
-       String saisieUtilisateur = Utils.saisieUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
+        String saisieUtilisateur = Utils.saisieUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
         int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieUtilisateur);
 
         //pas de mode developpeur pour l'utilisateur car son code secret et affiché par défaut
 
-        //la condition est respectée, affiche le code secret
+        Utils.etoileDecorationPourMaster();
+        System.out.println("l'ordinateur a créé un code secret !");
+        Utils.etoileDecorationPourMaster();
+        System.out.println();
+
         Utils.etoileDecorationPourMaster();
         System.out.println("Votre code secret est : " + Arrays.toString(tabNbSecretUtil));
         Utils.etoileDecorationPourMaster();
@@ -66,15 +70,14 @@ public class DuelMaster {
 
             Utils.algoComportementRandom(tabEssaiCpu, tabEssaiUtilisateur);
 
-            System.out.println();
             Utils.etoileDecorationPourMaster();
-            System.out.print(Arrays.toString(tabEssaiUtilisateur) + " Réponse pour joueur : ");
+            System.out.print("Essai n°" + i + " " + Arrays.toString(tabEssaiUtilisateur) + " Réponse pour joueur : ");
             Utils.algoMaster(tabEssaiUtilisateur, tabNbSecretCpu);
             Utils.etoileDecorationPourMaster();
 
             System.out.println();
             Utils.etoileDecorationPourMaster();
-            System.out.print(Arrays.toString(tabEssaiCpu) + " Réponse pour ordinateur : ");
+            System.out.print("Essai n°" + i + " " + Arrays.toString(tabEssaiCpu) + " Réponse pour ordinateur : ");
             Utils.algoMaster(tabEssaiCpu, tabNbSecretUtil);
             Utils.etoileDecorationPourMaster();
             System.out.println();
@@ -82,7 +85,6 @@ public class DuelMaster {
             if (i == nbEssaiMaster - 1) {
 
                 logger.info("le joueur et l'ordinateur n'ont plus qu'un essai");
-                System.out.println();
                 Utils.etoileDecorationPourMaster();
                 System.out.println("Attention dernier essai");
                 Utils.etoileDecorationPourMaster();
@@ -92,8 +94,8 @@ public class DuelMaster {
             if (i == nbEssaiMaster) {
 
                 logger.info("le joueur et l'odinateur ont tous deux perdu");
-                logger.info("le joueur devait trouver : "+Arrays.toString(tabNbSecretCpu)+" sa dernière proposition est : "+Arrays.toString(tabEssaiUtilisateur));
-                logger.info("l'ordinateur devait trouver : "+Arrays.toString(tabNbSecretUtil)+" sa dernière proposition est : "+Arrays.toString(tabEssaiCpu));
+                logger.info("le joueur devait trouver : " + Arrays.toString(tabNbSecretCpu) + " sa dernière proposition est : " + Arrays.toString(tabEssaiUtilisateur));
+                logger.info("l'ordinateur devait trouver : " + Arrays.toString(tabNbSecretUtil) + " sa dernière proposition est : " + Arrays.toString(tabEssaiCpu));
 
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
@@ -106,7 +108,7 @@ public class DuelMaster {
             }
             if (Arrays.equals(tabEssaiCpu, tabNbSecretUtil)) {
 
-                logger.info("l'odinateur a gagné avec la proosition : "+Arrays.toString(tabEssaiCpu)+" la combinaison a troouver été : "+ Arrays.toString(tabNbSecretUtil));
+                logger.info("l'odinateur a gagné avec la proosition : " + Arrays.toString(tabEssaiCpu) + " la combinaison a troouver été : " + Arrays.toString(tabNbSecretUtil));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("             L'ordinateur a GAGNÉ !");
@@ -118,7 +120,7 @@ public class DuelMaster {
             }
             if (Arrays.equals(tabEssaiUtilisateur, tabNbSecretCpu)) {
 
-                logger.info("l'utilisateur a gagné avec la combinaison : "+Arrays.toString(tabEssaiUtilisateur)+" la combianison a trouver été bien : "+Arrays.toString(tabNbSecretCpu));
+                logger.info("l'utilisateur a gagné avec la combinaison : " + Arrays.toString(tabEssaiUtilisateur) + " la combianison a trouver été bien : " + Arrays.toString(tabNbSecretCpu));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                    GAGNÉ !");

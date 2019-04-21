@@ -33,26 +33,25 @@ public class DefenseurMaster {
         Utils.exceptionNbEssais(nbEssaiMaster);
         Utils.exceptionNbAleatoireMaster(nbChiffreAleatoireMaster);
 
-
-        int[] tabSaisieAttaquant = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
-
         String saisieDefenseur = Utils.saisieUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
 
         int[] tabSaisieDefenseur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieDefenseur);
 
+        int[] tabSaisieAttaquant = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
+
         //pas de mode developpeur pour ce mode car le code secret de l'utilisateur est affiché par défaut
-        
+
         Utils.etoileDecorationPourMaster();
         System.out.println("Votre code secret est " + Arrays.toString(tabSaisieDefenseur));
         Utils.etoileDecorationPourMaster();
         System.out.println();
 
-        for (int y = 1; y <= nbEssaiMaster ;y++) {
+        for (int y = 1; y <= nbEssaiMaster; y++) {
 
             Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
 
             Utils.etoileDecorationPourMaster();
-            System.out.print("Essai n°"+ y +" Proposition : " + Arrays.toString(tabSaisieAttaquant) + " | Réponse : ");
+            System.out.print("Essai n°" + y + " Proposition : " + Arrays.toString(tabSaisieAttaquant) + " | Réponse : ");
             Utils.algoMaster(tabSaisieDefenseur, tabSaisieAttaquant);
             Utils.etoileDecorationPourMaster();
             System.out.println();
@@ -67,7 +66,7 @@ public class DefenseurMaster {
             }
             if (y == nbEssaiMaster) {
 
-                logger.info("le joueur a gagné !  l'odinateur a fait la proposition : "+ Arrays.toString(tabSaisieAttaquant)+"l'ordinateur n'a pas trouvé : "+ Arrays.toString(tabSaisieDefenseur));
+                logger.info("le joueur a gagné !  l'odinateur a fait la proposition : " + Arrays.toString(tabSaisieAttaquant) + "l'ordinateur n'a pas trouvé : " + Arrays.toString(tabSaisieDefenseur));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                    GAGNÉ !");
@@ -80,7 +79,7 @@ public class DefenseurMaster {
 
             if (Arrays.equals(tabSaisieAttaquant, tabSaisieDefenseur)) {
 
-                logger.info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieAttaquant)+" l'odinateur a trouvé : "+ Arrays.toString(tabSaisieDefenseur));
+                logger.info("le joueur a perdu avec la proposition : " + Arrays.toString(tabSaisieAttaquant) + " l'odinateur a trouvé : " + Arrays.toString(tabSaisieDefenseur));
                 Utils.etoileDecoration();
                 Utils.hastagDecoration();
                 System.out.println("                     PERDU !");
