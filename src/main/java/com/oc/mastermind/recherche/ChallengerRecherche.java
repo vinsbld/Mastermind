@@ -77,7 +77,6 @@ public class ChallengerRecherche {
             if (y == nbEssaiRecherche - 1) {
 
                 logger.info("le joueur n'a plus qu'un essai");
-                System.out.println();
                 Utils.etoileDecoration();
                 System.out.println("Attention dernier essai");
                 Utils.etoileDecoration();
