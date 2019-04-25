@@ -121,7 +121,7 @@ public class Menu {
         System.out.println("*         CHOISISSEZ UN MODE DE JEUX          *");
         Utils.etoileDecoration();
         System.out.println();
-        System.out.println("1. ChallengerRecherche");
+        System.out.println("1. Challenger");
         System.out.println("Le joueur joue contre l'ordinateur");
         System.out.println();
         System.out.println("2. Défenseur");
