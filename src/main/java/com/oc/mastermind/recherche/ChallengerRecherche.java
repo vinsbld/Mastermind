@@ -72,6 +72,7 @@ public class ChallengerRecherche {
              */
             System.out.print("Essai n°"+ y +" Proposition : " + Arrays.toString(tabSaisieUtilisateur) + " | Réponse : ");
             Utils.algoPlusMoins(tabSaisieUtilisateur, tabSaisieOrdinateur);
+            System.out.println();
 
             if (y == nbEssaiRecherche - 1) {
 

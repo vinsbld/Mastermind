@@ -333,6 +333,8 @@ public class Utils {
             Utils.etoileDecorationPourMaster();
             System.out.print("saisisez votre proposition : ");
             nbSecretUtilisateur = nb.next();
+            Utils.etoileDecorationPourMaster();
+            System.out.println();
             isUnNombre = nbSecretUtilisateur.matches("[0-9]*");
             logger.info("l'utilisateur propose la combinaison "+ nbSecretUtilisateur);
             if (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison){
