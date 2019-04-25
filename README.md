@@ -24,4 +24,3 @@ L'attaquant doit deviner la combinaison secrète en un nombre limitéd'essais.
 1.Mode ​challenger​ où vous devez trouver la combinaison secrètede l'ordinateur
 2.Mode ​défenseur​ où c'est à l'ordinateur de trouver votrecombinaison secrète
 3.Mode ​duel​ où l'ordinateur et vous jouez tour à tour, le premier àtrouver la combinaison secrète de l'autre a gagné
-
