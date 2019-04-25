@@ -83,7 +83,7 @@ public class ChallengerMaster {
                 Utils.etoileDecorationPourMaster();
                 System.out.println();
             }
-            if (y == nbEssaiMaster) {
+            if (y == nbEssaiMaster && !Arrays.equals(tabSaisieOrdinateur, tabSaisieUtilisateur)) {
 
                 logger.info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieUtilisateur) +"  il fallait trouver : "+ Arrays.toString(tabSaisieOrdinateur));
                 Utils.etoileDecorationPourMaster();

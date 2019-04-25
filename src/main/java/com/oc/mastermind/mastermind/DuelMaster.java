@@ -91,7 +91,7 @@ public class DuelMaster {
                 System.out.println();
             }
 
-            if (i == nbEssaiMaster) {
+            if (i == nbEssaiMaster && !Arrays.equals(tabNbSecretCpu, tabNbSecretUtil)) {
 
                 logger.info("le joueur et l'odinateur ont tous deux perdu");
                 logger.info("le joueur devait trouver : " + Arrays.toString(tabNbSecretCpu) + " sa dernière proposition est : " + Arrays.toString(tabEssaiUtilisateur));

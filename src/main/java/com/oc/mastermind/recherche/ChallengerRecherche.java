@@ -82,7 +82,7 @@ public class ChallengerRecherche {
                 Utils.etoileDecoration();
                 System.out.println();
             }
-            if (y == nbEssaiRecherche) {
+            if (y == nbEssaiRecherche && !Arrays.equals(tabSaisieOrdinateur, tabSaisieUtilisateur)) {
 
                 logger.info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieUtilisateur)+" il fallait trouver : "+ Arrays.toString(tabSaisieOrdinateur));
                 Utils.etoileDecoration();

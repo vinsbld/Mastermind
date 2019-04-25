@@ -64,7 +64,7 @@ public class DefenseurMaster {
                 Utils.etoileDecorationPourMaster();
                 System.out.println();
             }
-            if (y == nbEssaiMaster) {
+            if (y == nbEssaiMaster && !Arrays.equals(tabSaisieAttaquant, tabSaisieDefenseur)) {
 
                 logger.info("le joueur a gagné !  l'odinateur a fait la proposition : " + Arrays.toString(tabSaisieAttaquant) + "l'ordinateur n'a pas trouvé : " + Arrays.toString(tabSaisieDefenseur));
                 Utils.etoileDecoration();

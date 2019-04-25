@@ -66,7 +66,7 @@ public class DefenseurRecherche {
                 System.out.println();
             }
 
-            if (y == nbEssaiRecherche) {
+            if (y == nbEssaiRecherche && !Arrays.equals(tabSaisieAttaquant, tabSaisieDefenseur)) {
 
                 logger.info("le joueur a gagné !  l'odinateur a fait la proposition : "+ Arrays.toString(tabSaisieAttaquant)+"l'ordinateur n'a pas trouvé : "+ Arrays.toString(tabSaisieDefenseur));
                 Utils.etoileDecoration();

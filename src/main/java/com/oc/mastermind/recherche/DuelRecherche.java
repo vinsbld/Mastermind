@@ -91,7 +91,7 @@ public class DuelRecherche {
                 System.out.println();
             }
 
-            if (i == nbEssaiRecherche) {
+            if (i == nbEssaiRecherche && !Arrays.equals(tabNbSecretCpu, tabNbSecretUtil)) {
 
                 logger.info("le joueur et l'odinateur ont tous deux perdu");
 
