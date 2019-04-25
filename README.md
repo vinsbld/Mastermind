@@ -35,7 +35,7 @@ Lancer l'application en mode console :
     en mode joueur :
         java -jar "\mastMind.jar"
         
-    *vous pouvez entrer "java -java" puis faire glisser le fichier .jar dans la console
+    *vous pouvez entrer "java -jar" puis faire glisser le fichier .jar dans la console
     appuyez sur entrer pour le mode joueur,
     ajouter "dev" puis entrer pour le mode developpeur.
         
