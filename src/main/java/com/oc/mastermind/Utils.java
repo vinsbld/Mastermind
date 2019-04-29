@@ -102,7 +102,7 @@ public class Utils {
      * compotement de l'odinateur pour trouver le nombre secret pour le jeu mastermind
      * algorithme mastermind, première boucle indique si un élément est bien placé,
      * la deuxième boucle indique si un élément et présent dans le tableau,
-     *     la condition != indique que si l'élément est bien placé alors il ne faut pas le prendre en concidèration
+     * la condition != indique que si l'élément est bien placé alors il ne faut pas le prendre en concidèration
      * @param combinaisonSecrete
      * @param attaque
      */
@@ -119,7 +119,6 @@ public class Utils {
                     if (attaque[i] == combinaisonSecrete[y] && attaque[y] != combinaisonSecrete[y]) {
                         present = present + 1;
                         logger.info("le chiffre "+ attaque[i] +" est présent");
-                        break;
                     }
                 }
             }
