@@ -393,7 +393,7 @@ public class Utils {
             }
             if (tabSaisieAttaquant[i] > tabSaisieDefenseur[i]) {
                 logger.info("le chiffre "+ tabSaisieAttaquant[i] +" est trop grand");
-                tabSaisieAttaquant[i] = r.nextInt((tabSaisieAttaquant[i] - 0) ) + 0;
+                tabSaisieAttaquant[i] = r.nextInt((tabSaisieAttaquant[i]));
                 logger.info("le nouveau chiffre proposé par l'ordinateur est "+ tabSaisieAttaquant[i]);
             }
             if (tabSaisieAttaquant[i] == tabSaisieDefenseur[i]) {
