@@ -19,10 +19,9 @@ public class Config {
     public int modeDev;
     //public static Logger logger = LogManager.getLogger();
 
-    private static Config c = new Config();
+    private static final Config c = new Config();
 
     private Config() {
-
         load("config.properties");
 
     }
