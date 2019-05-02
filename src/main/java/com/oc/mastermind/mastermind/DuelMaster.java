@@ -82,15 +82,6 @@ public class DuelMaster {
             Utils.etoileDecorationPourMaster();
             System.out.println();
 
-            if (i == nbEssaiMaster - 1) {
-
-                logger.info("le joueur et l'ordinateur n'ont plus qu'un essai");
-                Utils.etoileDecorationPourMaster();
-                System.out.println("Attention dernier essai");
-                Utils.etoileDecorationPourMaster();
-                System.out.println();
-            }
-
             if (i == nbEssaiMaster && !Arrays.equals(tabNbSecretCpu, tabNbSecretUtil)) {
 
                 logger.info("le joueur et l'odinateur ont tous deux perdu");
@@ -129,6 +120,15 @@ public class DuelMaster {
                 System.out.println("Vous avez trouvé le code secret de l'ordinateur !");
                 System.out.println("Le code secret de l'ordinateur était : " + Arrays.toString(tabNbSecretCpu));
                 break;
+            }
+
+            if (i == nbEssaiMaster - 1) {
+
+                logger.info("le joueur et l'ordinateur n'ont plus qu'un essai");
+                Utils.etoileDecorationPourMaster();
+                System.out.println("Attention dernier essai");
+                Utils.etoileDecorationPourMaster();
+                System.out.println();
             }
         }
         Utils.etoileDecoration();

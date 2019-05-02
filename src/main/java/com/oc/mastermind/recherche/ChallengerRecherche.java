@@ -74,14 +74,7 @@ public class ChallengerRecherche {
             Utils.algoPlusMoins(tabSaisieUtilisateur, tabSaisieOrdinateur);
             System.out.println();
 
-            if (y == nbEssaiRecherche - 1) {
 
-                logger.info("le joueur n'a plus qu'un essai");
-                Utils.etoileDecoration();
-                System.out.println("Attention dernier essai");
-                Utils.etoileDecoration();
-                System.out.println();
-            }
             if (y == nbEssaiRecherche && !Arrays.equals(tabSaisieOrdinateur, tabSaisieUtilisateur)) {
 
                 logger.info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieUtilisateur)+" il fallait trouver : "+ Arrays.toString(tabSaisieOrdinateur));
@@ -105,6 +98,15 @@ public class ChallengerRecherche {
                 System.out.println("Vous avez trouvé la combinaison secrete !");
                 System.out.println("La combinaison été : " + Arrays.toString(tabSaisieOrdinateur));
                 break;
+            }
+
+            if (y == nbEssaiRecherche - 1) {
+
+                logger.info("le joueur n'a plus qu'un essai");
+                Utils.etoileDecoration();
+                System.out.println("Attention dernier essai");
+                Utils.etoileDecoration();
+                System.out.println();
             }
         }
         Utils.etoileDecoration();

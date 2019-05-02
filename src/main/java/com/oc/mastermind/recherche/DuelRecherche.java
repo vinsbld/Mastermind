@@ -82,15 +82,6 @@ public class DuelRecherche {
             Utils.etoileDecorationPourMaster();
             System.out.println();
 
-            if (i == nbEssaiRecherche - 1) {
-
-                logger.info("le joueur et l'ordinateur n'ont plus qu'un essai");
-                Utils.etoileDecoration();
-                System.out.println("Attention dernier essai");
-                Utils.etoileDecoration();
-                System.out.println();
-            }
-
             if (i == nbEssaiRecherche && !Arrays.equals(tabNbSecretCpu, tabNbSecretUtil)) {
 
                 logger.info("le joueur et l'odinateur ont tous deux perdu");
@@ -132,6 +123,15 @@ public class DuelRecherche {
                 System.out.println("Vous avez trouvé le code secret de l'ordinateur !");
                 System.out.println("Le code secret de l'ordinateur était : " + Arrays.toString(tabNbSecretCpu));
                 break;
+            }
+
+            if (i == nbEssaiRecherche - 1) {
+
+                logger.info("le joueur et l'ordinateur n'ont plus qu'un essai");
+                Utils.etoileDecoration();
+                System.out.println("Attention dernier essai");
+                Utils.etoileDecoration();
+                System.out.println();
             }
         }
         Utils.etoileDecoration();

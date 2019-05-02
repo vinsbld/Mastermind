@@ -56,14 +56,6 @@ public class DefenseurMaster {
             Utils.etoileDecorationPourMaster();
             System.out.println();
 
-            if (y == nbEssaiMaster - 1) {
-
-                logger.info("le joueur n'a plus qu'un essai");
-                Utils.etoileDecorationPourMaster();
-                System.out.println("Attention dernier essai");
-                Utils.etoileDecorationPourMaster();
-                System.out.println();
-            }
             if (y == nbEssaiMaster && !Arrays.equals(tabSaisieAttaquant, tabSaisieDefenseur)) {
 
                 logger.info("le joueur a gagné !  l'odinateur a fait la proposition : " + Arrays.toString(tabSaisieAttaquant) + "l'ordinateur n'a pas trouvé : " + Arrays.toString(tabSaisieDefenseur));
@@ -88,6 +80,15 @@ public class DefenseurMaster {
                 System.out.println("l'ordinateur a trouvé le code secret");
                 System.out.println("La combinaison été : " + Arrays.toString(tabSaisieDefenseur));
                 break;
+            }
+
+            if (y == nbEssaiMaster - 1) {
+
+                logger.info("le joueur n'a plus qu'un essai");
+                Utils.etoileDecorationPourMaster();
+                System.out.println("Attention dernier essai");
+                Utils.etoileDecorationPourMaster();
+                System.out.println();
             }
         }
         Utils.etoileDecoration();

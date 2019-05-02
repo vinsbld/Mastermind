@@ -57,14 +57,6 @@ public class DefenseurRecherche {
             Utils.etoileDecoration();
             System.out.println();
 
-            if (y == nbEssaiRecherche - 1) {
-
-                logger.info("le joueur n'a plus qu'un essai");
-                Utils.etoileDecoration();
-                System.out.println("Attention dernier essai");
-                Utils.etoileDecoration();
-                System.out.println();
-            }
 
             if (y == nbEssaiRecherche && !Arrays.equals(tabSaisieAttaquant, tabSaisieDefenseur)) {
 
@@ -90,6 +82,15 @@ public class DefenseurRecherche {
                 System.out.println("l'ordinateur a trouvé la combinaison secrete");
                 System.out.println("La combinaison été : " + Arrays.toString(tabSaisieDefenseur));
                 break;
+            }
+
+            if (y == nbEssaiRecherche - 1) {
+
+                logger.info("le joueur n'a plus qu'un essai");
+                Utils.etoileDecoration();
+                System.out.println("Attention dernier essai");
+                Utils.etoileDecoration();
+                System.out.println();
             }
         }
         Utils.etoileDecoration();

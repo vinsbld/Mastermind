@@ -75,14 +75,6 @@ public class ChallengerMaster {
             Utils.algoMaster(tabSaisieOrdinateur, tabSaisieUtilisateur);
             System.out.println();
 
-            if (y == nbEssaiMaster - 1) {
-
-                logger.info("le joueur n'a plus qu'un essai");
-                Utils.etoileDecorationPourMaster();
-                System.out.println("Attention dernier essai");
-                Utils.etoileDecorationPourMaster();
-                System.out.println();
-            }
             if (y == nbEssaiMaster && !Arrays.equals(tabSaisieOrdinateur, tabSaisieUtilisateur)) {
 
                 logger.info("le joueur a perdu avec la proposition : "+ Arrays.toString(tabSaisieUtilisateur) +"  il fallait trouver : "+ Arrays.toString(tabSaisieOrdinateur));
@@ -110,6 +102,15 @@ public class ChallengerMaster {
                 System.out.println("Vous avez trouvé la combinaison secrete !");
                 System.out.println("La combinaison été : " + Arrays.toString(tabSaisieOrdinateur));
                 break;
+            }
+
+            if (y == nbEssaiMaster - 1) {
+
+                logger.info("le joueur n'a plus qu'un essai");
+                Utils.etoileDecorationPourMaster();
+                System.out.println("Attention dernier essai");
+                Utils.etoileDecorationPourMaster();
+                System.out.println();
             }
         }
         Utils.etoileDecoration();
