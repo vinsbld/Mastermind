@@ -131,6 +131,7 @@ public class DuelRecherche {
                 Utils.etoileDecoration();
                 System.out.println("Vous avez trouvé le code secret de l'ordinateur !");
                 System.out.println("Le code secret de l'ordinateur était : " + Arrays.toString(tabNbSecretCpu));
+                break;
             }
         }
         Utils.etoileDecoration();

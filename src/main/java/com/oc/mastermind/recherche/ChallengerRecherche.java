@@ -104,6 +104,7 @@ public class ChallengerRecherche {
                 Utils.etoileDecoration();
                 System.out.println("Vous avez trouvé la combinaison secrete !");
                 System.out.println("La combinaison été : " + Arrays.toString(tabSaisieOrdinateur));
+                break;
             }
         }
         Utils.etoileDecoration();
