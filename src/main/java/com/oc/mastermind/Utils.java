@@ -247,7 +247,7 @@ public class Utils {
      * alors on lui proposaera sans cesse de saisir une valeur valide
      *
      * @param longueurDelaCombinaison
-     * @return
+     * @return nbSecretUtilisateur
      */
     public static String saisieUtilisateur(int longueurDelaCombinaison) {
 
