@@ -150,8 +150,8 @@ public class Utils {
      * convertie un String en int
      *
      * @param longueurDelaCombinaison nombre défini dans le fichier config.properties
-     * @param saisieUtilisateur       nombre secret saisi par l'utilisateur
-     * @return tabNbSecretUtil
+     * @param saisieUtilisateur nombre secret saisi par l'utilisateur
+     * @return tabNbSecretUtil retourne le nombre saisi par l'utilisateur sous forme de tableau
      */
     /*transforme la saisie utilisateur "String", chaque caractères
     "charAt(j)" est en suite converti en un entier et est placé dan sun tableau de int[]
@@ -204,8 +204,8 @@ public class Utils {
     /**
      * créer un nombre random pour le jeu recherche
      *
-     * @param longueurDelaCombinaison
-     * @return tabSaisieOrdinateur
+     * @param longueurDelaCombinaison nombre défini dans le fichier config.properties
+     * @return tabSaisieOrdinateur tableau contenant le nombre secret de l'ordinateur
      */
     public static int[] initialiseTableauRandom(int longueurDelaCombinaison) {
 
