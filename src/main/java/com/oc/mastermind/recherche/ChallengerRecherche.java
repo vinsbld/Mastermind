@@ -40,7 +40,7 @@ public class ChallengerRecherche {
         /*
          * crée un nombre aléatoire dans un tableau int
          */
-        int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
+        int[] tabSaisieOrdinateur = Utils.initialiseTableauRandom(longueurDeLaCombinaisonRecherche);
 
         Utils.etoileDecorationPourMaster();
         System.out.println("l'ordinateur a créé un nombre mystère !");
@@ -60,7 +60,7 @@ public class ChallengerRecherche {
             /*
              * demande au joueur de saisir un nombre String
              */
-            String saisieUtilisateur = Utils.essaiUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
+            String saisieUtilisateur = Utils.essaiUtilisateur(longueurDeLaCombinaisonRecherche);
 
             /*
              * convertie la saisie String utilisateur en un tableau int

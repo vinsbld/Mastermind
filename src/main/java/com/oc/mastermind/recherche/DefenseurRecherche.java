@@ -39,7 +39,7 @@ public class DefenseurRecherche {
 
         int[] tabSaisieDefenseur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, saisieDefenseur);
 
-        int[] tabSaisieAttaquant = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
+        int[] tabSaisieAttaquant = Utils.initialiseTableauRandom(longueurDeLaCombinaisonRecherche);
 
         //pas de mode developpeur pour ce mode car le code secret de l'utilisateur est affiché par défaut
 
@@ -50,7 +50,7 @@ public class DefenseurRecherche {
 
         for (int y = 1; y <= nbEssaiRecherche; y++) {
 
-            Utils.algoComportementRandomRecherhe(tabSaisieAttaquant, tabSaisieDefenseur);
+            Utils.algoComportementRandom(tabSaisieAttaquant, tabSaisieDefenseur);
             Utils.etoileDecoration();
             System.out.print("Essai n°"+ y +" Proposition : " + Arrays.toString(tabSaisieAttaquant) + " | Réponse : ");
             Utils.algoPlusMoins(tabSaisieAttaquant, tabSaisieDefenseur);

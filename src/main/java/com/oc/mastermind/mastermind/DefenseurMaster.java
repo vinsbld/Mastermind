@@ -35,7 +35,7 @@ public class DefenseurMaster {
 
         int[] tabSaisieDefenseur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieDefenseur);
 
-        int[] tabSaisieAttaquant = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster);
+        int[] tabSaisieAttaquant = Utils.initialiseTableauRandom(longueurDeLaCombinaisonMaster);
 
         //pas de mode developpeur pour ce mode car le code secret de l'utilisateur est affiché par défaut
 

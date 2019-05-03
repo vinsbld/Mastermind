@@ -17,26 +17,6 @@ public class Utils {
 
     }
 
-    /************************************************************************************/
-    /************************** fonctions pour Mastermind *******************************/
-
-    /**
-     * génére des chiffres de façon aléatoire
-     * céer un nombre aléatoire entre 4 a 10 "int nombreDeChiffre" et place chaque chiffre dans un tableau
-     * @param longueurDelaCombinaison nombre défini dans le fichier config.properties
-     * @return tabSaisieOrdinateur
-     */
-    public static int[] initialiseTableauRandomMaster(int longueurDelaCombinaison) {
-
-        Random nbAleatoire = new Random();
-        int[] tabSaisieOrdinateur = new int[longueurDelaCombinaison];
-        for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
-            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(10);
-        }
-        logger.info("L'ordinateur a créé un chiffre mystère : " + Arrays.toString(tabSaisieOrdinateur));
-        return tabSaisieOrdinateur;
-
-    }
 
     /**
      * fonction utilisée pour le mode duel
@@ -47,7 +27,7 @@ public class Utils {
      */
     /*tant que la condition n'est pas respectée alors revoi l'utilisateur vers une
        nouvelle saisie en lui indiquant les prérequis d'une saisie valide*/
-    public static String essaiUtilisateurMaster(int longueurDelaCombinaison) {
+    public static String essaiUtilisateur(int longueurDelaCombinaison) {
 
         boolean isUnNombre;
         String nbSecretUtilisateur;
@@ -167,40 +147,6 @@ public class Utils {
     }
 
     /**
-     * Fonction utilisée pour le mode défenseur et le mode duel
-     * détermine le comportement de l'ordinateur pour trouver la combinaison secrete
-     * si le nombre generé et inferieur ou supereieur à la valeur cible
-     * l'ordinateur génére un chiffre entre la valeur [i] et 9 si resultat est +.
-     * l'ordinateur génére un chiffre entre la valeur [i] et 4 si resultat est -.
-     *
-     * @param tabSaisieAttaquant
-     * @param tabSaisieDefenseur
-     */
-    public static void algoComportementRandom(int tabSaisieAttaquant[], int tabSaisieDefenseur[]) {
-
-        logger.info("l'ordinateur compare les éléments des deux tableaux, attaquant : " + Arrays.toString(tabSaisieAttaquant) + " et défenseur : " + Arrays.toString(tabSaisieDefenseur));
-
-        for (int i = 0; i < tabSaisieDefenseur.length; i++) {
-
-            if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
-                logger.info("le chiffre " + tabSaisieAttaquant[i] + " est trop petit");
-                tabSaisieAttaquant[i] = nombreMaxMinRandom(tabSaisieAttaquant[i] + 1, 9);
-                logger.info("le nouveau chiffre proposé par l'ordinateur est " + tabSaisieAttaquant[i]);
-            }else if (tabSaisieAttaquant[i] > tabSaisieDefenseur[i]) {
-                logger.info("le chiffre " + tabSaisieAttaquant[i] + " est trop grand");
-                tabSaisieAttaquant[i] = nombreMaxMinRandom(0, tabSaisieAttaquant[i] - 1);
-                logger.info("le nouveau chiffre proposé par l'ordinateur est " + tabSaisieAttaquant[i]);
-            } else {
-                tabSaisieAttaquant[i] = tabSaisieAttaquant[i];
-                logger.info("le chiffre " + tabSaisieAttaquant[i] + " est à la bonne place");
-            }
-        }
-    }
-
-    /************************************************************************************/
-    /******************************* fonctions communes *********************************/
-
-    /**
      * fonction utilisée dans le mode duel
      * convertie un String en int
      *
@@ -224,9 +170,6 @@ public class Utils {
         return tabNbSecretUtil;
     }
 
-
-    /************************************************************************************/
-    /**************************** fonctions Recherche +/- *******************************/
 
     /**
      * affiche si le chiffre est bien positionné ou si celui-ci est plus grand ou plus petit
@@ -265,7 +208,7 @@ public class Utils {
      * @param longueurDelaCombinaison
      * @return tabSaisieOrdinateur
      */
-    public static int[] initialiseTableauRandomRecherche(int longueurDelaCombinaison) {
+    public static int[] initialiseTableauRandom(int longueurDelaCombinaison) {
 
         Random nbAleatoire = new Random();
         int[] tabSaisieOrdinateur = new int[longueurDelaCombinaison];
@@ -296,37 +239,6 @@ public class Utils {
             System.out.print("#");
         }
         System.out.println();
-    }
-
-
-    /**
-     * fonction utilisée en mode recherche
-     * transforme la saisie utilisateur String en un entier
-     *
-     * @param longueurDelaCombinaison
-     * @return
-     */
-    public static String essaiUtilisateurRecherche(int longueurDelaCombinaison) {
-
-        boolean isUnNombre;
-        String nbSecretUtilisateur;
-
-        do {
-
-            Utils.etoileDecorationPourMaster();
-            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
-            Utils.etoileDecorationPourMaster();
-            System.out.print("saisisez votre proposition : ");
-            nbSecretUtilisateur = nb.next();
-            Utils.etoileDecorationPourMaster();
-            System.out.println();
-            isUnNombre = nbSecretUtilisateur.matches("[0-9]*");
-            logger.info("l'utilisateur propose la combinaison " + nbSecretUtilisateur);
-            if (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison) {
-                logger.warn("Utilisateur a saisie une mauvaise combinaison " + nbSecretUtilisateur + " n'est pas une proposition valide, la proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
-            }
-        } while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
-        return nbSecretUtilisateur;
     }
 
     /**
@@ -369,7 +281,6 @@ public class Utils {
         return r.nextInt((max - min) + 1) + min;
     }
 
-
     /**
      * compotement de l'odinateur pour trouver le nombre secret pour le jeu recherche
      * si le nombre generé et inferieur ou supereieur à la valeur cible
@@ -379,12 +290,11 @@ public class Utils {
      * @param tabSaisieAttaquant
      * @param tabSaisieDefenseur
      */
-    public static void algoComportementRandomRecherhe(int tabSaisieAttaquant[], int tabSaisieDefenseur[]) {
+    public static void algoComportementRandom(int tabSaisieAttaquant[], int tabSaisieDefenseur[]) {
 
         logger.info("l'ordinateur compare les éléments des deux tableaux, attaquant : " + Arrays.toString(tabSaisieAttaquant) + " et défenseur : " + Arrays.toString(tabSaisieDefenseur));
 
         for (int i = 0; i < tabSaisieDefenseur.length; i++) {
-
 
             if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
                 logger.info("le chiffre " + tabSaisieAttaquant[i] + " est trop petit");

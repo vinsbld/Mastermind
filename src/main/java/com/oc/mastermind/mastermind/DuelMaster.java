@@ -37,7 +37,7 @@ public class DuelMaster {
         Utils.exceptionNbEssais(nbEssaiMaster);
 
 
-        int[] tabNbSecretCpu = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster);
+        int[] tabNbSecretCpu = Utils.initialiseTableauRandom(longueurDeLaCombinaisonMaster);
 
         if (modeDev == 1) {
             System.out.println("le code secret ordinateur est : " + Arrays.toString(tabNbSecretCpu));
@@ -61,11 +61,11 @@ public class DuelMaster {
 
         for (int i = 1; i <= nbEssaiMaster; i++) {
 
-            String essaiUtilisateur = Utils.essaiUtilisateurMaster(longueurDeLaCombinaisonMaster);
+            String essaiUtilisateur = Utils.essaiUtilisateur(longueurDeLaCombinaisonMaster);
 
             int[] tabEssaiUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, essaiUtilisateur);
 
-            int[] tabEssaiCpu = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster);
+            int[] tabEssaiCpu = Utils.initialiseTableauRandom(longueurDeLaCombinaisonMaster);
 
             Utils.algoComportementRandom(tabEssaiCpu, tabEssaiUtilisateur);
 

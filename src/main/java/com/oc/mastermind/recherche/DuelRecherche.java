@@ -39,7 +39,7 @@ public class DuelRecherche {
         Utils.exceptionLongueurRecherche(longueurDeLaCombinaisonRecherche);
         Utils.exceptionNbEssais(nbEssaiRecherche);
 
-        int[] tabNbSecretCpu = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
+        int[] tabNbSecretCpu = Utils.initialiseTableauRandom(longueurDeLaCombinaisonRecherche);
 
         if (modeDev == 1) {
             System.out.println("le code secret ordinateur est : " + Arrays.toString(tabNbSecretCpu));
@@ -62,13 +62,13 @@ public class DuelRecherche {
 
         for (int i = 1; i <= nbEssaiRecherche; i++) {
 
-            String essaiUtilisateur = Utils.essaiUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
+            String essaiUtilisateur = Utils.essaiUtilisateur(longueurDeLaCombinaisonRecherche);
 
             int[] tabEssaiUtilisateur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, essaiUtilisateur);
 
-            int[] tabEssaiCpu = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);
+            int[] tabEssaiCpu = Utils.initialiseTableauRandom(longueurDeLaCombinaisonRecherche);
 
-            Utils.algoComportementRandomRecherhe(tabEssaiCpu, tabEssaiUtilisateur);
+            Utils.algoComportementRandom(tabEssaiCpu, tabEssaiUtilisateur);
 
             Utils.etoileDecorationPourMaster();
             System.out.print("Essai n°" + i + " " + Arrays.toString(tabEssaiUtilisateur) + " Réponse pour joueur : ");
