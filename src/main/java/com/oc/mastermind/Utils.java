@@ -17,13 +17,12 @@ public class Utils {
 
     }
 
-
     /**
      * fonction utilisée pour le mode duel
      * convertie un String en un int
      *
      * @param longueurDelaCombinaison nombre défini dans le fichier config.properties
-     * @return nbSecretUtilisateur
+     * @return nbSecretUtilisateur nombre secret créer par l'utilisateur
      */
     /*tant que la condition n'est pas respectée alors revoi l'utilisateur vers une
        nouvelle saisie en lui indiquant les prérequis d'une saisie valide*/
@@ -41,15 +40,15 @@ public class Utils {
             nbSecretUtilisateur = nb.next();
             Utils.etoileDecorationPourMaster();
             System.out.println();
-            isUnNombre = nbSecretUtilisateur.matches("[0 - 9]*");
+            isUnNombre = nbSecretUtilisateur.matches("[0-9]*");
             logger.info("L'utilisateur a essayé la combinaison : " + nbSecretUtilisateur);
 
-            if (isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison) {
+            if (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison) {
                 logger.warn("Utilisateur a saisie une mauvaise combinaison " + nbSecretUtilisateur + " n'est pas valide, la proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
             }
         }
 
-        while (isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
+        while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
         return nbSecretUtilisateur;
     }
 
@@ -60,8 +59,8 @@ public class Utils {
      * la deuxième boucle indique si un élément et présent dans le tableau,
      * la condition != indique que si l'élément est bien placé alors il ne faut pas le prendre en concidèration
      *
-     * @param combinaisonSecrete
-     * @param attaque
+     * @param combinaisonSecrete tableau du défenseur
+     * @param attaque tableau de l'attaquant
      */
     public static void algoMaster(int[] combinaisonSecrete, int[] attaque) {
         logger.info("l'odinateur verifie si dans sa combinaison : " + Arrays.toString(attaque) + " un nombre est bien placé ou présent ");
@@ -150,8 +149,8 @@ public class Utils {
      * fonction utilisée dans le mode duel
      * convertie un String en int
      *
-     * @param longueurDelaCombinaison
-     * @param saisieUtilisateur
+     * @param longueurDelaCombinaison nombre défini dans le fichier config.properties
+     * @param saisieUtilisateur nombre secret saisi par l'utilisateur
      * @return tabNbSecretUtil
      */
     /*transforme la saisie utilisateur "String", chaque caractères
