@@ -36,7 +36,7 @@ public class DuelRecherche {
         int nbEssaiRecherche = myConfig.nbEssaiRecherche;
         int modeDev = myConfig.modeDev;
 
-        Utils.exceptionLongueur(longueurDeLaCombinaisonRecherche);
+        Utils.exceptionLongueurRecherche(longueurDeLaCombinaisonRecherche);
         Utils.exceptionNbEssais(nbEssaiRecherche);
 
         int[] tabNbSecretCpu = Utils.initialiseTableauRandomRecherche(longueurDeLaCombinaisonRecherche);

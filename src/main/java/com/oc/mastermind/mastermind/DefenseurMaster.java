@@ -27,17 +27,15 @@ public class DefenseurMaster {
 
         int longueurDeLaCombinaisonMaster = myConfig.longueurDeLaCombinaisonMaster;
         int nbEssaiMaster = myConfig.nbEssaiMaster;
-        int nbChiffreAleatoireMaster = myConfig.nbChiffreAleatoireMaster;
 
-        Utils.exceptionLongueur(longueurDeLaCombinaisonMaster);
+        Utils.exceptionLongueurMaster(longueurDeLaCombinaisonMaster);
         Utils.exceptionNbEssais(nbEssaiMaster);
-        Utils.exceptionNbAleatoireMaster(nbChiffreAleatoireMaster);
 
-        String saisieDefenseur = Utils.saisieUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
+        String saisieDefenseur = Utils.saisieUtilisateurMaster(longueurDeLaCombinaisonMaster);
 
         int[] tabSaisieDefenseur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieDefenseur);
 
-        int[] tabSaisieAttaquant = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
+        int[] tabSaisieAttaquant = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster);
 
         //pas de mode developpeur pour ce mode car le code secret de l'utilisateur est affiché par défaut
 

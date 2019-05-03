@@ -30,20 +30,18 @@ public class ChallengerMaster {
 
         int longueurDeLaCombinaisonMaster = myConfig.longueurDeLaCombinaisonMaster;
         int nbEssaiMaster = myConfig.nbEssaiMaster;
-        int nbChiffreAleatoireMaster = myConfig.nbChiffreAleatoireMaster;
         int modeDev = myConfig.modeDev;
 
       /*
        * exceptions pour les paramètres de jeux
        */
-        Utils.exceptionLongueur(longueurDeLaCombinaisonMaster);
+        Utils.exceptionLongueurMaster(longueurDeLaCombinaisonMaster);
         Utils.exceptionNbEssais(nbEssaiMaster);
-        Utils.exceptionNbAleatoireMaster(nbChiffreAleatoireMaster);
 
       /*
        * crée un nombre aléatoire dans un tableau int
        */
-      int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
+      int[] tabSaisieOrdinateur = Utils.initialiseTableauRandomMaster(longueurDeLaCombinaisonMaster);
 
       Utils.etoileDecorationPourMaster();
       System.out.println("l'ordinateur a créé un nombre mystère !");
@@ -61,7 +59,7 @@ public class ChallengerMaster {
             /*
              * demande au joueur de saisir un nombre String
              */
-            String saisieUtilisateur = Utils.essaiUtilisateurMaster(longueurDeLaCombinaisonMaster, nbChiffreAleatoireMaster);
+            String saisieUtilisateur = Utils.essaiUtilisateurMaster(longueurDeLaCombinaisonMaster);
 
             /*
              * convertie la saisie String utilisateur en un tableau int

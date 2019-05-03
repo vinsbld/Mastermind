@@ -13,23 +13,25 @@ public class Utils {
 
     static Scanner nb = new Scanner(System.in);
 
+    private Utils() {
+
+    }
+
     /************************************************************************************/
     /************************** fonctions pour Mastermind *******************************/
 
     /**
      * génére des chiffres de façon aléatoire
      * céer un nombre aléatoire entre 4 a 10 "int nombreDeChiffre" et place chaque chiffre dans un tableau
-     *
-     * @param longueurDelaCombinaison
-     * @param nombreDeChiffre
+     * @param longueurDelaCombinaison nombre défini dans le fichier config.properties
      * @return tabSaisieOrdinateur
      */
-    public static int[] initialiseTableauRandomMaster(int longueurDelaCombinaison, int nombreDeChiffre) {
+    public static int[] initialiseTableauRandomMaster(int longueurDelaCombinaison) {
 
         Random nbAleatoire = new Random();
         int[] tabSaisieOrdinateur = new int[longueurDelaCombinaison];
         for (int i = 0; i < tabSaisieOrdinateur.length; i++) {
-            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(nombreDeChiffre - 4) + 4;
+            tabSaisieOrdinateur[i] = nbAleatoire.nextInt(10);
         }
         logger.info("L'ordinateur a créé un chiffre mystère : " + Arrays.toString(tabSaisieOrdinateur));
         return tabSaisieOrdinateur;
@@ -38,28 +40,27 @@ public class Utils {
 
     /**
      * transforme la saisie utilisateur String en un entier
-     *
-     * @param longueurDelaCombinaison
-     * @param nbChiffreAleatoire
+     * @param longueurDelaCombinaison nombre défini dans le fichier config.properties
      * @return nbSecretUtilisateur
      */
     /*tant que la condition n'est pas respectée alors revoi l'utilisateur vers une
        nouvelle saisie en lui indiquant les prérequis d'une saisie valide*/
-    public static String saisieUtilisateurMaster(int longueurDelaCombinaison, int nbChiffreAleatoire) {
+    public static String saisieUtilisateurMaster(int longueurDelaCombinaison) {
 
         boolean isUnNombre;
         String nbSecretUtilisateur;
 
         do {
+
             Utils.etoileDecorationPourMaster();
-            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 4 à " + nbChiffreAleatoire);
+            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
             Utils.etoileDecorationPourMaster();
             System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
             nbSecretUtilisateur = nb.next();
-            isUnNombre = nbSecretUtilisateur.matches("[4-" + nbChiffreAleatoire + "]*");
+            isUnNombre = nbSecretUtilisateur.matches("[0 - 9]*");
 
             if (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison) {
-                logger.warn("Utilisateur a saisie une mauvaise combinaison " + nbSecretUtilisateur + " n'est pas valide, la proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 4 à " + nbChiffreAleatoire);
+                logger.warn("Utilisateur a saisie une mauvaise combinaison " + nbSecretUtilisateur + " n'est pas valide, la proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
             }
         } while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
         return nbSecretUtilisateur;
@@ -70,33 +71,34 @@ public class Utils {
      * fonction utilisée pour le mode duel
      * convertie un String en un int
      *
-     * @param longueurDelaCombinaison
-     * @param nbChiffreAleatoire
+     * @param longueurDelaCombinaison nombre défini dans le fichier config.properties
      * @return nbSecretUtilisateur
      */
     /*tant que la condition n'est pas respectée alors revoi l'utilisateur vers une
        nouvelle saisie en lui indiquant les prérequis d'une saisie valide*/
-    public static String essaiUtilisateurMaster(int longueurDelaCombinaison, int nbChiffreAleatoire) {
+    public static String essaiUtilisateurMaster(int longueurDelaCombinaison) {
 
         boolean isUnNombre;
         String nbSecretUtilisateur;
 
         do {
+
             Utils.etoileDecorationPourMaster();
-            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 4 à " + nbChiffreAleatoire);
+            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
             Utils.etoileDecorationPourMaster();
             System.out.print("saisisez votre proposition : ");
             nbSecretUtilisateur = nb.next();
             Utils.etoileDecorationPourMaster();
             System.out.println();
-            isUnNombre = nbSecretUtilisateur.matches("[4-" + nbChiffreAleatoire + "]*");
+            isUnNombre = nbSecretUtilisateur.matches("[0 - 9]*");
             logger.info("L'utilisateur a essayé la combinaison : " + nbSecretUtilisateur);
 
-            if (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison) {
-                logger.warn("Utilisateur a saisie une mauvaise combinaison " + nbSecretUtilisateur + " n'est pas valide, la proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 4 à " + nbChiffreAleatoire);
+            if (isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison) {
+                logger.warn("Utilisateur a saisie une mauvaise combinaison " + nbSecretUtilisateur + " n'est pas valide, la proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
             }
         }
-        while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
+
+        while (isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
         return nbSecretUtilisateur;
     }
 
@@ -149,12 +151,12 @@ public class Utils {
     /**
      * exception lié au fichier config.properties
      *
-     * @param nbChiffreAleatoire
+     * @param nbCaseMaster nombre défini dans le fichier config.properties
      */
     //renvoie un message d'erreur quand le chiffre n'est pas conforme
-    public static void exceptionNbAleatoireMaster(int nbChiffreAleatoire) {
+    public static void exceptionLongueurMaster(int nbCaseMaster) {
 
-        if (nbChiffreAleatoire < 4 || nbChiffreAleatoire > 10) {
+        if (nbCaseMaster < 4 || nbCaseMaster > 10) {
 
             Utils.etoileDecorationPourMaster();
             logger.fatal("le nombre de chiffre utilisable n'est pas conforme ([4 - 10])");
@@ -167,11 +169,11 @@ public class Utils {
      * exception lié au fichier config.properties
      * la longueur de la combinaison ne doit pas etre inferieure à 3 et suppérieure à 10 "Mastermind"
      *
-     * @param longueurDeLaCombinaison
+     * @param longueurDeLaCombinaison nombre défini dans le fichier config.properties
      */
-    public static void exceptionLongueur(int longueurDeLaCombinaison) {
+    public static void exceptionLongueurRecherche(int longueurDeLaCombinaison) {
 
-        if (longueurDeLaCombinaison < 3 || longueurDeLaCombinaison > 10) {
+        if (longueurDeLaCombinaison < 1) {
             Utils.etoileDecorationPourMaster();
             logger.fatal("la longueur de la combinaison " + longueurDeLaCombinaison + " n'est pas valide");
             Utils.etoileDecorationPourMaster();
@@ -207,20 +209,17 @@ public class Utils {
 
         logger.info("l'ordinateur compare les éléments des deux tableaux, attaquant : " + Arrays.toString(tabSaisieAttaquant) + " et défenseur : " + Arrays.toString(tabSaisieDefenseur));
 
-        Random r = new Random();
         for (int i = 0; i < tabSaisieDefenseur.length; i++) {
 
             if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
                 logger.info("le chiffre " + tabSaisieAttaquant[i] + " est trop petit");
-                tabSaisieAttaquant[i] = r.nextInt((9 - tabSaisieAttaquant[i])) + tabSaisieAttaquant[i];
+                tabSaisieAttaquant[i] = nombreMaxMinRandom(tabSaisieAttaquant[i] + 1, 9);
                 logger.info("le nouveau chiffre proposé par l'ordinateur est " + tabSaisieAttaquant[i]);
-            }
-            if (tabSaisieAttaquant[i] > tabSaisieDefenseur[i]) {
+            }else if (tabSaisieAttaquant[i] > tabSaisieDefenseur[i]) {
                 logger.info("le chiffre " + tabSaisieAttaquant[i] + " est trop grand");
-                tabSaisieAttaquant[i] = r.nextInt((tabSaisieAttaquant[i] - 4)) + 4;
+                tabSaisieAttaquant[i] = nombreMaxMinRandom(0, tabSaisieAttaquant[i] - 1);
                 logger.info("le nouveau chiffre proposé par l'ordinateur est " + tabSaisieAttaquant[i]);
-            }
-            if (tabSaisieAttaquant[i] == tabSaisieDefenseur[i]) {
+            } else {
                 tabSaisieAttaquant[i] = tabSaisieAttaquant[i];
                 logger.info("le chiffre " + tabSaisieAttaquant[i] + " est à la bonne place");
             }
@@ -342,6 +341,7 @@ public class Utils {
         String nbSecretUtilisateur;
 
         do {
+
             Utils.etoileDecorationPourMaster();
             System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
             Utils.etoileDecorationPourMaster();
@@ -387,6 +387,18 @@ public class Utils {
         return nbSecretUtilisateur;
     }
 
+
+    private static int nombreMaxMinRandom(int min, int max) {
+
+        if (min > max) {
+            throw new IllegalArgumentException("max doit être infèrieur a min");
+        }
+
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
+    }
+
+
     /**
      * compotement de l'odinateur pour trouver le nombre secret pour le jeu recherche
      * si le nombre generé et inferieur ou supereieur à la valeur cible
@@ -400,20 +412,18 @@ public class Utils {
 
         logger.info("l'ordinateur compare les éléments des deux tableaux, attaquant : " + Arrays.toString(tabSaisieAttaquant) + " et défenseur : " + Arrays.toString(tabSaisieDefenseur));
 
-        Random r = new Random();
         for (int i = 0; i < tabSaisieDefenseur.length; i++) {
+
 
             if (tabSaisieAttaquant[i] < tabSaisieDefenseur[i]) {
                 logger.info("le chiffre " + tabSaisieAttaquant[i] + " est trop petit");
-                tabSaisieAttaquant[i] = r.nextInt((9 - tabSaisieAttaquant[i]) + tabSaisieAttaquant[i]);
+                tabSaisieAttaquant[i] = nombreMaxMinRandom(tabSaisieAttaquant[i] + 1, 9);
                 logger.info("le nouveau chiffre proposé par l'ordinateur est " + tabSaisieAttaquant[i]);
-            }
-            if (tabSaisieAttaquant[i] > tabSaisieDefenseur[i]) {
+            } else if (tabSaisieAttaquant[i] > tabSaisieDefenseur[i]) {
                 logger.info("le chiffre " + tabSaisieAttaquant[i] + " est trop grand");
-                tabSaisieAttaquant[i] = r.nextInt((tabSaisieAttaquant[i]));
+                tabSaisieAttaquant[i] = nombreMaxMinRandom(0, tabSaisieAttaquant[i] - 1);
                 logger.info("le nouveau chiffre proposé par l'ordinateur est " + tabSaisieAttaquant[i]);
-            }
-            if (tabSaisieAttaquant[i] == tabSaisieDefenseur[i]) {
+            } else {
                 tabSaisieAttaquant[i] = tabSaisieAttaquant[i];
                 logger.info("le chiffre " + tabSaisieAttaquant[i] + " est à la bonne place");
             }

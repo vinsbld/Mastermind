@@ -11,7 +11,6 @@ public class Config {
 
     public int longueurDeLaCombinaisonMaster;
     public int nbEssaiMaster;
-    public int nbChiffreAleatoireMaster;
 
     public int longueurDeLaCombinaisonRecherche;
     public int nbEssaiRecherche;
@@ -52,7 +51,6 @@ public class Config {
             // get the property value and print it out
             longueurDeLaCombinaisonMaster = Integer.parseInt(prop.getProperty("master_nombre_case"));
             nbEssaiMaster = Integer.parseInt(prop.getProperty("master_nombre_essai"));
-            nbChiffreAleatoireMaster = Integer.parseInt(prop.getProperty("master_nombre_de_chiffre"));
 
             longueurDeLaCombinaisonRecherche = Integer.parseInt(prop.getProperty("recherche_nombre_case"));
             nbEssaiRecherche = Integer.parseInt(prop.getProperty("recherche_nombre_essai"));

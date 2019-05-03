@@ -31,7 +31,7 @@ public class DefenseurRecherche {
         int longueurDeLaCombinaisonRecherche = myConfig.longueurDeLaCombinaisonRecherche;
         int nbEssaiRecherche = myConfig.nbEssaiRecherche;
 
-        Utils.exceptionLongueur(longueurDeLaCombinaisonRecherche);
+        Utils.exceptionLongueurRecherche(longueurDeLaCombinaisonRecherche);
         Utils.exceptionNbEssais(nbEssaiRecherche);
 
 

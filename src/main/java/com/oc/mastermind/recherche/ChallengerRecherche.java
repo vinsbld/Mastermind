@@ -34,7 +34,7 @@ public class ChallengerRecherche {
         /*
          * exceptions pour les paramètres de jeux
          */
-        Utils.exceptionLongueur(longueurDeLaCombinaisonRecherche);
+        Utils.exceptionLongueurRecherche(longueurDeLaCombinaisonRecherche);
         Utils.exceptionNbEssais(nbEssaiRecherche);
 
         /*
