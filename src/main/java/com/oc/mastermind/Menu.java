@@ -17,10 +17,8 @@ import java.util.Scanner;
  * on y retrouve tous les menus et sous menus des jeux
  */
 
-
 public class Menu {
-
-
+    
     static Scanner nb = new Scanner(System.in);
     
     public static Logger logger = LogManager.getLogger();
@@ -74,7 +72,7 @@ public class Menu {
         System.out.println("*         CHOISISSEZ UN MODE DE JEUX          *");
         Utils.etoileDecoration();
         System.out.println();
-        System.out.println("1. ChallengerRecherche");
+        System.out.println("1. Challenger");
         System.out.println("Le joueur joue contre l'ordinateur");
         System.out.println();
         System.out.println("2. Défenseur");
@@ -87,7 +85,6 @@ public class Menu {
         System.out.println("Pour choisir un Mode entrer 1, 2 ou 3 : ");
 
         String saisieUtilisateurMode = nb.nextLine();
-
 
         if (saisieUtilisateurMode.equals("1")) {
             ChallengerRecherche.algoChalengerRecherche();
@@ -134,7 +131,6 @@ public class Menu {
         System.out.println("Pour choisir un Mode entrer 1, 2 ou 3 : ");
 
         String saisieUtilisateurMode = nb.nextLine();
-
 
         if (saisieUtilisateurMode.equals("1")) {
             ChallengerMaster.algoChallengerMaster();
@@ -192,7 +188,7 @@ public class Menu {
             logger.info("l'utilisateur a saisi : "+ sasisieUtilisateur +" l'utilisateur a choisi de revenir au menu principal");
 
 
-        } else if (!sasisieUtilisateur.equals("3")) {
+        } else if (sasisieUtilisateur.equals("3")) {
             Utils.hastagDecoration();
             System.out.println("                      FIN");
             Utils.hastagDecoration();
@@ -213,7 +209,6 @@ public class Menu {
      * Challenger, Défenseur et Duel
      * ou bien propose au joueur de mettre fin au jeu
      */
-
    public static void menuFinMaster() {
 
         Utils.hastagDecoration();
@@ -245,7 +240,6 @@ public class Menu {
             System.out.println("                      FIN");
             Utils.hastagDecoration();
             logger.info("l'utilisateur a saisi "+ sasisieUtilisateur +"l'utilisateur a mis fin au jeu");
-
 
 
         } else {
