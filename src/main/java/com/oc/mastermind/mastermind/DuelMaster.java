@@ -43,20 +43,22 @@ public class DuelMaster {
             System.out.println("le code secret ordinateur est : " + Arrays.toString(tabNbSecretCpu));
         }
 
-        String saisieUtilisateur = Utils.saisieUtilisateur(longueurDeLaCombinaisonMaster);
-
-        int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieUtilisateur);
-
-        //pas de mode developpeur pour l'utilisateur car son code secret et affiché par défaut
-
         Utils.etoileDecorationPourMaster();
         System.out.println("l'ordinateur a créé un code secret !");
         Utils.etoileDecorationPourMaster();
         System.out.println();
 
+        String saisieUtilisateur = Utils.saisieUtilisateur(longueurDeLaCombinaisonMaster);
+
+        int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieUtilisateur);
+
+        //pas de mode developpeur pour l'utilisateur car son code secret et affiché par défaut
+        System.out.println();
+        System.out.println();
         Utils.etoileDecorationPourMaster();
         System.out.println("Votre code secret est : " + Arrays.toString(tabNbSecretUtil));
         Utils.etoileDecorationPourMaster();
+        System.out.println();
         System.out.println();
 
         for (int i = 1; i <= nbEssaiMaster; i++) {
@@ -69,6 +71,7 @@ public class DuelMaster {
 
             Utils.algoComportementRandom(tabEssaiCpu, tabEssaiUtilisateur);
 
+            System.out.println();
             Utils.etoileDecorationPourMaster();
             System.out.print("Essai n°" + i + " " + Arrays.toString(tabEssaiUtilisateur) + " Réponse pour joueur : ");
             Utils.algoMaster(tabEssaiUtilisateur, tabNbSecretCpu);
@@ -79,6 +82,7 @@ public class DuelMaster {
             System.out.print("Essai n°" + i + " " + Arrays.toString(tabEssaiCpu) + " Réponse pour ordinateur : ");
             Utils.algoMaster(tabEssaiCpu, tabNbSecretUtil);
             Utils.etoileDecorationPourMaster();
+            System.out.println();
             System.out.println();
 
             if (i == nbEssaiMaster && !Arrays.equals(tabNbSecretCpu, tabNbSecretUtil)) {

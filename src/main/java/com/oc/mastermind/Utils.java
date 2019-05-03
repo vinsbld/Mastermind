@@ -60,7 +60,7 @@ public class Utils {
      * la condition != indique que si l'élément est bien placé alors il ne faut pas le prendre en concidèration
      *
      * @param combinaisonSecrete tableau du défenseur
-     * @param attaque tableau de l'attaquant
+     * @param attaque            tableau de l'attaquant
      */
     public static void algoMaster(int[] combinaisonSecrete, int[] attaque) {
         logger.info("l'odinateur verifie si dans sa combinaison : " + Arrays.toString(attaque) + " un nombre est bien placé ou présent ");
@@ -150,7 +150,7 @@ public class Utils {
      * convertie un String en int
      *
      * @param longueurDelaCombinaison nombre défini dans le fichier config.properties
-     * @param saisieUtilisateur nombre secret saisi par l'utilisateur
+     * @param saisieUtilisateur       nombre secret saisi par l'utilisateur
      * @return tabNbSecretUtil
      */
     /*transforme la saisie utilisateur "String", chaque caractères
@@ -255,7 +255,7 @@ public class Utils {
         String nbSecretUtilisateur;
 
         do {
-            Utils.etoileDecoration();
+            Utils.etoileDecorationPourMaster();
             System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
             Utils.etoileDecorationPourMaster();
             System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
@@ -307,6 +307,15 @@ public class Utils {
                 tabSaisieAttaquant[i] = tabSaisieAttaquant[i];
                 logger.info("le chiffre " + tabSaisieAttaquant[i] + " est à la bonne place");
             }
+        }
+    }
+
+    /**
+     * cette fonction fait des sauts de lignes
+     */
+    public static void soutPln() {
+        for (int i = 1; i < 25; i++) {
+            System.out.println();
         }
     }
 

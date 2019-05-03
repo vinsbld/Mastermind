@@ -43,6 +43,7 @@ public class ChallengerMaster {
        */
       int[] tabSaisieOrdinateur = Utils.initialiseTableauRandom(longueurDeLaCombinaisonMaster);
 
+
       Utils.etoileDecorationPourMaster();
       System.out.println("l'ordinateur a créé un nombre mystère !");
       Utils.etoileDecorationPourMaster();
@@ -69,8 +70,10 @@ public class ChallengerMaster {
             /*
              * compare les tableaux tabSaisieOrdinateur et tabSaisieUtilisateur
              */
+            System.out.println();
             System.out.print("Essai n°"+ y +" Proposition : " + Arrays.toString(tabSaisieUtilisateur) + " | Réponse : ");
             Utils.algoMaster(tabSaisieOrdinateur, tabSaisieUtilisateur);
+            System.out.println();
             System.out.println();
 
             if (y == nbEssaiMaster && !Arrays.equals(tabSaisieOrdinateur, tabSaisieUtilisateur)) {

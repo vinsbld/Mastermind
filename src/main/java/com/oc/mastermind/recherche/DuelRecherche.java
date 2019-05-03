@@ -45,19 +45,22 @@ public class DuelRecherche {
             System.out.println("le code secret ordinateur est : " + Arrays.toString(tabNbSecretCpu));
         }
 
+        Utils.etoileDecorationPourMaster();
+        System.out.println("l'ordinateur a créé un code secret !");
+        Utils.etoileDecorationPourMaster();
+        System.out.println();
+
         String nbSecretUtilisateur = Utils.saisieUtilisateur(longueurDeLaCombinaisonRecherche);
 
         int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, nbSecretUtilisateur);
 
         //pas de mode developpeur pour l'utilisateur car son code secret et affiché par défaut
-        Utils.etoileDecoration();
-        System.out.println("l'ordinateur a créé un code secret !");
-        Utils.etoileDecoration();
         System.out.println();
-
-        Utils.etoileDecoration();
+        System.out.println();
+        Utils.etoileDecorationPourMaster();
         System.out.println("Votre code secret est : " + Arrays.toString(tabNbSecretUtil));
-        Utils.etoileDecoration();
+        Utils.etoileDecorationPourMaster();
+        System.out.println();
         System.out.println();
 
         for (int i = 1; i <= nbEssaiRecherche; i++) {
@@ -70,6 +73,7 @@ public class DuelRecherche {
 
             Utils.algoComportementRandom(tabEssaiCpu, tabEssaiUtilisateur);
 
+            System.out.println();
             Utils.etoileDecorationPourMaster();
             System.out.print("Essai n°" + i + " " + Arrays.toString(tabEssaiUtilisateur) + " Réponse pour joueur : ");
             Utils.algoPlusMoins(tabEssaiUtilisateur, tabNbSecretCpu);
@@ -80,6 +84,7 @@ public class DuelRecherche {
             System.out.print("Essai n°" + i + " " + Arrays.toString(tabEssaiCpu) + " Réponse pour ordinateur : ");
             Utils.algoPlusMoins(tabEssaiCpu, tabNbSecretUtil);
             Utils.etoileDecorationPourMaster();
+            System.out.println();
             System.out.println();
 
             if (i == nbEssaiRecherche && !Arrays.equals(tabNbSecretCpu, tabNbSecretUtil)) {

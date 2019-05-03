@@ -42,6 +42,7 @@ public class ChallengerRecherche {
          */
         int[] tabSaisieOrdinateur = Utils.initialiseTableauRandom(longueurDeLaCombinaisonRecherche);
 
+
         Utils.etoileDecorationPourMaster();
         System.out.println("l'ordinateur a créé un nombre mystère !");
         Utils.etoileDecorationPourMaster();
@@ -70,8 +71,10 @@ public class ChallengerRecherche {
             /*
              * compare les tableaux tabSaisieOrdinateur et tabSaisieUtilisateur
              */
+            System.out.println();
             System.out.print("Essai n°"+ y +" Proposition : " + Arrays.toString(tabSaisieUtilisateur) + " | Réponse : ");
             Utils.algoPlusMoins(tabSaisieUtilisateur, tabSaisieOrdinateur);
+            System.out.println();
             System.out.println();
 
 
