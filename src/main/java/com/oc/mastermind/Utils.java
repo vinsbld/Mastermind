@@ -39,35 +39,6 @@ public class Utils {
     }
 
     /**
-     * transforme la saisie utilisateur String en un entier
-     * @param longueurDelaCombinaison nombre défini dans le fichier config.properties
-     * @return nbSecretUtilisateur
-     */
-    /*tant que la condition n'est pas respectée alors revoi l'utilisateur vers une
-       nouvelle saisie en lui indiquant les prérequis d'une saisie valide*/
-    public static String saisieUtilisateurMaster(int longueurDelaCombinaison) {
-
-        boolean isUnNombre;
-        String nbSecretUtilisateur;
-
-        do {
-
-            Utils.etoileDecorationPourMaster();
-            System.out.println("Votre proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
-            Utils.etoileDecorationPourMaster();
-            System.out.println("SAISISSEZ VOTRE CHIFFRE MYSTERE : ");
-            nbSecretUtilisateur = nb.next();
-            isUnNombre = nbSecretUtilisateur.matches("[0 - 9]*");
-
-            if (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison) {
-                logger.warn("Utilisateur a saisie une mauvaise combinaison " + nbSecretUtilisateur + " n'est pas valide, la proposition doit comporter " + longueurDelaCombinaison + " chiffres allants de 0 à 9");
-            }
-        } while (!isUnNombre || nbSecretUtilisateur.length() != longueurDelaCombinaison);
-        return nbSecretUtilisateur;
-    }
-
-
-    /**
      * fonction utilisée pour le mode duel
      * convertie un String en un int
      *
@@ -367,7 +338,7 @@ public class Utils {
      * @param longueurDelaCombinaison
      * @return
      */
-    public static String saisieUtilisateurRecherche(int longueurDelaCombinaison) {
+    public static String saisieUtilisateur(int longueurDelaCombinaison) {
 
         boolean isUnNombre;
         String nbSecretUtilisateur;

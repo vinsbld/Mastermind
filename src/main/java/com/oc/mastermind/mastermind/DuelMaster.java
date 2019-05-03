@@ -43,7 +43,7 @@ public class DuelMaster {
             System.out.println("le code secret ordinateur est : " + Arrays.toString(tabNbSecretCpu));
         }
 
-        String saisieUtilisateur = Utils.saisieUtilisateurMaster(longueurDeLaCombinaisonMaster);
+        String saisieUtilisateur = Utils.saisieUtilisateur(longueurDeLaCombinaisonMaster);
 
         int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieUtilisateur);
 

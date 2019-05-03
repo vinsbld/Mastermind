@@ -35,7 +35,7 @@ public class DefenseurRecherche {
         Utils.exceptionNbEssais(nbEssaiRecherche);
 
 
-        String saisieDefenseur = Utils.saisieUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
+        String saisieDefenseur = Utils.saisieUtilisateur(longueurDeLaCombinaisonRecherche);
 
         int[] tabSaisieDefenseur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, saisieDefenseur);
 

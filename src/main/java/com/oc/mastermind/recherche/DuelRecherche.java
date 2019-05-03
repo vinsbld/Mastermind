@@ -45,7 +45,7 @@ public class DuelRecherche {
             System.out.println("le code secret ordinateur est : " + Arrays.toString(tabNbSecretCpu));
         }
 
-        String nbSecretUtilisateur = Utils.saisieUtilisateurRecherche(longueurDeLaCombinaisonRecherche);
+        String nbSecretUtilisateur = Utils.saisieUtilisateur(longueurDeLaCombinaisonRecherche);
 
         int[] tabNbSecretUtil = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonRecherche, nbSecretUtilisateur);
 

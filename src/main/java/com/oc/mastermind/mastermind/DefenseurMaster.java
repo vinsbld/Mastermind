@@ -31,7 +31,7 @@ public class DefenseurMaster {
         Utils.exceptionLongueurMaster(longueurDeLaCombinaisonMaster);
         Utils.exceptionNbEssais(nbEssaiMaster);
 
-        String saisieDefenseur = Utils.saisieUtilisateurMaster(longueurDeLaCombinaisonMaster);
+        String saisieDefenseur = Utils.saisieUtilisateur(longueurDeLaCombinaisonMaster);
 
         int[] tabSaisieDefenseur = Utils.initialiseTableauUtilisateur(longueurDeLaCombinaisonMaster, saisieDefenseur);
 
