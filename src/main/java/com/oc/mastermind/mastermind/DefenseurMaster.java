@@ -63,7 +63,7 @@ public class DefenseurMaster {
                 Utils.hastagDecoration();
                 Utils.etoileDecoration();
                 System.out.println("l'ordinateur n'a pas trouvé le code secret");
-                System.out.println("La combinaison secrette était : " + Arrays.toString(tabSaisieDefenseur));
+                System.out.println("La combinaison secrete était : " + Arrays.toString(tabSaisieDefenseur));
                 break;
             }
 
